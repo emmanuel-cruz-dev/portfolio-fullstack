@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -30,9 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <main className="container min-h-36">{children}</main>
-        <Footer />
+        <TooltipProvider delayDuration={200}>
+          <Navbar />
+          <main className="container min-h-36">{children}</main>
+          <Footer />
+        </TooltipProvider>
       </body>
     </html>
   );
