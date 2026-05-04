@@ -82,7 +82,7 @@ function Navbar() {
             </SheetTrigger>
 
             <SheetContent side="right" className="w-72">
-              <SheetHeader className="mb-4">
+              <SheetHeader className="mb-0 pb-0">
                 <SheetTitle className="flex items-center gap-2 text-left text-sm font-semibold">
                   <span className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground text-background">
                     <Code2 className="h-4 w-4" />
@@ -90,8 +90,8 @@ function Navbar() {
                   Emmanuel Cruz
                 </SheetTitle>
               </SheetHeader>
-              <Separator className="mb-4" />
-              <nav className="flex flex-col gap-1">
+              <Separator />
+              <nav className="flex flex-col gap-1 px-2">
                 {NAV_LINKS.map(({ label, href }) => (
                   <Link
                     key={href}
@@ -109,11 +109,13 @@ function Navbar() {
                 ))}
               </nav>
               <Separator className="my-4" />
-              <Button asChild className="w-full" size="sm">
-                <Link href="/contact" onClick={() => setOpen(false)}>
-                  Contacto
-                </Link>
-              </Button>
+              <div className="px-2">
+                <Button asChild className="w-full" size="sm">
+                  <Link href="/contact" onClick={() => setOpen(false)}>
+                    Contacto
+                  </Link>
+                </Button>
+              </div>
             </SheetContent>
           </Sheet>
           <AnimatedThemeToggler
