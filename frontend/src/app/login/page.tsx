@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
+
 import { LoginForm } from "@/components/ui/LoginForm";
 
-function Login() {
+export const metadata: Metadata = {
+  title: "Iniciar sesión | Emmanuel Cruz",
+  description: "Inicia sesión en tu cuenta",
+};
+
+function LoginPage() {
   return (
     <section className="py-16 flex items-center justify-center">
       <LoginForm />
@@ -8,4 +15,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;
