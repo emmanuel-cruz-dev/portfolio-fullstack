@@ -1,13 +1,9 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Code2, ArrowUpRight } from "lucide-react";
+import { Code2, ArrowUpRight } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import SocialLinksItem from "@/components/shared/SocialLinksItem";
 
 const FOOTER_LINKS = {
   portfolio: [
@@ -16,19 +12,6 @@ const FOOTER_LINKS = {
     { label: "Experiencia", href: "/works" },
     { label: "Formación", href: "/education" },
     { label: "Contacto", href: "/contact" },
-  ],
-  social: [
-    {
-      label: "GitHub",
-      href: "https://github.com/emmanuel-cruz-dev",
-      icon: Github,
-    },
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/emmanuel-cruz-dev/",
-      icon: Linkedin,
-    },
-    { label: "Email", href: "mailto:emmanuelgerr@gmail.com", icon: Mail },
   ],
 };
 
@@ -52,32 +35,7 @@ function Footer() {
               digitales con buena experiencia de usuario.
             </p>
 
-            <div className="flex items-center gap-1">
-              {FOOTER_LINKS.social.map(({ label, href, icon: Icon }) => (
-                <Tooltip key={label}>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-8 w-8 text-muted-foreground hover:text-foreground"
-                      asChild
-                    >
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={label}
-                      >
-                        <Icon className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom">
-                    <p>{label}</p>
-                  </TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
+            <SocialLinksItem />
           </div>
 
           <div className="sm:col-span-1">
