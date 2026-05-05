@@ -1,0 +1,9 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "education": "Formación",
+    "contact": "Contacto"
+  }
+}
