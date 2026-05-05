@@ -1,10 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { Menu, Code2 } from "lucide-react";
 
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -24,16 +26,17 @@ import { Separator } from "@/components/ui/separator";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
-  { label: "Inicio", href: "/" },
-  { label: "Proyectos", href: "/projects" },
-  { label: "Experiencia", href: "/works" },
-  { label: "Formación", href: "/education" },
-];
-
 function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+
+  const NAV_LINKS = [
+    { label: t("home"), href: "/" },
+    { label: t("projects"), href: "/projects" },
+    { label: t("experience"), href: "/works" },
+    { label: t("education"), href: "/education" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md supports-backdrop-filter:bg-background/60">
@@ -69,8 +72,9 @@ function Navbar() {
 
         <div className="flex items-center gap-2">
           <div className="hidden items-center gap-2 md:flex">
+            <LanguageSwitcher />
             <Button asChild size="sm" variant="outline">
-              <Link href="/contact">Contacto</Link>
+              <Link href="/contact">{t("contact")}</Link>
             </Button>
           </div>
 
@@ -109,10 +113,11 @@ function Navbar() {
                 ))}
               </nav>
               <Separator className="my-4" />
-              <div className="px-2">
+              <div className="flex items-center justify-between px-2">
+                <LanguageSwitcher />
                 <Button asChild className="w-full" size="sm">
                   <Link href="/contact" onClick={() => setOpen(false)}>
-                    Contacto
+                    {t("contact")}
                   </Link>
                 </Button>
               </div>
