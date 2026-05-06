@@ -3,9 +3,21 @@
     "title": "Inicio | Emmanuel Cruz | Portfolio",
     "description": "Emmanuel Cruz Full Stack Developer"
   },
+  "projectsPage": {
+    "title": "Proyectos | Emmanuel Cruz | Portfolio",
+    "description": "Mis proyectos"
+  },
+  "educationPage": {
+    "title": "Formación | Emmanuel Cruz | Portfolio",
+    "description": "Mis cursos de formación"
+  },
   "contactPage": {
     "title": "Contacto | Emmanuel Cruz | Portfolio",
     "description": "Ponete en contacto conmigo"
+  },
+  "loginPage": {
+    "title": "Iniciar sesión | Emmanuel Cruz | Portfolio",
+    "description": "Inicia sesión en tu cuenta"
   },
   "nav": {
     "home": "Inicio",
