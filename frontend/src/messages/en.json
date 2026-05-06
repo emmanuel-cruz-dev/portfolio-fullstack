@@ -1,4 +1,12 @@
 {
+  "homePage": {
+    "title": "Home | Emmanuel Cruz | Portfolio",
+    "description": "Emmanuel Cruz Full Stack Developer"
+  },
+  "contactPage": {
+    "title": "Contact | Emmanuel Cruz | Portfolio",
+    "description": "Get in touch with me"
+  },
   "nav": {
     "home": "Home",
     "projects": "Projects",
