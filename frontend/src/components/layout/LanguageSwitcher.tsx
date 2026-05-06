@@ -6,12 +6,12 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 
 export function LanguageSwitcher() {
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const currentLocale = useLocale();
 
   const toggleLocale = () => {
-    const next = locale === "es" ? "en" : "es";
+    const next = currentLocale === "es" ? "en" : "es";
     router.replace(pathname, { locale: next });
   };
 
@@ -20,9 +20,9 @@ export function LanguageSwitcher() {
       variant="ghost"
       size="sm"
       onClick={toggleLocale}
-      className="h-9 w-14 font-medium text-muted-foreground hover:text-foreground"
+      className="h-9 w-9 rounded-full font-semibold text-muted-foreground hover:text-foreground cursor-pointer"
     >
-      {locale === "es" ? "EN" : "ES"}
+      {currentLocale === "es" ? "EN" : "ES"}
     </Button>
   );
 }
