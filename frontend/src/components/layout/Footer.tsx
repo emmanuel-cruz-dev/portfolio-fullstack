@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Code2, ArrowUpRight } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import SocialLinksItem from "@/components/shared/SocialLinksItem";
