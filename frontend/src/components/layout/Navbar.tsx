@@ -5,9 +5,8 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Menu, Code2 } from "lucide-react";
 
-import { useIsDarkTheme } from "@/hooks/useIsDarkTheme";
-import { usePathname } from "@/i18n/navigation";
-import { Link } from "@/i18n/navigation";
+import { useIsDarkTheme } from "@/hooks";
+import { usePathname, Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import {
   NavigationMenu,
@@ -15,17 +14,15 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
-import {
+  Button,
+  Separator,
+  AnimatedThemeToggler,
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Separator } from "@/components/ui/separator";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+  SheetTitle,
+} from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 function Navbar() {
