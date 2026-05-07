@@ -9,7 +9,7 @@ export async function getPageMetadata({ locale, namespace }: MetadataParams) {
   const t = await getTranslations({ locale, namespace });
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title: t("metadata.title"),
+    description: t("metadata.description"),
   };
 }
