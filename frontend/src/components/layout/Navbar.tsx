@@ -1,11 +1,13 @@
 "use client";
 
-import { usePathname } from "@/i18n/navigation";
-import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Menu, Code2 } from "lucide-react";
 
+import { useIsDarkTheme } from "@/hooks/useIsDarkTheme";
+import { usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import {
   NavigationMenu,
@@ -27,6 +29,7 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { cn } from "@/lib/utils";
 
 function Navbar() {
+  const isDark = useIsDarkTheme();
   const pathname = usePathname();
   const t = useTranslations("layout.nav");
   const [open, setOpen] = useState(false);
@@ -45,9 +48,13 @@ function Navbar() {
           href="/"
           className="flex items-center gap-2 text-sm font-semibold tracking-tight transition-opacity hover:opacity-80"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground text-background">
-            <Code2 className="h-4 w-4" />
-          </span>
+          <Image
+            src={isDark ? "/e-logo-white.avif" : "/e-logo.avif"}
+            className="w-7 h-auto"
+            alt="Emmanuel Cruz Logo"
+            width={300}
+            height={198}
+          />
           <span className="hidden sm:inline">Emmanuel Cruz</span>
         </Link>
 
