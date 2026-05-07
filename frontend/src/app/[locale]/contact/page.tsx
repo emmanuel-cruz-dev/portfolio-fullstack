@@ -3,10 +3,12 @@ import { getPageMetadata } from "@/lib/utils/metadata";
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   return getPageMetadata({
-    locale: params.locale,
+    locale: locale,
     namespace: "contactPage",
   });
 }
