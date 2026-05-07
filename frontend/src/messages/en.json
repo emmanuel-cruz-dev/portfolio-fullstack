@@ -29,11 +29,25 @@
       "description": "Login to your account"
     }
   },
-  "nav": {
-    "home": "Home",
-    "projects": "Projects",
-    "experience": "Experience",
-    "education": "Education",
-    "contact": "Contact"
+  "layout": {
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "experience": "Experience",
+      "education": "Education",
+      "contact": "Contact"
+    }
+  },
+  "shared": {
+    "buttons": {
+      "send": "Send Message",
+      "cancel": "Cancel"
+    },
+    "forms": {
+      "errors": {
+        "required": "This field is required",
+        "invalidEmail": "Please enter a valid email address"
+      }
+    }
   }
 }

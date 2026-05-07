@@ -29,11 +29,25 @@
       "description": "Inicia sesión en tu cuenta"
     }
   },
-  "nav": {
-    "home": "Inicio",
-    "projects": "Proyectos",
-    "experience": "Experiencia",
-    "education": "Formación",
-    "contact": "Contacto"
+  "layout": {
+    "nav": {
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "experience": "Experiencia",
+      "education": "Formación",
+      "contact": "Contacto"
+    }
+  },
+  "shared": {
+    "buttons": {
+      "send": "Enviar Mensaje",
+      "cancel": "Cancelar"
+    },
+    "forms": {
+      "errors": {
+        "required": "Este campo es requerido",
+        "invalidEmail": "Por favor ingrese una dirección de correo electrónico válida"
+      }
+    }
   }
 }
