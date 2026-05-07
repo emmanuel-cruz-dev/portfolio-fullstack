@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Code2, ArrowUpRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
@@ -5,17 +6,19 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import SocialLinksItem from "@/components/shared/SocialLinksItem";
 
-const FOOTER_LINKS = {
-  portfolio: [
-    { label: "Inicio", href: "/" },
-    { label: "Proyectos", href: "/projects" },
-    { label: "Experiencia", href: "/works" },
-    { label: "Formación", href: "/education" },
-    { label: "Contacto", href: "/contact" },
-  ],
-};
-
 function Footer() {
+  const t = useTranslations("layout.footer");
+
+  const FOOTER_LINKS = {
+    portfolio: [
+      { label: t("home"), href: "/" },
+      { label: t("projects"), href: "/projects" },
+      { label: t("experience"), href: "/works" },
+      { label: t("education"), href: "/education" },
+      { label: t("contact"), href: "/contact" },
+    ],
+  };
+
   return (
     <footer className="border-t border-border/50 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -31,8 +34,7 @@ function Footer() {
               Emmanuel Cruz
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
-              Desarrollador fullstack apasionado por construir productos
-              digitales con buena experiencia de usuario.
+              {t("description")}
             </p>
 
             <SocialLinksItem />
@@ -40,7 +42,7 @@ function Footer() {
 
           <div className="sm:col-span-1">
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Navegación
+              {t("title1")}
             </p>
             <ul className="flex flex-col gap-2">
               {FOOTER_LINKS.portfolio.map(({ label, href }) => (
@@ -58,7 +60,7 @@ function Footer() {
 
           <div className="sm:col-span-1">
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Estado actual
+              {t("title2")}
             </p>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
@@ -67,7 +69,7 @@ function Footer() {
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
                 </span>
                 <span className="text-sm text-muted-foreground">
-                  Disponible para nuevos proyectos
+                  {t("available")}
                 </span>
               </div>
               <Button
@@ -77,7 +79,7 @@ function Footer() {
                 className="w-fit gap-1.5"
               >
                 <a href="mailto:emmanuelgerr@gmail.com">
-                  Hablemos
+                  {t("talkToMe")}
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </Button>
@@ -88,9 +90,7 @@ function Footer() {
         <Separator />
 
         <div className="flex items-center justify-center py-6">
-          <p className="text-xs text-muted-foreground">
-            © 2026 desarrollado por Emmanuel Cruz. Buenos Aires, Argentina.
-          </p>
+          <p className="text-xs text-muted-foreground">{t("copyright")}</p>
         </div>
       </div>
     </footer>
