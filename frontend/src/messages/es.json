@@ -36,6 +36,19 @@
       "experience": "Experiencia",
       "education": "Formación",
       "contact": "Contacto"
+    },
+    "footer": {
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "experience": "Experiencia",
+      "education": "Formación",
+      "contact": "Contacto",
+      "description": "Desarrollador Full Stack con enfoque en el desarrollo frontend y arquitecturas de interfaz de usuario modernas.",
+      "title1": "Navegación",
+      "title2": "Estado actual",
+      "available": "Disponible para nuevos proyectos",
+      "talkToMe": "Hablemos",
+      "copyright": "© 2026 desarrollado por Emmanuel Cruz. Buenos Aires, Argentina."
     }
   },
   "shared": {
