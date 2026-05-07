@@ -28,7 +28,7 @@ import { cn } from "@/lib/utils";
 
 function Navbar() {
   const pathname = usePathname();
-  const t = useTranslations("nav");
+  const t = useTranslations("layout.nav");
   const [open, setOpen] = useState(false);
 
   const NAV_LINKS = [
