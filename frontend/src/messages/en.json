@@ -51,10 +51,9 @@
       "contact": "Contact",
       "description": "Full Stack Developer with a focus on frontend development and modern user interface architectures.",
       "title1": "Navigation",
-      "title2": "Current State",
-      "available": "Available for new projects",
-      "talkToMe": "Talk to me",
-      "copyright": "© 2026 developed by Emmanuel Cruz. Buenos Aires, Argentina."
+      "title2": "Get in touch",
+      "contactText": "Do you have an idea, proposal, or simply want to talk? You can reach me via social networks or by email and I will respond as soon as possible.",
+      "copyright": "© 2026 Emmanuel Cruz · Buenos Aires, Argentina"
     }
   },
   "shared": {
