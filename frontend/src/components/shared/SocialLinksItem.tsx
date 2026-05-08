@@ -1,54 +1,88 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+"use client";
 
+import { toast } from "sonner";
+
+import { cn } from "@/lib/utils";
 import {
+  buttonVariants,
+  Separator,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
+  Dock,
+  DockIcon,
+} from "@/components/ui";
+import { EMAIL, CONTACT_DATA } from "@/constants";
 
-const SOCIAL_LINKS = [
-  {
-    label: "GitHub",
-    href: "https://github.com/emmanuel-cruz-dev",
-    icon: Github,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/emmanuel-cruz-dev/",
-    icon: Linkedin,
-  },
-  { label: "Email", href: "mailto:emmanuelgerr@gmail.com", icon: Mail },
-];
+const iconClass = cn(
+  buttonVariants({ variant: "ghost", size: "icon" }),
+  "size-12 rounded-full cursor-pointer"
+);
 
 function SocialLinksItem() {
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(EMAIL);
+    toast.success("Email copiado al portapapeles");
+  };
+
   return (
-    <div className="flex items-center gap-1">
-      {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-        <Tooltip key={label}>
-          <TooltipTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 text-muted-foreground hover:text-foreground"
-              asChild
-            >
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent side="bottom">
-            <p>{label}</p>
-          </TooltipContent>
-        </Tooltip>
-      ))}
-    </div>
+    <article className="w-fit -mt-6">
+      <Dock direction="middle">
+        {CONTACT_DATA.actions.map((item) => (
+          <DockIcon key={item.label}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                {item.type === "link" ? (
+                  <a
+                    href={item.href!}
+                    aria-label={item.label}
+                    className={iconClass}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <item.icon className="size-4" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={handleCopyEmail}
+                    aria-label={item.label}
+                    className={iconClass}
+                  >
+                    <item.icon className="size-4" />
+                  </button>
+                )}
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{item.label}</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+        ))}
+
+        <Separator orientation="vertical" className="h-full" />
+
+        {Object.entries(CONTACT_DATA.social).map(([name, social]) => (
+          <DockIcon key={name}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href={social.url}
+                  aria-label={social.name}
+                  className={iconClass}
+                  target={name === "Email" ? "_self" : "_blank"}
+                  rel="noopener noreferrer"
+                >
+                  <social.icon className="size-4" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{social.name}</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+        ))}
+      </Dock>
+    </article>
   );
 }
 
