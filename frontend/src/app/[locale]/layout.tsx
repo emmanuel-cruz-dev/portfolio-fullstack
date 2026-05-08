@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Toaster } from "sonner";
 
 import { routing } from "@/i18n/routing";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -55,6 +56,7 @@ export default async function RootLayout({
             <main className="container min-h-36">{children}</main>
             <Footer />
           </TooltipProvider>
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>
