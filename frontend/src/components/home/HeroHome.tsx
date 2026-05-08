@@ -1,8 +1,12 @@
+import { useTranslations } from "next-intl";
+
 import OrbitingItem from "./OrbitingItem";
 import { SocialLinksItem } from "../shared";
 import { AuroraText, ShimmerButton } from "@/components/ui";
 
 function HeroHome() {
+  const t = useTranslations("homePage.hero");
+
   return (
     <section className="py-6 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-14 items-center">
@@ -12,20 +16,15 @@ function HeroHome() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
             </span>
-            Disponible
+            {t("available")}
           </ShimmerButton>
           <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold">
-            Hola! Soy Emmanuel
+            {t("title")}
           </h1>
           <AuroraText className="text-3xl md:text-4xl xl:text-5xl font-bold">
-            Desarrollador Fullstack
+            {t("subtitle")}
           </AuroraText>
-          <p>
-            Especializado en la creación de aplicaciones web modernas y de alto
-            rendimiento. Creo productos digitales escalables con interfaces
-            responsivas, arquitectura limpia y sistemas backend listos para
-            producción.
-          </p>
+          <p>{t("description")}</p>
           <SocialLinksItem />
         </div>
 
