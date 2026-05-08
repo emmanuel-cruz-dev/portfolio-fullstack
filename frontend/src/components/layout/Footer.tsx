@@ -1,11 +1,15 @@
-import { useTranslations } from "next-intl";
-import { Code2 } from "lucide-react";
+"use client";
 
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+
+import { useIsDarkTheme } from "@/hooks";
 import { Link } from "@/i18n/navigation";
 import { Separator } from "@/components/ui";
 import SocialLinksItem from "@/components/shared/SocialLinksItem";
 
 function Footer() {
+  const isDark = useIsDarkTheme();
   const t = useTranslations("layout.footer");
 
   const FOOTER_LINKS = [
@@ -25,9 +29,13 @@ function Footer() {
               href="/"
               className="flex items-center gap-2 text-sm font-semibold w-fit transition-opacity hover:opacity-80"
             >
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground text-background">
-                <Code2 className="h-4 w-4" />
-              </span>
+              <Image
+                src={isDark ? "/e-logo-white.avif" : "/e-logo.avif"}
+                className="w-7 h-auto"
+                alt="Emmanuel Cruz Logo"
+                width={300}
+                height={198}
+              />
               Emmanuel Cruz
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
