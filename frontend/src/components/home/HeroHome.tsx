@@ -1,61 +1,35 @@
-import Image from "next/image";
-
-import { OrbitingCircles } from "@/components/ui/orbiting-circles";
+import OrbitingItem from "./OrbitingItem";
+import { SocialLinksItem } from "../shared";
+import { AuroraText, ShimmerButton } from "@/components/ui";
 
 function HeroHome() {
   return (
-    <section className="grid grid-cols-2 gap-4">
-      <div></div>
-      <div className="relative flex items-center justify-center h-125 w-full overflow-hidden">
-        <OrbitingCircles>
-          <Image src="/icons/nextjs.png" alt="Next.js" width={32} height={32} />
-          <Image src="/icons/react.png" alt="React" width={32} height={32} />
-          <Image
-            src="/icons/angular.png"
-            alt="Angular"
-            width={32}
-            height={32}
-          />
+    <section className="py-6 flex items-center justify-center">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-14 items-center">
+        <div className="flex flex-col justify-center gap-4 order-last md:order-first">
+          <ShimmerButton className="flex gap-2 w-fit scale-75 origin-left select-none cursor-default">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+            </span>
+            Disponible
+          </ShimmerButton>
+          <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold">
+            Hola! Soy Emmanuel
+          </h1>
+          <AuroraText className="text-3xl md:text-4xl xl:text-5xl font-bold">
+            Desarrollador Fullstack
+          </AuroraText>
+          <p>
+            Especializado en la creación de aplicaciones web modernas y de alto
+            rendimiento. Creo productos digitales escalables con interfaces
+            responsivas, arquitectura limpia y sistemas backend listos para
+            producción.
+          </p>
+          <SocialLinksItem />
+        </div>
 
-          <Image
-            src="/icons/fastapi.png"
-            alt="FastAPI"
-            width={32}
-            height={32}
-          />
-          <Image
-            src="/icons/spring-boot.png"
-            alt="Spring Boot"
-            width={32}
-            height={32}
-          />
-          <Image
-            src="/icons/tailwind.png"
-            alt="Tailwind"
-            width={32}
-            height={32}
-          />
-          <Image src="/icons/sass.png" alt="Sass" width={32} height={32} />
-        </OrbitingCircles>
-        <OrbitingCircles radius={100} reverse>
-          <Image src="/icons/css.png" alt="CSS" width={32} height={32} />
-          <Image src="/icons/html.png" alt="HTML" width={32} height={32} />
-          <Image
-            src="/icons/javascript.png"
-            alt="JavaScript"
-            width={32}
-            height={32}
-          />
-          <Image src="/icons/python.png" alt="Python" width={32} height={32} />
-          <Image src="/icons/java.png" alt="Java" width={32} height={32} />
-
-          <Image
-            src="/icons/typescript.png"
-            alt="TypeScript"
-            width={32}
-            height={32}
-          />
-        </OrbitingCircles>
+        <OrbitingItem />
       </div>
     </section>
   );
