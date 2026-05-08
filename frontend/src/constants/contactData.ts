@@ -13,29 +13,29 @@ export const CONTACT_DATA = {
     {
       href: "/CV - Emmanuel Cruz (fullstack).pdf",
       icon: FaRegFileAlt,
-      label: "Descargar Curriculum",
+      label: "downloadCurriculum",
       type: "link" as const,
     },
     {
       href: null,
       icon: MailIcon,
-      label: "Copiar Email",
+      label: "copyEmail",
       type: "copy" as const,
     },
   ],
   social: {
     GitHub: {
-      name: "GitHub",
+      name: "gitHub",
       url: "https://github.com/emmanuel-cruz-dev",
       icon: FaGithub,
     },
     LinkedIn: {
-      name: "LinkedIn",
+      name: "linkedIn",
       url: "https://www.linkedin.com/in/emmanuel-cruz-dev/",
       icon: FaLinkedin,
     },
     Email: {
-      name: "Enviar Email",
+      name: "sendEmail",
       url: `mailto:${EMAIL}`,
       icon: FaPaperPlane,
     },
