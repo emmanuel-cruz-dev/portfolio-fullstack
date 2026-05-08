@@ -52,6 +52,14 @@
     }
   },
   "shared": {
+    "socialLinksItem": {
+      "copyEmail": "Copy email",
+      "downloadCurriculum": "Download curriculum",
+      "linkedIn": "LinkedIn",
+      "gitHub": "GitHub",
+      "sendEmail": "Send email",
+      "toastCopyEmail": "Email copied to clipboard"
+    },
     "buttons": {
       "send": "Send Message",
       "cancel": "Cancel"

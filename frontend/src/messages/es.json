@@ -52,6 +52,14 @@
     }
   },
   "shared": {
+    "socialLinksItem": {
+      "copyEmail": "Copiar email",
+      "downloadCurriculum": "Descargar currículum",
+      "linkedIn": "LinkedIn",
+      "gitHub": "GitHub",
+      "sendEmail": "Enviar email",
+      "toastCopyEmail": "Email copiado al portapapeles"
+    },
     "buttons": {
       "send": "Enviar Mensaje",
       "cancel": "Cancelar"
