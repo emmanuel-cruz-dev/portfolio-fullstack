@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
@@ -20,9 +21,11 @@ const iconClass = cn(
 );
 
 function SocialLinksItem() {
+  const t = useTranslations("shared.socialLinksItem");
+
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(EMAIL);
-    toast.success("Email copiado al portapapeles");
+    toast.success(t("toastCopyEmail"));
   };
 
   return (
@@ -53,7 +56,7 @@ function SocialLinksItem() {
                 )}
               </TooltipTrigger>
               <TooltipContent>
-                <p>{item.label}</p>
+                <p>{t(item.label)}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
@@ -76,7 +79,7 @@ function SocialLinksItem() {
                 </a>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{social.name}</p>
+                <p>{t(social.name)}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
