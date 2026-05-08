@@ -3,6 +3,12 @@
     "metadata": {
       "title": "Inicio | Emmanuel Cruz | Portfolio",
       "description": "Emmanuel Cruz Full Stack Developer"
+    },
+    "hero": {
+      "title": "Hola! Soy Emmanuel",
+      "subtitle": "Desarrollador Fullstack",
+      "available": "Disponible",
+      "description": "Especializado en la creación de aplicaciones web modernas y de alto rendimiento. Creo productos digitales escalables con interfaces responsivas, arquitectura limpia y sistemas backend listos para producción."
     }
   },
   "projectsPage": {
