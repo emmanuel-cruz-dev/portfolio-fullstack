@@ -1,4 +1,4 @@
-import HeroHome from "@/components/home/HeroHome";
+import { HeroHome } from "@/components";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({

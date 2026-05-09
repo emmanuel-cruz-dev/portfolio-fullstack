@@ -1,1 +1,2 @@
-export { default as ContactForm } from "./contact/ContactForm";
+export * from "./contact";
+export * from "./home";
