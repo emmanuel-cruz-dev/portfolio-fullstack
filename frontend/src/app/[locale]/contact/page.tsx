@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/utils/metadata";
+import { ContactForm } from "@/components";
 
 export async function generateMetadata({
   params,
@@ -15,9 +16,9 @@ export async function generateMetadata({
 
 function ContactPage() {
   return (
-    <div>
-      <h1>Contact</h1>
-    </div>
+    <section>
+      <ContactForm />
+    </section>
   );
 }
 
