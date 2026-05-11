@@ -27,6 +27,18 @@
     "metadata": {
       "title": "Contact | Emmanuel Cruz | Portfolio",
       "description": "Get in touch with me"
+    },
+    "contactInformation": {
+      "title": "Get in touch",
+      "subtitle": "Do you have an idea, need to improve an existing application, or develop new features? I can help you create modern, scalable web solutions focused on user experience.",
+      "infoItems": {
+        "emailLabel": "Email",
+        "emailValue": "You can reach me directly from the form",
+        "timeLabel": "Response time",
+        "timeValue": "Generally respond in less than 24 hours",
+        "locationLabel": "Location",
+        "locationValue": "Buenos Aires, Argentina. Available for remote work"
+      }
     }
   },
   "loginPage": {
