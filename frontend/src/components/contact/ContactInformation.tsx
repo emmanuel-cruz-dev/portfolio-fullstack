@@ -6,13 +6,17 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "Podés escribirme directamente  desde el formulario",
+    value: "Podés escribirme directamente desde el formulario",
   },
-  { icon: Clock, label: "Tiempo de Respuesta", value: "Dentro de 24 horas" },
+  {
+    icon: Clock,
+    label: "Tiempo de Respuesta",
+    value: "Generalmente respondo en menos de 24 horas",
+  },
   {
     icon: MapPin,
     label: "Ubicación",
-    value: "Buenos Aires, Argentina",
+    value: "Buenos Aires, Argentina. Disponible para trabajo remoto",
   },
 ];
 
