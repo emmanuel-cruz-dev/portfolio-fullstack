@@ -1,34 +1,35 @@
+import { useTranslations } from "next-intl";
 import { Mail, Clock, MapPin } from "lucide-react";
 
 import { SocialLinksItem } from "../shared";
 
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "Podés escribirme directamente desde el formulario",
-  },
-  {
-    icon: Clock,
-    label: "Tiempo de Respuesta",
-    value: "Generalmente respondo en menos de 24 horas",
-  },
-  {
-    icon: MapPin,
-    label: "Ubicación",
-    value: "Buenos Aires, Argentina. Disponible para trabajo remoto",
-  },
-];
-
 function ContactInformation() {
+  const t = useTranslations("contactPage.contactInformation");
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: t("infoItems.emailLabel"),
+      value: t("infoItems.emailValue"),
+    },
+    {
+      icon: Clock,
+      label: t("infoItems.timeLabel"),
+      value: t("infoItems.timeValue"),
+    },
+    {
+      icon: MapPin,
+      label: t("infoItems.locationLabel"),
+      value: t("infoItems.locationValue"),
+    },
+  ];
+
   return (
     <article className="flex flex-col gap-8">
       <header>
-        <h3 className="text-2xl font-bold mb-3">Ponte en contacto</h3>
+        <h3 className="text-2xl font-bold mb-3">{t("title")}</h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          ¿Tenés una idea, necesitás mejorar una aplicación existente o
-          desarrollar nuevas funcionalidades? Puedo ayudarte a crear soluciones
-          web modernas, escalables y enfocadas en la experiencia del usuario.
+          {t("subtitle")}
         </p>
       </header>
 
