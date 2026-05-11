@@ -65,6 +65,12 @@
       "sendEmail": "Enviar email",
       "toastCopyEmail": "Email copiado al portapapeles"
     },
+    "statsSection": {
+      "experience": "Años de experiencia",
+      "certifications": "Certificaciones",
+      "projects": "Proyectos completados",
+      "commits": "Commits en GitHub"
+    },
     "buttons": {
       "send": "Enviar Mensaje",
       "cancel": "Cancelar"
