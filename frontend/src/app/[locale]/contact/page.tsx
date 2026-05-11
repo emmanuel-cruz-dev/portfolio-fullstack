@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { getPageMetadata } from "@/lib/utils/metadata";
 import { ContactForm, ContactInformation } from "@/components";
 
@@ -15,20 +17,21 @@ export async function generateMetadata({
 }
 
 function ContactPage() {
+  const t = useTranslations("contactPage.sectionHeader");
+
   return (
     <section className="w-full py-20 px-4">
       <header className="max-w-6xl mx-auto text-center mb-16">
         <p className="text-violet-400 text-sm font-medium mb-4 tracking-widest uppercase">
-          Conectemos
+          {t("eyebrow")}
         </p>
         <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
-          Transformando ideas en
+          {t("title")}
           <br />
-          <span className="text-violet-400">aplicaciones web</span>
+          <span className="text-violet-400">{t("titleAccent")}</span>
         </h2>
         <p className="text-slate-400 max-w-xl mx-auto text-base leading-relaxed">
-          Hablemos sobre tu proyecto y cómo podemos construir una solución
-          moderna, rápida y funcional.
+          {t("description")}
         </p>
         <div className="w-16 h-0.5 bg-violet-500 mx-auto mt-8" />
       </header>
