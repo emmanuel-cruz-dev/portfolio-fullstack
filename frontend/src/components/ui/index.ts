@@ -8,6 +8,7 @@ export * from "./icon-cloud";
 export * from "./input";
 export * from "./label";
 export * from "./navigation-menu";
+export * from "./number-ticker";
 export * from "./orbiting-circles";
 export * from "./separator";
 export * from "./sheet";
