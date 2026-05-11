@@ -53,7 +53,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <TooltipProvider delayDuration={200}>
             <Navbar />
-            <main className="container min-h-36">{children}</main>
+            <main>{children}</main>
             <Footer />
           </TooltipProvider>
           <Toaster />
