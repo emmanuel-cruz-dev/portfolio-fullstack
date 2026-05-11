@@ -1,4 +1,4 @@
-import { HeroHome } from "@/components";
+import { HeroHome, StatsSection } from "@/components";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({
@@ -15,7 +15,12 @@ export async function generateMetadata({
 }
 
 function HomePage() {
-  return <HeroHome />;
+  return (
+    <>
+      <HeroHome />;
+      <StatsSection />;
+    </>
+  );
 }
 
 export default HomePage;
