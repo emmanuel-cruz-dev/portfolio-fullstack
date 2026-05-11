@@ -28,6 +28,12 @@
       "title": "Contact | Emmanuel Cruz | Portfolio",
       "description": "Get in touch with me"
     },
+    "sectionHeader": {
+      "eyebrow": "Connect",
+      "title": "Transforming ideas into",
+      "titleAccent": "web applications",
+      "description": "Let's talk about your project and how we can build a modern, fast, and functional solution."
+    },
     "contactInformation": {
       "title": "Get in touch",
       "subtitle": "Do you have an idea, need to improve an existing application, or develop new features? I can help you create modern, scalable web solutions focused on user experience.",
