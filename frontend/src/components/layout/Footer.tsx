@@ -49,7 +49,7 @@ function Footer() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               {t("title1")}
             </p>
-            <ul className="grid grid-cols-2 gap-x-12 gap-y-3 sm:flex sm:flex-row lg:flex-col">
+            <ul className="grid grid-cols-2 gap-x-12 gap-y-3">
               {FOOTER_LINKS.map(({ label, href }) => (
                 <li key={href}>
                   <Link
