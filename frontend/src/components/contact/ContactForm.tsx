@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
-import { CheckCircle, Send } from "lucide-react";
+import { AlertCircle, CheckCircle, Send } from "lucide-react";
 
 import { contactSchema, ContactFormValues } from "@/schemas";
 import {
@@ -89,11 +89,14 @@ function ContactForm() {
     }
   }
 
+  const inputStyles =
+    "bg-gray-100 border dark:bg-white/5 dark:border-white/10 text-foreground placeholder:text-muted-foreground/50 focus-visible:ring-brand-accent/30 focus-visible:border-brand-accent transition-all duration-200 rounded-md";
+
   return (
-    <article className="dark:bg-white/5 border dark:border-white/10 rounded-2xl p-6 md:p-8">
+    <article className="bg-white/2 dark:bg-white/2 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <FieldGroup className="gap-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <FieldGroup className="gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <Controller
               name="nombre"
               control={control}
@@ -101,21 +104,20 @@ function ContactForm() {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel
                     htmlFor="contact-nombre"
-                    className="text-muted-foreground text-sm font-medium"
+                    className="text-foreground/80 text-sm ml-1"
                   >
-                    Nombre<span className="text-violet-400">*</span>
+                    Nombre <span className="text-brand-accent">*</span>
                   </FieldLabel>
                   <Input
                     {...field}
                     id="contact-nombre"
                     placeholder="Tu nombre"
-                    aria-invalid={fieldState.invalid}
-                    className="bg-neutral-200 dark:bg-black/50 border-white/10 text-white placeholder:text-slate-600 focus-visible:ring-violet-500 focus-visible:border-violet-500 rounded-md"
+                    className={inputStyles}
                   />
                   {fieldState.invalid && (
                     <FieldError
                       errors={[fieldState.error]}
-                      className="text-red-400 text-xs"
+                      className="text-red-400 text-xs ml-1"
                     />
                   )}
                 </Field>
@@ -129,21 +131,20 @@ function ContactForm() {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel
                     htmlFor="contact-asunto"
-                    className="text-muted-foreground text-sm font-medium"
+                    className="text-foreground/80 text-sm ml-1"
                   >
-                    Asunto<span className="text-violet-400">*</span>
+                    Asunto <span className="text-brand-accent">*</span>
                   </FieldLabel>
                   <Input
                     {...field}
                     id="contact-asunto"
-                    placeholder="Consulta, proyecto o colaboración"
-                    aria-invalid={fieldState.invalid}
-                    className="bg-neutral-200 dark:bg-black/50 border-white/10 text-white placeholder:text-slate-600 focus-visible:ring-violet-500 focus-visible:border-violet-500 rounded-md"
+                    placeholder="Motivo del contacto"
+                    className={inputStyles}
                   />
                   {fieldState.invalid && (
                     <FieldError
                       errors={[fieldState.error]}
-                      className="text-red-400 text-xs"
+                      className="text-red-400 text-xs ml-1"
                     />
                   )}
                 </Field>
@@ -158,22 +159,21 @@ function ContactForm() {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel
                   htmlFor="contact-email"
-                  className="text-slate-300 text-sm font-medium"
+                  className="text-foreground/80 text-sm ml-1"
                 >
-                  Email <span className="text-violet-400">*</span>
+                  Email <span className="text-brand-accent">*</span>
                 </FieldLabel>
                 <Input
                   {...field}
                   id="contact-email"
                   type="email"
                   placeholder="tu@email.com"
-                  aria-invalid={fieldState.invalid}
-                  className="bg-neutral-200 dark:bg-black/50 border-white/10 text-white placeholder:text-slate-600 focus-visible:ring-violet-500 focus-visible:border-violet-500 rounded-md"
+                  className={inputStyles}
                 />
                 {fieldState.invalid && (
                   <FieldError
                     errors={[fieldState.error]}
-                    className="text-red-400 text-xs"
+                    className="text-red-400 text-xs ml-1"
                   />
                 )}
               </Field>
@@ -187,22 +187,21 @@ function ContactForm() {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel
                   htmlFor="contact-mensaje"
-                  className="text-slate-300 text-sm font-medium"
+                  className="text-foreground/80 text-sm ml-1"
                 >
-                  Mensaje <span className="text-violet-400">*</span>
+                  Mensaje <span className="text-brand-accent">*</span>
                 </FieldLabel>
                 <Textarea
                   {...field}
                   id="contact-mensaje"
-                  placeholder="Contame sobre tu proyecto, idea o necesidad..."
-                  rows={5}
-                  aria-invalid={fieldState.invalid}
-                  className="bg-neutral-200 dark:bg-black/50 border-white/10 text-white placeholder:text-slate-600 focus-visible:ring-violet-500 focus-visible:border-violet-500 rounded-md resize-none"
+                  placeholder="¿En qué puedo ayudarte?"
+                  rows={4}
+                  className={`${inputStyles} resize-none`}
                 />
                 {fieldState.invalid && (
                   <FieldError
                     errors={[fieldState.error]}
-                    className="text-red-400 text-xs"
+                    className="text-red-400 text-xs ml-1"
                   />
                 )}
               </Field>
@@ -210,35 +209,40 @@ function ContactForm() {
           />
 
           {status === "success" && (
-            <p className="flex items-center justify-center gap-2 text-emerald-400 text-sm text-center bg-emerald-400/10 border border-emerald-400/20 rounded-xl py-3">
-              <CheckCircle /> Mensaje enviado. Gracias por contactarme.
-            </p>
+            <div className="flex items-center gap-3 text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-xl p-4 animate-in fade-in zoom-in duration-300">
+              <CheckCircle className="w-5 h-5 shrink-0" />
+              <p className="text-sm">¡Mensaje enviado con éxito!</p>
+            </div>
           )}
-          {status === "error" && (
-            <p className="text-red-400 text-sm text-center bg-red-400/10 border border-red-400/20 rounded-xl py-3">
-              Ocurrió un error al enviar. Intentá de nuevo.
-            </p>
-          )}
-          {status === "rate_limited" && (
-            <p className="text-amber-400 text-sm text-center bg-amber-400/10 border border-amber-400/20 rounded-xl py-3">
-              Alcanzaste el límite de {MAX_PER_DAY} mensajes por día.
-            </p>
+
+          {(status === "error" || status === "rate_limited") && (
+            <div
+              className={`flex items-center gap-3 rounded-xl p-4 animate-in fade-in zoom-in duration-300 border ${
+                status === "error"
+                  ? "text-red-400 bg-red-400/10 border-red-400/20"
+                  : "text-amber-400 bg-amber-400/10 border-amber-400/20"
+              }`}
+            >
+              <AlertCircle className="w-5 h-5 shrink-0" />
+              <p className="text-sm">
+                {status === "error"
+                  ? "Error al enviar. Inténtalo de nuevo."
+                  : `Límite diario alcanzado (${MAX_PER_DAY} mensajes).`}
+              </p>
+            </div>
           )}
 
           <Button
             type="submit"
             disabled={status === "loading" || status === "rate_limited"}
-            className="w-full bg-violet-600 hover:bg-violet-700 disabled:opacity-50 text-white font-semibold rounded-md flex items-center justify-center gap-2 transition-all duration-200"
+            className="w-full h-12 bg-brand-accent dark:hover:brightness-110 disabled:opacity-40 text-black hover:text-white dark:hover:text-black font-bold rounded-md flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.15)] dark:hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] active:scale-[0.98] cursor-pointer"
           >
             {status === "loading" ? (
-              <>
-                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                Enviando...
-              </>
+              <span className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
             ) : (
               <>
                 Enviar Mensaje
-                <Send className="w-4 h-4" />
+                <Send className="w-5 h-5" />
               </>
             )}
           </Button>
