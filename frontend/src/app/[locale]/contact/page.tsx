@@ -22,7 +22,7 @@ function ContactPage() {
   return (
     <section className="w-full py-20 px-4">
       <header className="relative max-w-6xl mx-auto text-center mb-20">
-        <p className="text-brand-accent text-xs font-bold mb-2 tracking-[0.3em] uppercase opacity-90">
+        <p className="inline-block px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/30 text-cyan-800 dark:text-cyan-300 text-[10px] font-bold mb-2 tracking-[0.2em] uppercase border border-cyan-100 dark:border-cyan-800/50">
           {t("eyebrow")}
         </p>
 
