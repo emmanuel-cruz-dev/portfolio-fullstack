@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
 import { contactSchema, ContactFormValues } from "@/schemas";
+import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
   Button,
   Input,
@@ -17,46 +18,14 @@ import {
   FieldError,
   FieldGroup,
 } from "@/components/ui";
-import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from "@/constants";
-
-const RATE_LIMIT_KEY = "contact_submissions";
-const MAX_PER_DAY = 3;
-
-function checkRateLimit(): boolean {
-  try {
-    const raw = localStorage.getItem(RATE_LIMIT_KEY);
-    const today = new Date().toDateString();
-    if (!raw) return true;
-    const data: { date: string; count: number } = JSON.parse(raw);
-    if (data.date !== today) return true;
-    return data.count < MAX_PER_DAY;
-  } catch {
-    return true;
-  }
-}
-
-function incrementRateLimit() {
-  const raw = localStorage.getItem(RATE_LIMIT_KEY);
-  const today = new Date().toDateString();
-
-  if (!raw || JSON.parse(raw).date !== today) {
-    localStorage.setItem(
-      RATE_LIMIT_KEY,
-      JSON.stringify({ date: today, count: 1 })
-    );
-  } else {
-    const data = JSON.parse(raw);
-    localStorage.setItem(
-      RATE_LIMIT_KEY,
-      JSON.stringify({ date: today, count: data.count + 1 })
-    );
-  }
-}
+import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "@/constants";
 
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
 function ContactForm() {
-  const [status, setStatus] = useState<Status>("idle");
+  const [status, setStatus] = useState<Status>(() =>
+    checkRateLimit() ? "idle" : "rate_limited"
+  );
 
   const { control, handleSubmit, reset } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
