@@ -7,9 +7,8 @@ import { Toaster } from "sonner";
 
 import { ThemeProvider } from "@/providers";
 import { routing } from "@/i18n/routing";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import { TooltipProvider } from "@/components/ui";
+import { Navbar, Footer } from "@/components";
 import "../../app/globals.css";
 
 const geistSans = Geist({
