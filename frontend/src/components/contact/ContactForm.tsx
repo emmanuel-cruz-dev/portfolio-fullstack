@@ -16,10 +16,7 @@ import {
   FieldError,
   FieldGroup,
 } from "@/components/ui";
-
-const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID!;
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID!;
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY!;
+import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from "@/constants";
 
 const RATE_LIMIT_KEY = "contact_submissions";
 const MAX_PER_DAY = 3;
@@ -38,22 +35,21 @@ function checkRateLimit(): boolean {
 }
 
 function incrementRateLimit() {
-  try {
-    const raw = localStorage.getItem(RATE_LIMIT_KEY);
-    const today = new Date().toDateString();
-    if (!raw || JSON.parse(raw).date !== today) {
-      localStorage.setItem(
-        RATE_LIMIT_KEY,
-        JSON.stringify({ date: today, count: 1 })
-      );
-    } else {
-      const data = JSON.parse(raw);
-      localStorage.setItem(
-        RATE_LIMIT_KEY,
-        JSON.stringify({ date: today, count: data.count + 1 })
-      );
-    }
-  } catch {}
+  const raw = localStorage.getItem(RATE_LIMIT_KEY);
+  const today = new Date().toDateString();
+
+  if (!raw || JSON.parse(raw).date !== today) {
+    localStorage.setItem(
+      RATE_LIMIT_KEY,
+      JSON.stringify({ date: today, count: 1 })
+    );
+  } else {
+    const data = JSON.parse(raw);
+    localStorage.setItem(
+      RATE_LIMIT_KEY,
+      JSON.stringify({ date: today, count: data.count + 1 })
+    );
+  }
 }
 
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
@@ -140,7 +136,7 @@ function ContactForm() {
                   <Input
                     {...field}
                     id="contact-asunto"
-                    placeholder="¿De qué trata?"
+                    placeholder="Consulta, proyecto o colaboración"
                     aria-invalid={fieldState.invalid}
                     className="bg-neutral-200 dark:bg-black/50 border-white/10 text-white placeholder:text-slate-600 focus-visible:ring-violet-500 focus-visible:border-violet-500 rounded-md"
                   />
@@ -198,7 +194,7 @@ function ContactForm() {
                 <Textarea
                   {...field}
                   id="contact-mensaje"
-                  placeholder="Cuéntame sobre tu proyecto..."
+                  placeholder="Contame sobre tu proyecto, idea o necesidad..."
                   rows={5}
                   aria-invalid={fieldState.invalid}
                   className="bg-neutral-200 dark:bg-black/50 border-white/10 text-white placeholder:text-slate-600 focus-visible:ring-violet-500 focus-visible:border-violet-500 rounded-md resize-none"
@@ -215,7 +211,7 @@ function ContactForm() {
 
           {status === "success" && (
             <p className="flex items-center justify-center gap-2 text-emerald-400 text-sm text-center bg-emerald-400/10 border border-emerald-400/20 rounded-xl py-3">
-              <CheckCircle /> Mensaje enviado. Te respondo dentro de 24 horas.
+              <CheckCircle /> Mensaje enviado. Gracias por contactarme.
             </p>
           )}
           {status === "error" && (
