@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
-import { AlertCircle, CheckCircle, Send } from "lucide-react";
+import { toast } from "sonner";
+import { AlertCircle, Send } from "lucide-react";
 
 import { contactSchema, ContactFormValues } from "@/schemas";
 import {
@@ -75,17 +76,20 @@ function ContactForm() {
         TEMPLATE_ID,
         {
           from_name: values.name,
+          user_name: values.name,
+          user_email: values.email,
           subject: values.subject,
-          reply_to: values.email,
           message: values.message,
         },
         { publicKey: PUBLIC_KEY }
       );
       incrementRateLimit();
+      toast.success("¡Mensaje enviado con éxito!");
       setStatus("success");
       reset();
     } catch {
       setStatus("error");
+      toast.error("Error al enviar. Inténtalo de nuevo.");
     }
   }
 
@@ -208,26 +212,11 @@ function ContactForm() {
             )}
           />
 
-          {status === "success" && (
-            <div className="flex items-center gap-3 text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-xl p-4 animate-in fade-in zoom-in duration-300">
-              <CheckCircle className="w-5 h-5 shrink-0" />
-              <p className="text-sm">¡Mensaje enviado con éxito!</p>
-            </div>
-          )}
-
-          {(status === "error" || status === "rate_limited") && (
-            <div
-              className={`flex items-center gap-3 rounded-xl p-4 animate-in fade-in zoom-in duration-300 border ${
-                status === "error"
-                  ? "text-red-400 bg-red-400/10 border-red-400/20"
-                  : "text-amber-400 bg-amber-400/10 border-amber-400/20"
-              }`}
-            >
+          {status === "rate_limited" && (
+            <div className="flex items-center gap-3 rounded-xl p-4 animate-in fade-in zoom-in duration-300 border text-amber-400 bg-amber-400/10 border-amber-400/20">
               <AlertCircle className="w-5 h-5 shrink-0" />
               <p className="text-sm">
-                {status === "error"
-                  ? "Error al enviar. Inténtalo de nuevo."
-                  : `Límite diario alcanzado (${MAX_PER_DAY} mensajes).`}
+                Límite diario alcanzado ({MAX_PER_DAY} mensajes).
               </p>
             </div>
           )}
