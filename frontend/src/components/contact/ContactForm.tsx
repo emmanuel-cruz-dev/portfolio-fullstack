@@ -59,7 +59,7 @@ function ContactForm() {
 
   const { control, handleSubmit, reset } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { nombre: "", asunto: "", email: "", mensaje: "" },
+    defaultValues: { name: "", subject: "", email: "", message: "" },
   });
 
   async function onSubmit(values: ContactFormValues) {
@@ -74,10 +74,10 @@ function ContactForm() {
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          from_name: values.nombre,
-          subject: values.asunto,
+          from_name: values.name,
+          subject: values.subject,
           reply_to: values.email,
-          message: values.mensaje,
+          message: values.message,
         },
         { publicKey: PUBLIC_KEY }
       );
@@ -98,19 +98,19 @@ function ContactForm() {
         <FieldGroup className="gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <Controller
-              name="nombre"
+              name="name"
               control={control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel
-                    htmlFor="contact-nombre"
+                    htmlFor="contact-name"
                     className="text-foreground/80 text-sm ml-1"
                   >
                     Nombre <span className="text-brand-accent">*</span>
                   </FieldLabel>
                   <Input
                     {...field}
-                    id="contact-nombre"
+                    id="contact-name"
                     placeholder="Tu nombre"
                     className={inputStyles}
                   />
@@ -125,19 +125,19 @@ function ContactForm() {
             />
 
             <Controller
-              name="asunto"
+              name="subject"
               control={control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel
-                    htmlFor="contact-asunto"
+                    htmlFor="contact-subject"
                     className="text-foreground/80 text-sm ml-1"
                   >
                     Asunto <span className="text-brand-accent">*</span>
                   </FieldLabel>
                   <Input
                     {...field}
-                    id="contact-asunto"
+                    id="contact-subject"
                     placeholder="Motivo del contacto"
                     className={inputStyles}
                   />
@@ -181,19 +181,19 @@ function ContactForm() {
           />
 
           <Controller
-            name="mensaje"
+            name="message"
             control={control}
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel
-                  htmlFor="contact-mensaje"
+                  htmlFor="contact-message"
                   className="text-foreground/80 text-sm ml-1"
                 >
                   Mensaje <span className="text-brand-accent">*</span>
                 </FieldLabel>
                 <Textarea
                   {...field}
-                  id="contact-mensaje"
+                  id="contact-message"
                   placeholder="¿En qué puedo ayudarte?"
                   rows={4}
                   className={`${inputStyles} resize-none`}
@@ -238,7 +238,10 @@ function ContactForm() {
             className="w-full h-12 bg-brand-accent dark:hover:brightness-110 disabled:opacity-40 text-black hover:text-white dark:hover:text-black font-bold rounded-md flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.15)] dark:hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] active:scale-[0.98] cursor-pointer"
           >
             {status === "loading" ? (
-              <span className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+              <>
+                Enviando...
+                <span className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+              </>
             ) : (
               <>
                 Enviar Mensaje
