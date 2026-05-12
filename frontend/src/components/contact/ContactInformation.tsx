@@ -27,20 +27,23 @@ function ContactInformation() {
   return (
     <article className="flex flex-col gap-8">
       <header>
-        <h3 className="text-2xl font-bold mb-3">{t("title")}</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">
+        <h3 className="text-2xl font-bold mb-3 tracking-tight">{t("title")}</h3>
+        <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
           {t("subtitle")}
         </p>
       </header>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         {contactInfo.map(({ icon: Icon, label, value }) => (
-          <div key={label} className="flex items-center gap-4">
-            <figure className="w-11 h-11 rounded-full bg-violet-500/10 dark:bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
-              <Icon className="w-5 h-5 text-violet-400" />
+          <div key={label} className="group flex items-center gap-4">
+            <figure className="relative w-11 h-11 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-brand-accent/50 group-hover:shadow-[0_0_15px_rgba(0,212,255,0.2)]">
+              <Icon className="w-5 h-5 text-brand-accent transition-transform duration-300 group-hover:scale-110" />
             </figure>
+
             <aside>
-              <p className="font-semibold text-sm">{label}</p>
+              <p className="font-medium text-sm text-foreground/90 group-hover:text-brand-accent transition-colors duration-300">
+                {label}
+              </p>
               <p className="text-muted-foreground text-sm">{value}</p>
             </aside>
           </div>
