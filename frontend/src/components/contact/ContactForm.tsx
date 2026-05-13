@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
+import { useIsDarkTheme } from "@/hooks";
 import { contactSchema, ContactFormValues } from "@/schemas";
 import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
@@ -24,6 +25,7 @@ import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "@/constants";
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
 function ContactForm() {
+  const isDarkTheme = useIsDarkTheme();
   const [status, setStatus] = useState<Status>(() =>
     checkRateLimit() ? "idle" : "rate_limited"
   );
@@ -67,7 +69,12 @@ function ContactForm() {
     "bg-gray-100 border dark:bg-white/5 dark:border-white/10 text-foreground placeholder:text-muted-foreground/50 focus-visible:ring-brand-accent/30 focus-visible:border-brand-accent transition-all duration-200 rounded-md";
 
   return (
-    <MagicCard className="bg-white/2 dark:bg-white/2 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl">
+    <MagicCard
+      className="rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl"
+      gradientColor={isDarkTheme ? "#262626" : "#e0e0e0"}
+      gradientFrom="#00d4ff"
+      gradientTo="#9E7AFF"
+    >
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <FieldGroup className="gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
