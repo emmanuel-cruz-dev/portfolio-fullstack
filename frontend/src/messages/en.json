@@ -45,6 +45,33 @@
         "locationLabel": "Location",
         "locationValue": "Buenos Aires, Argentina. Available for remote work"
       }
+    },
+    "contactForm": {
+      "labels": {
+        "name": "Name",
+        "subject": "Subject",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send Message",
+        "sending": "Sending..."
+      },
+      "placeholders": {
+        "name": "Your name",
+        "subject": "Contact reason",
+        "email": "your@email.com",
+        "message": "What can I help you with?"
+      },
+      "messages": {
+        "success": "Message sent successfully!",
+        "error": "Error sending. Try again.",
+        "rateLimit": "Daily limit reached ({max} messages)."
+      },
+      "validation": {
+        "name": "Name must be at least 2 characters.",
+        "subject": "Subject must be at least 4 characters.",
+        "email": "Enter a valid email.",
+        "message": "Message must be at least 10 characters."
+      }
     }
   },
   "loginPage": {

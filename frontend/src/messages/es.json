@@ -45,6 +45,33 @@
         "locationLabel": "Ubicación",
         "locationValue": "Buenos Aires, Argentina. Disponible para trabajo remoto"
       }
+    },
+    "contactForm": {
+      "labels": {
+        "name": "Nombre",
+        "subject": "Asunto",
+        "email": "Email",
+        "message": "Mensaje",
+        "submit": "Enviar Mensaje",
+        "sending": "Enviando..."
+      },
+      "placeholders": {
+        "name": "Tu nombre",
+        "subject": "Motivo del contacto",
+        "email": "tu@email.com",
+        "message": "¿En qué puedo ayudarte?"
+      },
+      "messages": {
+        "success": "¡Mensaje enviado con éxito!",
+        "error": "Error al enviar. Inténtalo de nuevo.",
+        "rateLimit": "Límite diario alcanzado ({max} mensajes)."
+      },
+      "validation": {
+        "name": "El nombre debe tener al menos 2 caracteres.",
+        "subject": "El asunto debe tener al menos 4 caracteres.",
+        "email": "Ingresá un email válido.",
+        "message": "El mensaje debe tener al menos 10 caracteres."
+      }
     }
   },
   "loginPage": {
