@@ -8,7 +8,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/providers";
 import { routing } from "@/i18n/routing";
 import { TooltipProvider } from "@/components/ui";
-import { Navbar, Footer } from "@/components";
+import { Navbar, Footer, ScrollToTopButton } from "@/components";
 import "../../app/globals.css";
 
 const geistSans = Geist({
@@ -55,6 +55,7 @@ export default async function RootLayout({
             <TooltipProvider delayDuration={200}>
               <Navbar />
               <main>{children}</main>
+              <ScrollToTopButton />
               <Footer />
             </TooltipProvider>
             <Toaster />
