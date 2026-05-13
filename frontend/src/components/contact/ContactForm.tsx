@@ -17,6 +17,7 @@ import {
   FieldLabel,
   FieldError,
   FieldGroup,
+  MagicCard,
 } from "@/components/ui";
 import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "@/constants";
 
@@ -66,7 +67,7 @@ function ContactForm() {
     "bg-gray-100 border dark:bg-white/5 dark:border-white/10 text-foreground placeholder:text-muted-foreground/50 focus-visible:ring-brand-accent/30 focus-visible:border-brand-accent transition-all duration-200 rounded-md";
 
   return (
-    <article className="bg-white/2 dark:bg-white/2 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl">
+    <MagicCard className="bg-white/2 dark:bg-white/2 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <FieldGroup className="gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -209,7 +210,7 @@ function ContactForm() {
           </Button>
         </FieldGroup>
       </form>
-    </article>
+    </MagicCard>
   );
 }
 
