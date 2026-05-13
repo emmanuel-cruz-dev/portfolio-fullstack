@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
 import { useIsDarkTheme } from "@/hooks";
-import { contactSchema, ContactFormValues } from "@/schemas";
+import { getContactSchema, ContactFormValues } from "@/schemas";
 import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
   Button,
@@ -21,17 +21,19 @@ import {
   MagicCard,
 } from "@/components/ui";
 import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "@/constants";
+import { useTranslations } from "next-intl";
 
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
 function ContactForm() {
+  const t = useTranslations("contactPage.contactForm");
   const isDarkTheme = useIsDarkTheme();
   const [status, setStatus] = useState<Status>(() =>
     checkRateLimit() ? "idle" : "rate_limited"
   );
 
   const { control, handleSubmit, reset } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(getContactSchema(t)),
     defaultValues: { name: "", subject: "", email: "", message: "" },
   });
 
@@ -56,12 +58,12 @@ function ContactForm() {
         { publicKey: PUBLIC_KEY }
       );
       incrementRateLimit();
-      toast.success("¡Mensaje enviado con éxito!");
+      toast.success(t("messages.success"));
       setStatus("success");
       reset();
     } catch {
       setStatus("error");
-      toast.error("Error al enviar. Inténtalo de nuevo.");
+      toast.error(t("messages.error"));
     }
   }
 
@@ -87,12 +89,13 @@ function ContactForm() {
                     htmlFor="contact-name"
                     className="text-foreground/80 text-sm ml-1"
                   >
-                    Nombre <span className="text-brand-accent">*</span>
+                    {t("labels.name")}
+                    <span className="text-brand-accent">*</span>
                   </FieldLabel>
                   <Input
                     {...field}
                     id="contact-name"
-                    placeholder="Tu nombre"
+                    placeholder={t("placeholders.name")}
                     className={inputStyles}
                   />
                   {fieldState.invalid && (
@@ -114,12 +117,13 @@ function ContactForm() {
                     htmlFor="contact-subject"
                     className="text-foreground/80 text-sm ml-1"
                   >
-                    Asunto <span className="text-brand-accent">*</span>
+                    {t("labels.subject")}
+                    <span className="text-brand-accent">*</span>
                   </FieldLabel>
                   <Input
                     {...field}
                     id="contact-subject"
-                    placeholder="Motivo del contacto"
+                    placeholder={t("placeholders.subject")}
                     className={inputStyles}
                   />
                   {fieldState.invalid && (
@@ -142,13 +146,14 @@ function ContactForm() {
                   htmlFor="contact-email"
                   className="text-foreground/80 text-sm ml-1"
                 >
-                  Email <span className="text-brand-accent">*</span>
+                  {t("labels.email")}
+                  <span className="text-brand-accent">*</span>
                 </FieldLabel>
                 <Input
                   {...field}
                   id="contact-email"
                   type="email"
-                  placeholder="tu@email.com"
+                  placeholder={t("placeholders.email")}
                   className={inputStyles}
                 />
                 {fieldState.invalid && (
@@ -170,12 +175,13 @@ function ContactForm() {
                   htmlFor="contact-message"
                   className="text-foreground/80 text-sm ml-1"
                 >
-                  Mensaje <span className="text-brand-accent">*</span>
+                  {t("labels.message")}
+                  <span className="text-brand-accent">*</span>
                 </FieldLabel>
                 <Textarea
                   {...field}
                   id="contact-message"
-                  placeholder="¿En qué puedo ayudarte?"
+                  placeholder={t("placeholders.message")}
                   rows={4}
                   className={`${inputStyles} resize-none`}
                 />
@@ -193,7 +199,7 @@ function ContactForm() {
             <div className="flex items-center gap-3 rounded-xl p-4 animate-in fade-in zoom-in duration-300 border text-amber-400 bg-amber-400/10 border-amber-400/20">
               <AlertCircle className="w-5 h-5 shrink-0" />
               <p className="text-sm">
-                Límite diario alcanzado ({MAX_PER_DAY} mensajes).
+                {t("messages.rateLimit", { max: MAX_PER_DAY })}
               </p>
             </div>
           )}
@@ -205,12 +211,12 @@ function ContactForm() {
           >
             {status === "loading" ? (
               <>
-                Enviando...
+                {t("labels.sending")}
                 <span className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
               </>
             ) : (
               <>
-                Enviar Mensaje
+                {t("labels.submit")}
                 <Send className="w-5 h-5" />
               </>
             )}
