@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { useIsDarkTheme } from "@/hooks";
 import { Link } from "@/i18n/navigation";
-import { Separator } from "@/components/ui";
+import { Separator, SpinningText } from "@/components/ui";
 import SocialLinksItem from "@/components/shared/SocialLinksItem";
 
 function Footer() {
@@ -65,12 +65,9 @@ function Footer() {
           </div>
 
           <div className="sm:col-span-1">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              {t("title2")}
-            </p>
-            <p className="text-sm text-muted-foreground w-4/6">
-              {t("contactText")}
-            </p>
+            <article className="h-full flex justify-center">
+              <SpinningText>{t("spinningText")}</SpinningText>
+            </article>
           </div>
         </div>
 
