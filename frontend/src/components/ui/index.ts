@@ -22,5 +22,6 @@ export * from "./separator";
 export * from "./sheet";
 export * from "./shimmer-button";
 export * from "./skeleton";
+export * from "./spinning-text";
 export * from "./textarea";
 export * from "./tooltip";
