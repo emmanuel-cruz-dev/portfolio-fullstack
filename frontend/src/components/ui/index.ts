@@ -8,6 +8,7 @@ export * from "./card";
 export * from "./carousel";
 export * from "./dialog";
 export * from "./dock";
+export * from "./dot-pattern";
 export * from "./field";
 export * from "./hover-card";
 export * from "./icon-cloud";
