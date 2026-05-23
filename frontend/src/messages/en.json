@@ -80,6 +80,12 @@
       "description": "Login to your account"
     }
   },
+  "worksPage": {
+    "metadata": {
+      "title": "Experience | Emmanuel Cruz | Portfolio",
+      "description": "My works"
+    }
+  },
   "layout": {
     "nav": {
       "home": "Home",

@@ -80,6 +80,12 @@
       "description": "Inicia sesión en tu cuenta"
     }
   },
+  "worksPage": {
+    "metadata": {
+      "title": "Experiencia | Emmanuel Cruz | Portfolio",
+      "description": "Mis trabajos realizados"
+    }
+  },
   "layout": {
     "nav": {
       "home": "Inicio",
