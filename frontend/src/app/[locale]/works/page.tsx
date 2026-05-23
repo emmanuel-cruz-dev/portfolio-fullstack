@@ -1,9 +1,17 @@
-import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Experiencia | Emmanuel Cruz",
-  description: "Mis trabajos realizados",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  return getPageMetadata({
+    locale: locale,
+    namespace: "worksPage",
+  });
+}
 
 function WorksPage() {
   return (
