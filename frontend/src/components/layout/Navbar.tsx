@@ -34,7 +34,7 @@ function Navbar() {
   const NAV_LINKS = [
     { label: t("home"), href: "/" },
     { label: t("projects"), href: "/projects" },
-    { label: t("experience"), href: "/works" },
+    { label: t("experience"), href: "/experience" },
     { label: t("education"), href: "/education" },
   ];
 
