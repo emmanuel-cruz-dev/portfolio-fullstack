@@ -1,3 +1,4 @@
+import { ExperiencePageClient } from "@/components";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({
@@ -9,16 +10,12 @@ export async function generateMetadata({
 
   return getPageMetadata({
     locale: locale,
-    namespace: "worksPage",
+    namespace: "experiencePage",
   });
 }
 
-function WorksPage() {
-  return (
-    <div>
-      <h1>Works</h1>
-    </div>
-  );
+function ExperiencePage() {
+  return <ExperiencePageClient />;
 }
 
-export default WorksPage;
+export default ExperiencePage;
