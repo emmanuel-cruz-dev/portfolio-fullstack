@@ -1,5 +1,5 @@
 import { getPageMetadata } from "@/lib/utils/metadata";
-import { ContactPageClient } from "@/components";
+import { ContactPageClient } from "@/features/contact";
 
 export async function generateMetadata({
   params,
