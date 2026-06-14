@@ -1,4 +1,4 @@
-import { ExperiencePageClient } from "@/components";
+import { ExperiencePageClient } from "@/features/experience";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({
