@@ -20,6 +20,7 @@ export * from "./number-ticker";
 export * from "./orbiting-circles";
 export * from "./pagination";
 export * from "./separator";
+export * from "./select";
 export * from "./sheet";
 export * from "./shimmer-button";
 export * from "./skeleton";
