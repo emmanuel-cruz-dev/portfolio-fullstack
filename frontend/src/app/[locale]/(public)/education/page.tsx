@@ -1,4 +1,4 @@
-import { EducationPageClient } from "@/components";
+import { EducationClient } from "@/features/education";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
 }
 
 function EducationPage() {
-  return <EducationPageClient />;
+  return <EducationClient />;
 }
 
 export default EducationPage;
