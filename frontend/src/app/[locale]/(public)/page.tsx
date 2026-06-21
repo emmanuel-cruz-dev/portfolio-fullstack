@@ -1,4 +1,4 @@
-import { HomePageClient } from "@/components";
+import { HomeClient } from "@/features/home";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
 }
 
 function HomePage() {
-  return <HomePageClient />;
+  return <HomeClient />;
 }
 
 export default HomePage;

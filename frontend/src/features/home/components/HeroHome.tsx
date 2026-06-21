@@ -3,8 +3,8 @@
 import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 
-import OrbitingItem from "./OrbitingItem";
-import { SocialLinksItem } from "../shared";
+import { OrbitingItem } from "./OrbitingItem";
+import { SocialLinksItem } from "@/components/shared";
 import { AuroraText, ShimmerButton } from "@/components/ui";
 
 const containerVariants: Variants = {
@@ -44,7 +44,7 @@ const orbitVariants: Variants = {
   },
 };
 
-function HeroHome() {
+export function HeroHome() {
   const t = useTranslations("homePage.hero");
 
   return (
@@ -93,5 +93,3 @@ function HeroHome() {
     </section>
   );
 }
-
-export default HeroHome;

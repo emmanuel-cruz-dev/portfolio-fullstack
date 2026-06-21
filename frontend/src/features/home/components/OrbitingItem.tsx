@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import { OrbitingCircles } from "../ui";
+import { OrbitingCircles } from "@/components/ui";
 import { INNER_STACK, OUTER_STACK } from "@/constants";
 
-function OrbitingItem() {
+export function OrbitingItem() {
   const renderIcons = (
     stack: {
       src: string;
@@ -29,5 +29,3 @@ function OrbitingItem() {
     </article>
   );
 }
-
-export default OrbitingItem;
