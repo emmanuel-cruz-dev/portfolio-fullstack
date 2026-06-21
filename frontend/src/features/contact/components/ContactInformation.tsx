@@ -3,7 +3,7 @@ import { Mail, Clock, MapPin } from "lucide-react";
 
 import { SocialLinksItem } from "../../../components/shared";
 
-function ContactInformation() {
+export function ContactInformation() {
   const t = useTranslations("contactPage.contactInformation");
 
   const contactInfo = [
@@ -54,5 +54,3 @@ function ContactInformation() {
     </article>
   );
 }
-
-export default ContactInformation;

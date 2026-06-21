@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,7 +9,7 @@ import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
 import { useIsDarkTheme } from "@/hooks";
-import { getContactSchema, ContactFormValues } from "@/schemas";
+
 import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
   Button,
@@ -21,11 +22,11 @@ import {
   MagicCard,
 } from "@/components/ui";
 import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "@/constants";
-import { useTranslations } from "next-intl";
+import { ContactFormValues, getContactSchema } from "../schemas";
 
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
-function ContactForm() {
+export function ContactForm() {
   const t = useTranslations("contactPage.contactForm");
   const isDarkTheme = useIsDarkTheme();
   const [status, setStatus] = useState<Status>(() =>
@@ -226,5 +227,3 @@ function ContactForm() {
     </MagicCard>
   );
 }
-
-export default ContactForm;
