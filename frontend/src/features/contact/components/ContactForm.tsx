@@ -8,8 +8,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
-import { useIsDarkTheme } from "@/hooks";
-
+import { useIsDarkTheme } from "@/shared";
 import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
   Button,
@@ -20,7 +19,7 @@ import {
   FieldError,
   FieldGroup,
   MagicCard,
-} from "@/components/ui";
+} from "@/components";
 import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "@/constants";
 import { ContactFormValues, getContactSchema } from "../schemas";
 
