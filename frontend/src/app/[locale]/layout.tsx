@@ -5,9 +5,9 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
-import { ThemeProvider } from "@/providers";
+import { ThemeProvider } from "@/shared";
 import { routing } from "@/i18n/routing";
-import { TooltipProvider } from "@/components/ui";
+import { TooltipProvider } from "@/components";
 import { ScrollToTopButton } from "@/components";
 import "../../app/globals.css";
 
