@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Menu, Code2 } from "lucide-react";
 
-import { useIsDarkTheme } from "@/hooks";
+import { useIsDarkTheme } from "@/shared";
 import { usePathname, Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import {
@@ -22,7 +22,7 @@ import {
   SheetHeader,
   SheetTrigger,
   SheetTitle,
-} from "@/components/ui";
+} from "@/components";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {

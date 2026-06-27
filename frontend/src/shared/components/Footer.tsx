@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import { useIsDarkTheme } from "@/hooks";
 import { Link } from "@/i18n/navigation";
-import { Separator, SpinningText } from "@/components/ui";
+import { useIsDarkTheme } from "@/shared";
+import { Separator, SpinningText } from "@/components";
 import SocialLinksItem from "@/components/shared/SocialLinksItem";
 
 export function Footer() {
