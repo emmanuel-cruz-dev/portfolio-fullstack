@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { NumberTicker } from "../ui/number-ticker";
+import { NumberTicker } from "../../components/ui/number-ticker";
 
 interface Stat {
   prefix: string;
@@ -8,7 +8,7 @@ interface Stat {
   label: string;
 }
 
-function StatsSection() {
+export function StatsSection() {
   const t = useTranslations("shared.statsSection");
 
   const stats: Stat[] = [
@@ -42,5 +42,3 @@ function StatsSection() {
     </section>
   );
 }
-
-export default StatsSection;

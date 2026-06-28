@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui";
 
-function ScrollToTopButton() {
+export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -61,5 +61,3 @@ function ScrollToTopButton() {
     </div>
   );
 }
-
-export default ScrollToTopButton;

@@ -20,7 +20,7 @@ const iconClass = cn(
   "size-12 rounded-full cursor-pointer"
 );
 
-function SocialLinksItem() {
+export function SocialLinksItem() {
   const t = useTranslations("shared.socialLinksItem");
 
   const handleCopyEmail = () => {
@@ -88,5 +88,3 @@ function SocialLinksItem() {
     </article>
   );
 }
-
-export default SocialLinksItem;
