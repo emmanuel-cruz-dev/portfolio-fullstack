@@ -8,7 +8,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/shared";
 import { routing } from "@/i18n/routing";
 import { TooltipProvider } from "@/components";
-import { ScrollToTopButton } from "@/components";
+import { ScrollToTopButton } from "@/shared";
 import "../../app/globals.css";
 
 const geistSans = Geist({

@@ -4,8 +4,8 @@ import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 
 import { OrbitingItem } from "./OrbitingItem";
-import { SocialLinksItem } from "@/components/shared";
-import { AuroraText, ShimmerButton } from "@/components/ui";
+import { SocialLinksItem } from "@/shared";
+import { AuroraText, ShimmerButton } from "@/components";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
