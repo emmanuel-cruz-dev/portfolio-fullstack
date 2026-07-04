@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Mail, Clock, MapPin } from "lucide-react";
 
-import { SocialLinksItem } from "../../../components/shared";
+import { SocialLinksItem } from "@/shared";
 
 export function ContactInformation() {
   const t = useTranslations("contactPage.contactInformation");
