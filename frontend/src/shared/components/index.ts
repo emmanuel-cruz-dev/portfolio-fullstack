@@ -1,3 +1,4 @@
+export * from "./BackButton";
 export * from "./CtaSection";
 export * from "./FAQs";
 export * from "./Footer";
