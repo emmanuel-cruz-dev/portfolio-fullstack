@@ -13,9 +13,9 @@ export function Footer() {
 
   const FOOTER_LINKS = [
     { label: t("home"), href: "/" },
-    { label: t("projects"), href: "/projects" },
-    { label: t("experience"), href: "/works" },
     { label: t("education"), href: "/education" },
+    { label: t("experience"), href: "/works" },
+    { label: t("projects"), href: "/projects" },
     { label: t("contact"), href: "/contact" },
   ];
 
