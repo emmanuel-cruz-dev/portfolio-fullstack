@@ -5,7 +5,7 @@ import { ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui";
+import { Button } from "@/components";
 
 export function ScrollTopButton() {
   const [isVisible, setIsVisible] = useState(false);

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { NumberTicker } from "../../components/ui/number-ticker";
+import { NumberTicker } from "@/components";
 
 interface Stat {
   prefix: string;

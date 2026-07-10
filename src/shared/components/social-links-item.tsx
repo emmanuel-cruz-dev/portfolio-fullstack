@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
   Dock,
   DockIcon,
-} from "@/components/ui";
+} from "@/components";
 import { EMAIL, CONTACT_DATA } from "@/constants";
 
 const iconClass = cn(
