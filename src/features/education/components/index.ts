@@ -1,1 +1,1 @@
-export * from "./EducationClient";
+export * from "./education-content";

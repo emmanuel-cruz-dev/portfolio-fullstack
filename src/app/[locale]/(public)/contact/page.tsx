@@ -1,5 +1,5 @@
 import { getPageMetadata } from "@/lib/utils/metadata";
-import { ContactPageClient } from "@/features/contact";
+import { ContactClient } from "@/features/contact";
 
 export async function generateMetadata({
   params,
@@ -11,7 +11,7 @@ export async function generateMetadata({
 }
 
 function ContactPage() {
-  return <ContactPageClient />;
+  return <ContactClient />;
 }
 
 export default ContactPage;

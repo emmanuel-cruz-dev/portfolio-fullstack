@@ -1,1 +1,1 @@
-export { default as ExperiencePageClient } from "./components/ExperiencePageClient";
+export * from "./components/experience-content";

@@ -1,4 +1,4 @@
-import { ExperiencePageClient } from "@/features/experience";
+import { ExperienceContent } from "@/features/experience";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
 }
 
 function ExperiencePage() {
-  return <ExperiencePageClient />;
+  return <ExperienceContent />;
 }
 
 export default ExperiencePage;

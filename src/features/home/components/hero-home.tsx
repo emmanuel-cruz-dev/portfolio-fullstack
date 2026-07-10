@@ -3,7 +3,7 @@
 import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 
-import { OrbitingItem } from "./OrbitingItem";
+import { OrbitingItem } from "./orbiting-item";
 import { SocialLinksItem } from "@/shared";
 import { AuroraText, ShimmerButton } from "@/components";
 

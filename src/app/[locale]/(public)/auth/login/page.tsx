@@ -1,4 +1,4 @@
-import { LoginForm } from "@/features/auth/components/LoginForm";
+import { LoginForm } from "@/features/auth";
 import { getPageMetadata } from "@/lib/utils/metadata";
 
 export async function generateMetadata({

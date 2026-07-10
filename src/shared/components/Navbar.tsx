@@ -7,7 +7,7 @@ import { Menu, Code2 } from "lucide-react";
 
 import { useIsDarkTheme } from "@/shared";
 import { usePathname, Link } from "@/i18n/navigation";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LanguageSwitcher } from "./language-switcher";
 import {
   NavigationMenu,
   NavigationMenuItem,

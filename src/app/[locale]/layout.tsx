@@ -8,7 +8,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/shared";
 import { routing } from "@/i18n/routing";
 import { TooltipProvider } from "@/components";
-import { ScrollToTopButton } from "@/shared";
+import { ScrollTopButton } from "@/shared";
 import "../../app/globals.css";
 
 const geistSans = Geist({
@@ -54,7 +54,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <TooltipProvider delayDuration={200}>
               <main>{children}</main>
-              <ScrollToTopButton />
+              <ScrollTopButton />
             </TooltipProvider>
             <Toaster />
           </NextIntlClientProvider>

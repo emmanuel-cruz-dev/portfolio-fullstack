@@ -3,8 +3,8 @@
 import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 
-import { ContactInformation } from "./ContactInformation";
-import { ContactForm } from "./ContactForm";
+import { ContactInformation } from "./contact-information";
+import { ContactForm } from "./contact-form";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -23,7 +23,7 @@ const fadeIn: Variants = {
   }),
 };
 
-export function ContactPageClient() {
+export function ContactClient() {
   const t = useTranslations("contactPage.sectionHeader");
 
   return (
