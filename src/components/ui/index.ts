@@ -1,5 +1,6 @@
 export * from "./alert-dialog";
 export * from "./alert";
+export * from "./avatar";
 export * from "./animated-list";
 export * from "./animated-theme-toggler";
 export * from "./aurora-text";
