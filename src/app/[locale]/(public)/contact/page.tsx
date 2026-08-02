@@ -1,3 +1,5 @@
+import { setRequestLocale } from "next-intl/server";
+
 import { getPageMetadata } from "@/lib/utils/metadata";
 import { ContactClient } from "@/features/contact";
 
@@ -7,10 +9,17 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return getPageMetadata({ locale, namespace: "contactPage" });
+  return getPageMetadata({ locale, namespace: "contact" });
 }
 
-function ContactPage() {
+async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return <ContactClient />;
 }
 
