@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Menu, Code2 } from "lucide-react";
 
-import { useIsDarkTheme } from "@/shared";
 import { usePathname, Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./language-switcher";
 import {
@@ -26,9 +25,8 @@ import {
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const isDark = useIsDarkTheme();
   const pathname = usePathname();
-  const t = useTranslations("layout.nav");
+  const t = useTranslations("shared.nav");
   const [open, setOpen] = useState(false);
 
   const NAV_LINKS = [
@@ -45,13 +43,24 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2 text-sm font-semibold tracking-tight transition-opacity hover:opacity-80"
         >
-          <Image
-            src={isDark ? "/e-logo-white.avif" : "/e-logo.avif"}
-            className="w-7 h-auto"
-            alt="Emmanuel Cruz Logo"
-            width={300}
-            height={198}
-          />
+          <span className="w-7 h-4.5">
+            <Image
+              src="/e-logo.avif"
+              alt="Emmanuel Cruz Logo"
+              width={28}
+              height={18}
+              className="object-contain dark:hidden"
+              priority
+            />
+            <Image
+              src="/e-logo-white.avif"
+              alt="Emmanuel Cruz Logo"
+              width={28}
+              height={18}
+              className="object-contain hidden dark:block"
+              priority
+            />
+          </span>
           <span className="hidden sm:inline">Emmanuel Cruz</span>
         </Link>
 

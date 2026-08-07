@@ -1,15 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
-import { SocialLinksItem, useIsDarkTheme } from "@/shared";
+import { SocialLinksItem } from "@/shared";
 import { Separator, SpinningText } from "@/components";
 
 export function Footer() {
-  const isDark = useIsDarkTheme();
-  const t = useTranslations("layout.footer");
+  const t = useTranslations("shared.footer");
 
   const FOOTER_LINKS = [
     { label: t("home"), href: "/" },
@@ -28,14 +25,25 @@ export function Footer() {
               href="/"
               className="flex items-center gap-2 text-sm font-semibold w-fit transition-opacity hover:opacity-80"
             >
-              <Image
-                src={isDark ? "/e-logo-white.avif" : "/e-logo.avif"}
-                className="w-7 h-auto"
-                alt="Emmanuel Cruz Logo"
-                width={300}
-                height={198}
-              />
-              Emmanuel Cruz
+              <span className="w-7 h-4.5">
+                <Image
+                  src="/e-logo.avif"
+                  alt="Emmanuel Cruz Logo"
+                  width={28}
+                  height={18}
+                  className="object-contain dark:hidden"
+                  priority
+                />
+                <Image
+                  src="/e-logo-white.avif"
+                  alt="Emmanuel Cruz Logo"
+                  width={28}
+                  height={18}
+                  className="object-contain hidden dark:block"
+                  priority
+                />
+              </span>
+              <span className="hidden sm:inline">Emmanuel Cruz</span>
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
               {t("description")}
