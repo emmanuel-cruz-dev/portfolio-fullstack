@@ -1,7 +1,35 @@
 {
-  "homePage": {
+  "auth": {
+    "login": {
+      "metadata": {
+        "title": "Iniciar sesión",
+        "description": "Inicia sesión en tu cuenta"
+      },
+      "loginForm": {
+        "title": "Inicia sesión en tu cuenta",
+        "description": "Ingresa tu correo electrónico y contraseña para acceder a tu cuenta",
+        "labels": {
+          "email": "Email",
+          "password": "Contraseña",
+          "submit": "Iniciar sesión"
+        },
+        "placeholders": {
+          "email": "correo@ejemplo.com"
+        },
+        "messages": {
+          "success": "¡Inicio de sesión exitoso!",
+          "error": "Correo electrónico o contraseña inválidos."
+        },
+        "validation": {
+          "email": "Ingresá un email válido.",
+          "password": "La contraseña debe tener al menos 8 caracteres."
+        }
+      }
+    }
+  },
+  "home": {
     "metadata": {
-      "title": "Inicio | Emmanuel Cruz | Portfolio",
+      "title": "Inicio",
       "description": "Emmanuel Cruz Full Stack Developer"
     },
     "hero": {
@@ -9,23 +37,126 @@
       "subtitle": "Desarrollador Fullstack",
       "available": "Disponible",
       "description": "Especializado en la creación de aplicaciones web modernas y de alto rendimiento. Creo productos digitales escalables con interfaces responsivas, arquitectura limpia y sistemas backend listos para producción."
+    },
+    "featuredEducation": {
+      "title": "Formación destacada",
+      "subtitle": "Una selección de mis certificaciones, bootcamps y cursos más relevantes en el desarrollo de software.",
+      "actionLabel": "Ver mis certificaciones"
+    },
+    "featuredExperience": {
+      "title": "Experiencia en proyectos",
+      "subtitle": "Participación en equipos multidisciplinarios bajo metodologías ágiles, con foco en calidad de código y buenas prácticas.",
+      "actionLabel": "Ver más"
+    },
+    "featuredProjects": {
+      "title": "Proyectos personales",
+      "subtitle": "Proyectos que he desarrollado para aprender, experimentar y crear soluciones",
+      "actionLabel": "Ver todos los proyectos"
     }
   },
-  "projectsPage": {
+  "projects": {
     "metadata": {
-      "title": "Proyectos | Emmanuel Cruz | Portfolio",
+      "title": "Proyectos",
       "description": "Mis proyectos"
+    },
+    "projectCard": {
+      "github": "Ver código fuente",
+      "demo": "Ver demo online",
+      "viewDetails": "Ver detalles"
+    },
+    "types": {
+      "personal": "Personal",
+      "freelance": "Freelance",
+      "academic": "Académico",
+      "collaborative": "Colaborativo",
+      "openSource": "Open Source"
+    },
+    "status": {
+      "completed": "Completado",
+      "inProgress": "En Progreso",
+      "planned": "Planeado",
+      "archived": "Archivado"
     }
   },
-  "educationPage": {
+  "education": {
     "metadata": {
-      "title": "Formación | Emmanuel Cruz | Portfolio",
+      "title": "Formación",
       "description": "Mis cursos de formación"
+    },
+    "pageHeader": {
+      "eyebrow": "Formación",
+      "title": "Aprendizaje",
+      "titleAccent": "continuo",
+      "description": "Cada curso, certificación y etapa de estudio ha fortalecido mis habilidades para desarrollar aplicaciones modernas, escalables y orientadas a buenas prácticas."
+    },
+    "educationCard": {
+      "present": "Actualidad",
+      "keyTechnologies": "Tecnologías clave",
+      "viewCertificate": "Ver certificado",
+      "educationAreas": "Áreas de educación",
+      "certificateAlt": "Certificado de {title}"
+    },
+    "educationAreas": {
+      "FRONTEND": "Frontend",
+      "BACKEND": "Backend",
+      "FULL_STACK": "Full Stack",
+      "DATABASE": "Base de datos",
+      "DEVOPS": "DevOps",
+      "SECURITY": "Security",
+      "QA": "QA",
+      "UX_UI": "UX/UI",
+      "SOFTWARE_ENGINEERING": "Ingeniería de software",
+      "FUNCTIONAL_ANALYST": "Análisis funcional"
+    },
+    "educationTypes": {
+      "COURSE": "Curso",
+      "BOOTCAMP": "Bootcamp",
+      "CERTIFICATE": "Certificación",
+      "DEGREE": "Carrera"
+    },
+    "sidebar": {
+      "title": "Filtros",
+      "typeLabel": "Tipo de formación",
+      "areaLabel": "Área de especialización",
+      "featuredLabel": "Solo destacados",
+      "allTypes": "Todos los tipos",
+      "allAreas": "Todas las áreas",
+      "clearFilters": "Limpiar filtros",
+      "filterButton": "Filtros"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "empty": "No se encontraron resultados con los filtros aplicados.",
+    "error": {
+      "title": "Algo salió mal",
+      "description": "Ocurrió un error al obtener la formación académica.",
+      "retry": "Intentar nuevamente"
     }
   },
-  "contactPage": {
+  "experience": {
     "metadata": {
-      "title": "Contacto | Emmanuel Cruz | Portfolio",
+      "title": "Experiencia",
+      "description": "Mis trabajos realizados"
+    },
+    "experienceCard": {
+      "present": "Actualidad",
+      "technologies": "Tecnologías",
+      "viewCompany": "Ver empresa",
+      "viewDetails": "Ver detalles"
+    },
+    "experienceTypes": {
+      "EMPLOYMENT": "Empleo",
+      "FREELANCE": "Freelance",
+      "INTERNSHIP": "Internship",
+      "VOLUNTEER": "Voluntario",
+      "ACADEMIC": "Académico"
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contacto",
       "description": "Ponete en contacto conmigo"
     },
     "sectionHeader": {
@@ -74,19 +205,7 @@
       }
     }
   },
-  "loginPage": {
-    "metadata": {
-      "title": "Iniciar sesión | Emmanuel Cruz | Portfolio",
-      "description": "Inicia sesión en tu cuenta"
-    }
-  },
-  "experiencePage": {
-    "metadata": {
-      "title": "Experiencia | Emmanuel Cruz | Portfolio",
-      "description": "Mis trabajos realizados"
-    }
-  },
-  "layout": {
+  "shared": {
     "nav": {
       "home": "Inicio",
       "projects": "Proyectos",
@@ -104,9 +223,7 @@
       "title1": "Navegación",
       "spinningText": "codificar • crear • innovar • crecer •",
       "copyright": "© 2026 Emmanuel Cruz · Buenos Aires, Argentina"
-    }
-  },
-  "shared": {
+    },
     "socialLinksItem": {
       "copyEmail": "Copiar email",
       "downloadCurriculum": "Descargar currículum",

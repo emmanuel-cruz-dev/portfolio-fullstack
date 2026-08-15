@@ -1,7 +1,35 @@
 {
-  "homePage": {
+  "auth": {
+    "login": {
+      "metadata": {
+        "title": "Login",
+        "description": "Login to your account"
+      },
+      "loginForm": {
+        "title": "Login to your account",
+        "description": "Enter your email and password to access your account",
+        "labels": {
+          "email": "Email",
+          "password": "Password",
+          "submit": "Login"
+        },
+        "placeholders": {
+          "email": "mail@example.com"
+        },
+        "messages": {
+          "success": "Login successful!",
+          "error": "Invalid email or password."
+        },
+        "validation": {
+          "email": "Enter a valid email.",
+          "password": "Password must be at least 8 characters."
+        }
+      }
+    }
+  },
+  "home": {
     "metadata": {
-      "title": "Home | Emmanuel Cruz | Portfolio",
+      "title": "Home",
       "description": "Emmanuel Cruz Full Stack Developer"
     },
     "hero": {
@@ -9,23 +37,126 @@
       "subtitle": "Fullstack Developer",
       "available": "Available",
       "description": "Specialized in creating modern and high-performance web applications. I create scalable digital products with responsive interfaces, clean architecture, and ready-to-go backend systems for production."
+    },
+    "featuredEducation": {
+      "title": "Featured Training",
+      "subtitle": "A selection of my most relevant certifications, bootcamps, and courses in software development",
+      "actionLabel": "View my certifications"
+    },
+    "featuredExperience": {
+      "title": "Experience in projects",
+      "subtitle": "Participation in multidisciplinary teams under agile methodologies, with a focus on code quality and good practices.",
+      "actionLabel": "View more"
+    },
+    "featuredProjects": {
+      "title": "Personal projects",
+      "subtitle": "Projects I've developed to learn, experiment, and create solutions",
+      "actionLabel": "View all projects"
     }
   },
-  "projectsPage": {
+  "projects": {
     "metadata": {
-      "title": "Projects | Emmanuel Cruz | Portfolio",
+      "title": "Projects",
       "description": "My projects"
+    },
+    "projectCard": {
+      "github": "View source code",
+      "demo": "View live demo",
+      "viewDetails": "View details"
+    },
+    "types": {
+      "personal": "Personal",
+      "freelance": "Freelance",
+      "academic": "Academic",
+      "collaborative": "Collaborative",
+      "openSource": "Open Source"
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "planned": "Planned",
+      "archived": "Archived"
     }
   },
-  "educationPage": {
+  "education": {
     "metadata": {
-      "title": "Education | Emmanuel Cruz | Portfolio",
+      "title": "Education",
       "description": "My education courses"
+    },
+    "pageHeader": {
+      "eyebrow": "Education",
+      "title": "Learning",
+      "titleAccent": "continuous",
+      "description": "Each course, certification, and stage of study has strengthened my skills in developing modern, scalable, and best-practice-oriented applications."
+    },
+    "educationCard": {
+      "present": "Present",
+      "keyTechnologies": "Key Technologies",
+      "viewCertificate": "View certificate",
+      "educationAreas": "Education areas",
+      "certificateAlt": "Certificate of {title}"
+    },
+    "educationAreas": {
+      "FRONTEND": "Frontend",
+      "BACKEND": "Backend",
+      "FULL_STACK": "Full Stack",
+      "DATABASE": "Database",
+      "DEVOPS": "DevOps",
+      "SECURITY": "Security",
+      "QA": "QA",
+      "UX_UI": "UX/UI",
+      "SOFTWARE_ENGINEERING": "Software Engineering",
+      "FUNCTIONAL_ANALYST": "Functional Analyst"
+    },
+    "educationTypes": {
+      "COURSE": "Course",
+      "BOOTCAMP": "Bootcamp",
+      "CERTIFICATE": "Certificate",
+      "DEGREE": "Degree"
+    },
+    "sidebar": {
+      "title": "Filters",
+      "typeLabel": "Education Type",
+      "areaLabel": "Specialization Area",
+      "featuredLabel": "Featured only",
+      "allTypes": "All types",
+      "allAreas": "All areas",
+      "clearFilters": "Clear filters",
+      "filterButton": "Filters"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "empty": "No education entries found matching the selected filters.",
+    "error": {
+      "title": "Something went wrong",
+      "description": "An error occurred while fetching the education records.",
+      "retry": "Try again"
     }
   },
-  "contactPage": {
+  "experience": {
     "metadata": {
-      "title": "Contact | Emmanuel Cruz | Portfolio",
+      "title": "Experience",
+      "description": "My works"
+    },
+    "experienceCard": {
+      "present": "Present",
+      "technologies": "Technologies",
+      "viewCompany": "View company",
+      "viewDetails": "View details"
+    },
+    "experienceTypes": {
+      "EMPLOYMENT": "Employment",
+      "FREELANCE": "Freelance",
+      "INTERNSHIP": "Internship",
+      "VOLUNTEER": "Volunteer",
+      "ACADEMIC": "Academic"
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contact",
       "description": "Get in touch with me"
     },
     "sectionHeader": {
@@ -74,19 +205,7 @@
       }
     }
   },
-  "loginPage": {
-    "metadata": {
-      "title": "Login | Emmanuel Cruz | Portfolio",
-      "description": "Login to your account"
-    }
-  },
-  "experiencePage": {
-    "metadata": {
-      "title": "Experience | Emmanuel Cruz | Portfolio",
-      "description": "My works"
-    }
-  },
-  "layout": {
+  "shared": {
     "nav": {
       "home": "Home",
       "projects": "Projects",
@@ -104,9 +223,7 @@
       "title1": "Navigation",
       "spinningText": "code • create • innovate • grow •",
       "copyright": "© 2026 Emmanuel Cruz · Buenos Aires, Argentina"
-    }
-  },
-  "shared": {
+    },
     "socialLinksItem": {
       "copyEmail": "Copy email",
       "downloadCurriculum": "Download curriculum",
