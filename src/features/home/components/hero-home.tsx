@@ -45,7 +45,7 @@ const orbitVariants: Variants = {
 };
 
 export function HeroHome() {
-  const t = useTranslations("homePage.hero");
+  const t = useTranslations("home.hero");
 
   return (
     <section className="py-6 flex items-center justify-center">
