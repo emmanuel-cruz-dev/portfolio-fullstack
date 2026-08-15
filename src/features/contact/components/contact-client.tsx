@@ -24,7 +24,7 @@ const fadeIn: Variants = {
 };
 
 export function ContactClient() {
-  const t = useTranslations("contactPage.sectionHeader");
+  const t = useTranslations("contact.sectionHeader");
 
   return (
     <section className="w-full py-20 px-4">

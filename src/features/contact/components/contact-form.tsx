@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
-import { useIsDarkTheme } from "@/shared";
+// import { useIsDarkTheme } from "@/shared";
 import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
   Button,
@@ -26,8 +26,8 @@ import { ContactFormValues, getContactSchema } from "../schemas";
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
 export function ContactForm() {
-  const t = useTranslations("contactPage.contactForm");
-  const isDarkTheme = useIsDarkTheme();
+  const t = useTranslations("contact.contactForm");
+  // const isDarkTheme = useIsDarkTheme();
   const [status, setStatus] = useState<Status>(() =>
     checkRateLimit() ? "idle" : "rate_limited"
   );
@@ -73,7 +73,7 @@ export function ContactForm() {
   return (
     <MagicCard
       className="rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl"
-      gradientColor={isDarkTheme ? "#262626" : "#e0e0e0"}
+      // gradientColor={isDarkTheme ? "#262626" : "#e0e0e0"}
       gradientFrom="#00d4ff"
       gradientTo="#9E7AFF"
     >

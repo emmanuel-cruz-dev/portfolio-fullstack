@@ -4,7 +4,7 @@ import { Mail, Clock, MapPin } from "lucide-react";
 import { SocialLinksItem } from "@/shared";
 
 export function ContactInformation() {
-  const t = useTranslations("contactPage.contactInformation");
+  const t = useTranslations("contact.contactInformation");
 
   const contactInfo = [
     {
