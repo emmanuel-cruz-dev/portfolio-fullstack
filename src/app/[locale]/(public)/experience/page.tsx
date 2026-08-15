@@ -10,7 +10,7 @@ export async function generateMetadata({
 
   return getPageMetadata({
     locale: locale,
-    namespace: "experiencePage",
+    namespace: "experience",
   });
 }
 
