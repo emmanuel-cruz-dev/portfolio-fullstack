@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
       dynamic: 30,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
+      },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();
