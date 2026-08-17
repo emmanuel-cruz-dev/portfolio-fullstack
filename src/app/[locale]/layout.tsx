@@ -22,8 +22,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Emmanuel Cruz | Portfolio",
+  title: {
+    template: "%s | Emmanuel Cruz - Portfolio",
+    default: "Emmanuel Cruz - Portfolio",
+  },
   description: "Emmanuel Cruz Full Stack Developer",
+  keywords: [
+    "Emmanuel Cruz",
+    "Full Stack",
+    "Frontend",
+    "Backend",
+    "Developer",
+    "Portfolio",
+    "Web",
+  ],
 };
 
 export function generateStaticParams() {
