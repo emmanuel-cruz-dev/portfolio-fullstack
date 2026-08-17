@@ -1,10 +1,24 @@
-import { cookies } from "next/headers";
+import { cacheLife, cacheTag } from "next/cache";
 
-import { createClient } from "@/lib/supabase/server";
+import { createStaticClient } from "@/lib/supabase/static";
+import { Project, ProjectRaw } from "../types";
+import { Locale } from "@/shared";
 
-export async function getFeaturedProjects(): Promise<any[]> {
-  const cookieStore = await cookies();
-  const supabase = createClient(cookieStore);
+function localizeProject(project: ProjectRaw, locale: Locale): Project {
+  return {
+    ...project,
+    description: project.description[locale] ?? project.description.es,
+    highlights: project.highlights[locale] ?? project.highlights.es,
+    challenges: project.challenges[locale] ?? project.challenges.es,
+  };
+}
+
+export async function getFeaturedProjects(locale: Locale): Promise<Project[]> {
+  "use cache";
+  cacheLife("hours");
+  cacheTag("projects", "featured-projects");
+
+  const supabase = createStaticClient();
 
   const { data: projects, error } = await supabase
     .from("projects")
@@ -18,5 +32,7 @@ export async function getFeaturedProjects(): Promise<any[]> {
     return [];
   }
 
-  return projects ?? [];
+  return ((projects as unknown as ProjectRaw[]) ?? []).map((p) =>
+    localizeProject(p, locale)
+  );
 }
