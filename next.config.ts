@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "aeeilekbivxefnxpgdjp.supabase.co",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
     ],
   },
 };
