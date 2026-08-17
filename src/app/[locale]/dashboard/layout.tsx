@@ -32,10 +32,13 @@ export default async function DashboardLayout({
     <div>
       <h1>Dashboard</h1>
       <p>User details:</p>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<p>Loading user...</p>}>
         <UserDetails locale={locale} />
       </Suspense>
-      {children}
+      <Suspense fallback={<p>Loading dashboard...</p>}>
+        {children}
+      </Suspense>
     </div>
   );
 }
+
