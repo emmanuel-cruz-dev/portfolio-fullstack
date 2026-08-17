@@ -3,8 +3,7 @@
 import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 
-import { OrbitingItem } from "./orbiting-item";
-import { SocialLinksItem } from "@/shared";
+import { IconCloudItem, SocialLinksItem } from "@/shared";
 import { AuroraText, ShimmerButton } from "@/components";
 
 const containerVariants: Variants = {
@@ -49,9 +48,9 @@ export function HeroHome() {
 
   return (
     <section className="py-6 flex items-center justify-center">
-      <article className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-14 items-center">
+      <article className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 xl:gap-14">
         <motion.div
-          className="flex flex-col justify-center gap-4 order-last md:order-first"
+          className="flex flex-col justify-center gap-4 order-last md:order-first md:w-3/6"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -86,9 +85,17 @@ export function HeroHome() {
           </motion.div>
         </motion.div>
 
-        <motion.div variants={orbitVariants} initial="hidden" animate="visible">
-          <OrbitingItem />
-        </motion.div>
+        <div className="flex items-center justify-center w-full lg:w-1/2 min-h-87.5 md:min-h-100">
+          <motion.div
+            variants={orbitVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="relative w-full max-w-76 aspect-square flex items-center justify-center conversion-gradient rounded-full bg-linear-to-tr from-primary/5 to-secondary/5 shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.15),inset_10px_10px_25px_rgba(255,255,255,0.5)] dark:shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.6),inset_10px_10px_25px_rgba(255,255,255,0.05)] border border-white/10">
+              <IconCloudItem />
+            </div>
+          </motion.div>
+        </div>
       </article>
     </section>
   );
