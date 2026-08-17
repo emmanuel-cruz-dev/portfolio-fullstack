@@ -4,6 +4,7 @@ export * from "./faqs";
 export * from "./featured-section";
 export * from "./featured-section-skeleton";
 export * from "./footer";
+export * from "./icon-cloud-item";
 export * from "./language-switcher";
 export * from "./navbar";
 export * from "./scroll-top-button";
