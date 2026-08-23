@@ -23,6 +23,7 @@ const slugs = [
   "prisma",
   "python",
   "react",
+  "supabase",
   "tailwindcss",
   "typescript",
   "vercel",

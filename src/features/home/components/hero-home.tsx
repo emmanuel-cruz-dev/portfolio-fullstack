@@ -91,7 +91,7 @@ export function HeroHome() {
             initial="hidden"
             animate="visible"
           >
-            <div className="relative w-full max-w-76 aspect-square flex items-center justify-center conversion-gradient rounded-full bg-linear-to-tr from-primary/5 to-secondary/5 shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.15),inset_10px_10px_25px_rgba(255,255,255,0.5)] dark:shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.6),inset_10px_10px_25px_rgba(255,255,255,0.05)] border border-white/10">
+            <div className="relative w-full max-w-76 aspect-square flex items-center justify-center conversion-gradient rounded-full bg-gradient-to-br from-primary/10 via-secondary/5 to-transparent shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.4),inset_10px_10px_25px_rgba(255,255,255,0.1)] dark:shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.5),inset_10px_10px_25px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.05)] border border-white/10 dark:border-white/20 bg-white/5 dark:bg-primary/5">
               <IconCloudItem />
             </div>
           </motion.div>
