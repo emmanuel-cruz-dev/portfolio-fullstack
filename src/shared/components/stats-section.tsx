@@ -20,21 +20,23 @@ export function StatsSection() {
 
   return (
     <section className="w-full px-4 py-6">
-      <div className="max-w-6xl mx-auto rounded-2xl border border-slate-200 bg-[#eef2f7] px-6 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-          {stats.map((stat, i) => (
+      <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/80 px-6 py-8 shadow-sm backdrop-blur-sm">
+        <div className="grid grid-cols-2 md:grid-cols-4 md:divide-border md:divide-x-2">
+          {stats.map((stat) => (
             <div
-              key={i}
-              className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center"
+              key={stat.label}
+              className="group flex flex-col items-center justify-center gap-2 px-4 py-6 text-center transition-transform duration-300 hover:-translate-y-0.5"
             >
-              <p className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-none whitespace-nowrap">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-none whitespace-nowrap">
                 <span>{stat.prefix}</span>
                 <NumberTicker
                   value={stat.value}
-                  className="font-bold text-slate-900! tracking-tight"
+                  className="font-bold text-foreground! tracking-tight"
                 />
               </p>
-              <span className="text-sm text-slate-500 mt-1">{stat.label}</span>
+              <span className="text-sm text-muted-foreground">
+                {stat.label}
+              </span>
             </div>
           ))}
         </div>
