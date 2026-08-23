@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/utils/metadata";
+import { ProjectsContent } from "@/features/projects";
 
 export async function generateMetadata({
   params,
@@ -14,11 +15,7 @@ export async function generateMetadata({
 }
 
 function ProjectsPage() {
-  return (
-    <div>
-      <h1>Projects</h1>
-    </div>
-  );
+  return <ProjectsContent />;
 }
 
 export default ProjectsPage;
