@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, Code2 } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { usePathname, Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./language-switcher";
@@ -91,6 +91,9 @@ export function Navbar() {
             </Button>
           </div>
 
+          <div className="md:hidden">
+            <LanguageSwitcher />
+          </div>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon" aria-label="Abrir menú">
@@ -101,8 +104,23 @@ export function Navbar() {
             <SheetContent side="right" className="w-72">
               <SheetHeader className="mb-0 pb-0">
                 <SheetTitle className="flex items-center gap-2 text-left text-sm font-semibold">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground text-background">
-                    <Code2 className="h-4 w-4" />
+                  <span className="w-7 h-4.5">
+                    <Image
+                      src="/e-logo.avif"
+                      alt="Emmanuel Cruz Logo"
+                      width={28}
+                      height={18}
+                      className="object-contain dark:hidden"
+                      priority
+                    />
+                    <Image
+                      src="/e-logo-white.avif"
+                      alt="Emmanuel Cruz Logo"
+                      width={28}
+                      height={18}
+                      className="object-contain hidden dark:block"
+                      priority
+                    />
                   </span>
                   Emmanuel Cruz
                 </SheetTitle>
@@ -126,8 +144,8 @@ export function Navbar() {
                 ))}
               </nav>
               <Separator className="my-4" />
-              <div className="flex items-center justify-between px-2">
-                <LanguageSwitcher />
+
+              <div className="px-2">
                 <Button asChild className="w-full" size="sm">
                   <Link href="/contact" onClick={() => setOpen(false)}>
                     {t("contact")}

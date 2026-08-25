@@ -19,8 +19,8 @@ export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 py-8">
-          <div className="flex flex-col gap-4 sm:col-span-1">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 py-8">
+          <div className="flex flex-col gap-4">
             <Link
               href="/"
               className="flex items-center gap-2 text-sm font-semibold w-fit transition-opacity hover:opacity-80"
@@ -52,7 +52,7 @@ export function Footer() {
             <SocialLinksItem />
           </div>
 
-          <div className="sm:col-span-1">
+          <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               {t("title1")}
             </p>
@@ -71,7 +71,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="sm:col-span-1">
+          <div className="hidden lg:block">
             <article className="h-full flex justify-center">
               <SpinningText>{t("spinningText")}</SpinningText>
             </article>
