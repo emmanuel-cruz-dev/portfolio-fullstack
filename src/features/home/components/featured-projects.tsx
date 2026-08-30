@@ -1,11 +1,12 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { FeaturedSection } from "@/shared";
 import { ProjectCard } from "@/features/projects";
 import { getFeaturedProjects } from "@/features/projects/services";
 import { type Locale } from "@/shared";
 
-export async function FeaturedProjects({ locale }: { locale: Locale }) {
+export async function FeaturedProjects() {
+  const locale = (await getLocale()) as Locale;
   const t = await getTranslations("home.featuredProjects");
   const projects = await getFeaturedProjects(locale);
 
