@@ -1,1 +1,2 @@
-export * from "./components/experience-content";
+export * from "./components";
+export * from "./types";
