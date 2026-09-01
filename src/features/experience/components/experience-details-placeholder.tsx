@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 
 export function ExperienceDetailsPlaceholder({ slug }: { slug: string }) {
   return (
-    <article className="w-full max-w-4xl mx-auto py-12 px-4">
+    <article className="w-full max-w-6xl mx-auto py-12 px-4">
       <Link
         href="/experience"
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
