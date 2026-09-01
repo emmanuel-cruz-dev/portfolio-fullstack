@@ -242,6 +242,12 @@
       "send": "Send Message",
       "cancel": "Cancel"
     },
+    "cta": {
+      "badge": "Let's work together",
+      "title": "Have a project in mind?",
+      "description": "I'm available for freelance, full-time roles, or collaborative projects.",
+      "button": "Get in touch"
+    },
     "forms": {
       "errors": {
         "required": "This field is required",

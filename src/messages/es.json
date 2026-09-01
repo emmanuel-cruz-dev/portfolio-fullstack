@@ -242,6 +242,12 @@
       "send": "Enviar Mensaje",
       "cancel": "Cancelar"
     },
+    "cta": {
+      "badge": "Trabajemos juntos",
+      "title": "¿Tienes un proyecto en mente?",
+      "description": "Estoy disponible para oportunidades freelance, roles a tiempo completo o colaboraciones en proyectos desafiantes.",
+      "button": "Ponte en contacto"
+    },
     "forms": {
       "errors": {
         "required": "Este campo es requerido",
