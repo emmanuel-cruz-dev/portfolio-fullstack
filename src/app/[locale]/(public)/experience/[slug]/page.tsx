@@ -1,7 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 
-import { getExperienceSlugs } from "@/features/experience/services/experience.service";
 import { routing } from "@/i18n/routing";
+import { getExperienceSlugs } from "@/features/experience/services/experience.service";
+import { ExperienceDetailsPlaceholder } from "@/features/experience";
 
 export async function generateStaticParams() {
   const slugs = await getExperienceSlugs();
@@ -19,7 +20,7 @@ async function ExperienceSlugPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  return <h1>{slug}</h1>;
+  return <ExperienceDetailsPlaceholder slug={slug} />;
 }
 
 export default ExperienceSlugPage;
