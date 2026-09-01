@@ -1,10 +1,6 @@
 import { Suspense } from "react";
 
-import {
-  FeaturedSectionSkeleton,
-  // CtaSection,
-  StatsSection,
-} from "@/shared";
+import { FeaturedSectionSkeleton, CtaSection, StatsSection } from "@/shared";
 import { HeroHome } from "./hero-home";
 import { FeaturedEducation } from "./featured-education";
 import { FeaturedExperience } from "./featured-experience";
@@ -23,8 +19,8 @@ export async function HomeContent() {
       <Suspense fallback={<FeaturedSectionSkeleton />}>
         <FeaturedExperience />
       </Suspense>
-      {/* <SkillsSection />
-      <CtaSection /> */}
+      {/* <SkillsSection />*/}
+      <CtaSection />
     </>
   );
 }
