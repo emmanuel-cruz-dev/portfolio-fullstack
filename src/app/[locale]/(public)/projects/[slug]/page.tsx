@@ -1,7 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 
-import { getProjectSlugs } from "@/features/projects/services/projects.service";
 import { routing } from "@/i18n/routing";
+import { getProjectSlugs } from "@/features/projects/services";
+import { ProjectDetailsPlaceholder } from "@/features/projects";
 
 export async function generateStaticParams() {
   const slugs = await getProjectSlugs();
@@ -19,7 +20,7 @@ async function ProjectPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  return <h1>{slug}</h1>;
+  return <ProjectDetailsPlaceholder slug={slug} />;
 }
 
 export default ProjectPage;
