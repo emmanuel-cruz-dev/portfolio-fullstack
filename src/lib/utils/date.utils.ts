@@ -10,6 +10,7 @@ export function formatMonthYear(
   const raw = date.toLocaleDateString(localeTag, {
     year: "numeric",
     month: "long",
+    timeZone: "UTC",
   });
 
   if (locale === "es") {
