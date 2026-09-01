@@ -1,9 +1,8 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
-import { FeaturedSection } from "@/shared";
 import { EducationCard } from "@/features/education";
 import { getFeaturedEducation } from "@/features/education/services";
-import { type Locale } from "@/shared";
+import { FeaturedSection, type Locale } from "@/shared";
 
 export async function FeaturedEducation() {
   const locale = (await getLocale()) as Locale;
