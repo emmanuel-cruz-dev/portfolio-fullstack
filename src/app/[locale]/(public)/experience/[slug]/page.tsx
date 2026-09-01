@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
-import { getExperienceSlugs } from "@/features/experience/services/experience.service";
+import { getExperienceSlugs } from "@/features/experience/services";
 import { ExperienceDetailsPlaceholder } from "@/features/experience";
 
 export async function generateStaticParams() {
