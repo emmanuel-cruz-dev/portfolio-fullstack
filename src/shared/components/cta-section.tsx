@@ -1,18 +1,16 @@
 import { useTranslations } from "next-intl";
-import { Mail, ArrowRight, Sparkles } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
-import { Badge, Button } from "@/components";
-
-interface CtaSectionProps {
-  translationKey?: string;
-  contactHref?: string;
-}
+import { Button } from "@/components";
 
 export function CtaSection({
   translationKey = "shared.cta",
   contactHref = "/contact",
-}: CtaSectionProps) {
+}: {
+  translationKey?: string;
+  contactHref?: string;
+}) {
   const t = useTranslations(translationKey);
 
   return (
@@ -27,20 +25,9 @@ export function CtaSection({
           className="absolute -bottom-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"
         />
 
-        {/* Header Icon / Badge */}
-        <div className="flex flex-col items-center gap-3">
-          <figure className="p-3.5 rounded-full bg-primary/10 text-primary">
-            <Mail className="w-6 h-6" />
-          </figure>
-
-          <Badge
-            variant="outline"
-            className="gap-1.5 py-1 px-3 text-xs font-medium"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-primary" />
-            {t("badge")}
-          </Badge>
-        </div>
+        <figure className="p-3.5 rounded-full bg-primary/10 text-primary">
+          <Mail className="w-6 h-6" />
+        </figure>
 
         <header className="space-y-3 max-w-2xl">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
