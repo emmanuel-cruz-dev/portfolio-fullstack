@@ -19,8 +19,8 @@ export function ItemsCarousel({ children }: { children: React.ReactNode }) {
       <CarouselContent>{children}</CarouselContent>
 
       <>
-        <CarouselPrevious className="cursor-pointer" />
-        <CarouselNext className="cursor-pointer" />
+        <CarouselPrevious className="left-2 md:-left-10 cursor-pointer z-10" />
+        <CarouselNext className="right-2 md:-right-10 cursor-pointer z-10" />
       </>
     </Carousel>
   );
