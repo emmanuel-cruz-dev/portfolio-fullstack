@@ -14,7 +14,7 @@ export function CtaSection({
   const t = useTranslations(translationKey);
 
   return (
-    <section className="w-full max-w-6xl mx-auto py-12 px-4">
+    <section className="max-w-6xl mx-auto py-12">
       <div className="relative overflow-hidden rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/50 backdrop-blur-sm p-8 md:p-12 text-center flex flex-col items-center justify-center gap-6 shadow-xs">
         <div
           aria-hidden="true"
