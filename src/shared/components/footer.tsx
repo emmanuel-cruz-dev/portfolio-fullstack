@@ -17,7 +17,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border/50 bg-background">
+    <footer className="border-t border-border/50 bg-background overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 py-8">
           <div className="flex flex-col gap-4 lg:col-span-2">
