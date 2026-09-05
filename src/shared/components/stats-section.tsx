@@ -19,7 +19,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="w-full px-4 py-6">
+    <section className="px-6 xl:px-0 py-6">
       <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/80 px-6 py-8 shadow-sm backdrop-blur-sm">
         <div className="grid grid-cols-2 md:grid-cols-4 md:divide-border md:divide-x-2">
           {stats.map((stat) => (
