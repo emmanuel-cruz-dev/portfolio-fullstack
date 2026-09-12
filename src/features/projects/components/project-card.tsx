@@ -6,7 +6,7 @@ import {
   Clock,
   Archive,
   PlayCircle,
-  Eye,
+  ArrowRight,
 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
@@ -63,7 +63,7 @@ export function ProjectCard({ item }: { item: Project }) {
         title={t("projectCard.viewDetails")}
       >
         <Image
-          src={item.thumbnail}
+          src={item.images[0]}
           alt={item.title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -181,9 +181,13 @@ export function ProjectCard({ item }: { item: Project }) {
             )}
           </div>
           <Link href={`/projects/${item.slug}`}>
-            <Button variant="ghost" size="sm" className="gap-1 cursor-pointer">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-1 cursor-pointer group/button"
+            >
               {t("projectCard.viewDetails")}
-              <Eye className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/button:translate-x-0.5" />
             </Button>
           </Link>
         </div>
