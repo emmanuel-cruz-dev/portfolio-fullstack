@@ -4,6 +4,7 @@ import { FeaturedSectionSkeleton, CtaSection, StatsSection } from "@/shared";
 import { HeroHome } from "./hero-home";
 import { FeaturedEducation } from "./featured-education";
 import { FeaturedExperience } from "./featured-experience";
+import { FeaturedProjects } from "./featured-projects";
 // import { AboutSection } from "./about-section";
 // import { SkillsSection } from "./skills-section";
 
@@ -18,6 +19,9 @@ export async function HomeContent() {
       </Suspense>
       <Suspense fallback={<FeaturedSectionSkeleton />}>
         <FeaturedExperience />
+      </Suspense>
+      <Suspense fallback={<FeaturedSectionSkeleton />}>
+        <FeaturedProjects />
       </Suspense>
       {/* <SkillsSection />*/}
       <CtaSection />
