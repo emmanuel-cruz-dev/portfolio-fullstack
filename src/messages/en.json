@@ -144,6 +144,8 @@
       "present": "Present",
       "technologies": "Technologies",
       "viewCompany": "View company",
+      "github": "View source code",
+      "demo": "View live demo",
       "viewDetails": "View details"
     },
     "experienceTypes": {

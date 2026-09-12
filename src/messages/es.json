@@ -144,6 +144,8 @@
       "present": "Actualidad",
       "technologies": "Tecnologías",
       "viewCompany": "Ver empresa",
+      "github": "Ver código fuente",
+      "demo": "Ver demo online",
       "viewDetails": "Ver detalles"
     },
     "experienceTypes": {
