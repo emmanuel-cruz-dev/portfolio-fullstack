@@ -4,7 +4,8 @@ import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 
 import { IconCloudItem, SocialLinksItem } from "@/shared";
-import { AuroraText, ShimmerButton } from "@/components";
+import { AuroraText, Button } from "@/components";
+import { Link } from "@/i18n/navigation";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -55,16 +56,6 @@ export function HeroHome() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="w-fit">
-            <ShimmerButton className="flex gap-2 scale-75 origin-left select-none cursor-default">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-              </span>
-              {t("available")}
-            </ShimmerButton>
-          </motion.div>
-
           <motion.h1
             variants={itemVariants}
             className="text-4xl md:text-5xl xl:text-6xl font-bold"
@@ -82,6 +73,20 @@ export function HeroHome() {
 
           <motion.div variants={itemVariants}>
             <SocialLinksItem />
+          </motion.div>
+          <motion.div variants={itemVariants} className="w-full xs:w-fit">
+            <div className="flex flex-col gap-4 xs:flex-row">
+              <Button
+                asChild
+                variant={"outline"}
+                className="cursor-pointer shadow-sm px-12! py-6"
+              >
+                <Link href="/experience">{t("actionLabelPrimary")}</Link>
+              </Button>
+              <Button asChild className="cursor-pointer shadow-sm px-12! py-6">
+                <Link href="/contact">{t("actionLabelSecondary")}</Link>
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
 
