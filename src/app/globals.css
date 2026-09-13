@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --breakpoint-xs: 30rem;
+}
+
 @theme inline {
   --color-brand-accent: #00d4ff;
   --color-background: var(--background);
