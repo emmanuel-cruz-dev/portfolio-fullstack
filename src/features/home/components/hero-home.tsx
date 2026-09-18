@@ -1,98 +1,68 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
+import { motion } from "motion/react";
 
-import { IconCloudItem, SocialLinksItem } from "@/shared";
-import { AuroraText, Button } from "@/components";
 import { Link } from "@/i18n/navigation";
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
-  },
-};
-
-const orbitVariants: Variants = {
-  hidden: { opacity: 0, x: 40, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1],
-      delay: 0.2,
-    },
-  },
-};
+import {
+  fadeInFromLeft,
+  fadeInFromRightScale,
+  fadeInUp,
+  IconCloudItem,
+  SocialLinksItem,
+  staggerContainer,
+} from "@/shared";
+import { AuroraText, Button } from "@/components";
 
 export function HeroHome() {
   const t = useTranslations("home.hero");
 
   return (
-    <section className="px-6 xl:px-0 py-6 flex items-center justify-center">
+    <section className="px-6 xl:px-0 py-12 flex items-center justify-center">
       <article className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 xl:gap-14">
         <motion.div
-          className="flex flex-col justify-center gap-4 order-last md:order-first md:w-3/6"
-          variants={containerVariants}
+          className="flex flex-col justify-center gap-4 xl:gap-6 order-last md:order-first md:w-3/6 lg:w-4/7"
+          variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl md:text-5xl xl:text-6xl font-bold"
-          >
-            {t("title")}
-          </motion.h1>
+          <motion.div variants={fadeInFromLeft}>
+            <header className="space-y-2 mb-4 md:mb-6">
+              <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold">
+                {t("title")}
+              </h1>
 
-          <motion.div variants={itemVariants}>
-            <AuroraText className="text-3xl md:text-4xl xl:text-5xl font-bold">
-              {t("subtitle")}
-            </AuroraText>
+              <AuroraText className="text-3xl md:text-4xl xl:text-5xl font-bold">
+                {t("subtitle")}
+              </AuroraText>
+            </header>
+
+            <p>{t("description")}</p>
           </motion.div>
 
-          <motion.p variants={itemVariants}>{t("description")}</motion.p>
-
-          <motion.div variants={itemVariants}>
+          <motion.div variants={fadeInUp} className="space-y-6">
             <SocialLinksItem />
-          </motion.div>
-          <motion.div variants={itemVariants} className="w-full xs:w-fit">
-            <div className="flex flex-col gap-4 xs:flex-row">
+            <footer className="flex flex-col gap-4 xl:gap-6 xs:flex-row w-full xs:w-fit">
               <Button
                 asChild
                 variant={"outline"}
-                className="cursor-pointer shadow-sm px-12! py-6"
+                className="cursor-pointer shadow-sm px-12! xl:px-16! py-6"
               >
                 <Link href="/experience">{t("actionLabelPrimary")}</Link>
               </Button>
-              <Button asChild className="cursor-pointer shadow-sm px-12! py-6">
+              <Button
+                asChild
+                className="cursor-pointer shadow-sm px-12! xl:px-16! py-6"
+              >
                 <Link href="/contact">{t("actionLabelSecondary")}</Link>
               </Button>
-            </div>
+            </footer>
           </motion.div>
         </motion.div>
 
         <div className="flex items-center justify-center w-full lg:w-1/2 min-h-87.5 md:min-h-100">
           <motion.div
-            variants={orbitVariants}
+            variants={fadeInFromRightScale}
             initial="hidden"
             animate="visible"
           >
