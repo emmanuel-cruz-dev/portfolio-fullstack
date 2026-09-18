@@ -40,7 +40,20 @@
       "actionLabelSecondary": "Contactame"
     },
     "aboutSection": {
-      "available": "Disponible"
+      "title": "Sobre mí",
+      "subtitle": "Transformando requerimientos en soluciones de software completas",
+      "aboutCard": {
+        "heading": "Desarrollador Fullstack",
+        "bio1": "Actualmente estoy cursando el tercer cuatrimestre de la <strong>Tecnicatura Superior en Desarrollo de Software</strong>, mientras continúo profundizando mis conocimientos en desarrollo fullstack y arquitectura de software.",
+        "bio2": "Me especializo en construir interfaces modernas y <accent>APIs REST escalables</accent>, aplicando arquitectura limpia y buenas prácticas de desarrollo. Tengo experiencia colaborando en equipos ágiles (<strong>Scrum/Kanban</strong>) y participando en todo el ciclo de vida del software: desde el análisis de requerimientos y gestión de bases de datos relacionales, hasta el mantenimiento, revisiones de código y documentación técnica.",
+        "stackTitle": "Stack principal: ",
+        "stackItems": "React · Angular · Next.js · TypeScript · Node.js · Express · NestJS · Java · Spring Boot · PostgreSQL · MySQL · MongoDB",
+        "locationLabel": "Ubicación",
+        "locationValue": "Buenos Aires, Argentina · Remoto o híbrido",
+        "languagesLabel": "Idiomas",
+        "languagesValue": "Español (nativo) · Inglés (B1)",
+        "downloadCv": "Descargar CV"
+      }
     },
     "featuredEducation": {
       "title": "Formación destacada",
@@ -253,6 +266,11 @@
       "title": "¿Tienes un proyecto en mente?",
       "description": "Estoy disponible para oportunidades freelance, roles a tiempo completo o colaboraciones en proyectos desafiantes.",
       "button": "Ponte en contacto"
+    },
+    "components": {
+      "statusBadge": {
+        "available": "Disponible"
+      }
     },
     "forms": {
       "errors": {

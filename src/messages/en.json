@@ -40,7 +40,20 @@
       "actionLabelSecondary": "Contact me"
     },
     "aboutSection": {
-      "available": "Available"
+      "title": "About me",
+      "subtitle": "Transforming requirements into complete software solutions",
+      "aboutCard": {
+        "heading": "Fullstack Developer",
+        "bio1": "I am currently in the third term of the <strong>Higher Technical Program in Software Development</strong>, while continuing to deepen my knowledge of full-stack development and software architecture.",
+        "bio2": "I specialize in building modern interfaces and <accent>scalable REST APIs</accent>, applying clean architecture and development best practices. I have experience collaborating in Agile teams (<strong>Scrum/Kanban</strong>) and participating in the entire software development lifecycle—from requirements analysis and relational database management to maintenance, code reviews, and technical documentation.",
+        "stackTitle": "Core stack: ",
+        "stackItems": "React · Angular · Next.js · TypeScript · Node.js · Express · NestJS · Java · Spring Boot · PostgreSQL · MySQL · MongoDB",
+        "locationLabel": "Location",
+        "locationValue": "Buenos Aires, Argentina · Remote or hybrid",
+        "languagesLabel": "Languages",
+        "languagesValue": "Spanish (native) · English (B1)",
+        "downloadCv": "Download CV"
+      }
     },
     "featuredEducation": {
       "title": "Featured Training",
@@ -253,6 +266,11 @@
       "title": "Have a project in mind?",
       "description": "I'm available for freelance, full-time roles, or collaborative projects.",
       "button": "Get in touch"
+    },
+    "components": {
+      "statusBadge": {
+        "available": "Available"
+      }
     },
     "forms": {
       "errors": {
