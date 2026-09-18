@@ -10,3 +10,4 @@ export * from "./navbar";
 export * from "./scroll-top-button";
 export * from "./social-links-item";
 export * from "./stats-section";
+export * from "./status-badge";
