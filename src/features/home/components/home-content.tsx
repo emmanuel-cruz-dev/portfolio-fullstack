@@ -5,7 +5,7 @@ import { HeroHome } from "./hero-home";
 import { FeaturedEducation } from "./featured-education";
 import { FeaturedExperience } from "./featured-experience";
 import { FeaturedProjects } from "./featured-projects";
-// import { AboutSection } from "./about-section";
+import { AboutSection } from "./about-section";
 // import { SkillsSection } from "./skills-section";
 
 export async function HomeContent() {
@@ -13,7 +13,7 @@ export async function HomeContent() {
     <>
       <HeroHome />
       <StatsSection />
-      {/* <AboutSection /> */}
+      <AboutSection />
       <Suspense fallback={<FeaturedSectionSkeleton />}>
         <FeaturedEducation />
       </Suspense>
