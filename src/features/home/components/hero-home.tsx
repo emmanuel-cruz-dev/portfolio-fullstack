@@ -46,13 +46,13 @@ export function HeroHome() {
               <Button
                 asChild
                 variant={"outline"}
-                className="cursor-pointer shadow-sm px-12! xl:px-16! py-6"
+                className="cursor-pointer shadow-sm px-12! xl:px-16! h-12 font-bold"
               >
                 <Link href="/experience">{t("actionLabelPrimary")}</Link>
               </Button>
               <Button
                 asChild
-                className="cursor-pointer shadow-sm px-12! xl:px-16! py-6"
+                className="btn-brand-cta h-12 w-full xs:w-fit xs:px-12 xl:px-16"
               >
                 <Link href="/contact">{t("actionLabelSecondary")}</Link>
               </Button>
