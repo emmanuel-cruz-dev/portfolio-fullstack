@@ -86,9 +86,11 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <div className="hidden items-center gap-2 md:flex">
             <LanguageSwitcher />
-            <Button asChild size="sm" variant="outline">
-              <Link href="/contact">{t("contact")}</Link>
-            </Button>
+            <div>
+              <Button asChild className="btn-brand-cta">
+                <Link href="/contact">{t("contact")}</Link>
+              </Button>
+            </div>
           </div>
 
           <div className="md:hidden">
@@ -146,7 +148,7 @@ export function Navbar() {
               <Separator className="my-4" />
 
               <div className="px-2">
-                <Button asChild className="w-full" size="sm">
+                <Button asChild className="w-full btn-brand-cta">
                   <Link href="/contact" onClick={() => setOpen(false)}>
                     {t("contact")}
                   </Link>
