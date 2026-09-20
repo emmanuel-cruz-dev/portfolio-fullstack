@@ -85,7 +85,7 @@ export function AboutSection() {
 
               <Button
                 asChild
-                className="hidden w-full max-w-64 h-12 bg-brand-accent dark:hover:brightness-110 disabled:opacity-40 text-black hover:text-white dark:hover:text-black font-bold rounded-md lg:flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.15)] dark:hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] active:scale-[0.98] cursor-pointer"
+                className="btn-brand-cta hidden lg:flex h-12 max-w-64"
               >
                 <a
                   href="/CV - Emmanuel Cruz (fullstack).pdf"
