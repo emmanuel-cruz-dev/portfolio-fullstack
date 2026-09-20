@@ -188,6 +188,12 @@
   }
 }
 
+@layer components {
+  .btn-brand-cta {
+    @apply w-full bg-brand-accent! font-bold! dark:hover:brightness-110 disabled:opacity-40 text-black! hover:text-white! hover:bg-black! dark:hover:text-black! dark:hover:bg-white! rounded-md items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.15)] dark:hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] active:scale-[0.98] cursor-pointer;
+  }
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
