@@ -38,8 +38,8 @@ export function CtaSection({
           </p>
         </header>
 
-        <div className="pt-2">
-          <Button asChild size="lg" className="gap-2 cursor-pointer shadow-sm">
+        <div className="pt-2 w-full xs:w-fit">
+          <Button asChild className="btn-brand-cta h-12 gap-2 px-12! xl:px-16!">
             <Link href={contactHref}>
               {t("button")}
               <ArrowRight className="w-4 h-4" />
