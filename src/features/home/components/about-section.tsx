@@ -142,7 +142,7 @@ export function AboutSection() {
                 </p>
               </div>
 
-              <footer className="mt-2">
+              <footer className="mt-2 space-y-4">
                 <dl>
                   <div className="flex flex-col gap-2 py-4 border-t border-border/80 sm:flex-row sm:items-center sm:justify-between">
                     <dt className="text-xs font-semibold uppercase tracking-widest text-cyan-800 dark:text-cyan-300">
@@ -164,6 +164,22 @@ export function AboutSection() {
                     </dd>
                   </div>
                 </dl>
+                <div className="flex justify-center">
+                  <Button
+                    asChild
+                    className="btn-brand-cta lg:hidden h-12 px-12! xl:px-16! w-full xs:w-fit"
+                  >
+                    <a
+                      href="/CV - Emmanuel Cruz (fullstack).pdf"
+                      aria-label={t("aboutCard.downloadCv")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("aboutCard.downloadCv")}
+                      <FaRegFileAlt className="w-5 h-5" />
+                    </a>
+                  </Button>
+                </div>
               </footer>
             </motion.div>
           </motion.div>
