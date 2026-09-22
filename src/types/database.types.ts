@@ -203,6 +203,45 @@ export type Database = {
         }
         Relationships: []
       }
+      technologies: {
+        Row: {
+          category: Database["public"]["Enums"]["technology_category"]
+          created_at: string
+          icon: string | null
+          id: string
+          is_active: boolean
+          name: string
+          order: number
+          slug: string
+          type: Database["public"]["Enums"]["technology_type"]
+          updated_at: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["technology_category"]
+          created_at?: string
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          order?: number
+          slug: string
+          type?: Database["public"]["Enums"]["technology_type"]
+          updated_at?: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["technology_category"]
+          created_at?: string
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          order?: number
+          slug?: string
+          type?: Database["public"]["Enums"]["technology_type"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -256,6 +295,13 @@ export type Database = {
         | "ACADEMIC"
         | "COLLABORATIVE"
         | "OPEN_SOURCE"
+      technology_category:
+        | "FRONTEND"
+        | "BACKEND"
+        | "DATABASE"
+        | "TOOLS"
+        | "MANAGEMENT"
+      technology_type: "TECHNOLOGY" | "TOOL"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -433,6 +479,14 @@ export const Constants = {
         "COLLABORATIVE",
         "OPEN_SOURCE",
       ],
+      technology_category: [
+        "FRONTEND",
+        "BACKEND",
+        "DATABASE",
+        "TOOLS",
+        "MANAGEMENT",
+      ],
+      technology_type: ["TECHNOLOGY", "TOOL"],
     },
   },
 } as const
