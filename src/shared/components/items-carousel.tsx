@@ -14,13 +14,13 @@ export function ItemsCarousel({ children }: { children: React.ReactNode }) {
     <Carousel
       opts={{ align: "start", loop: true }}
       plugins={[Autoplay({ delay: 4000 })]}
-      className="w-full"
+      className="-mx-1"
     >
       <CarouselContent>{children}</CarouselContent>
 
       <>
-        <CarouselPrevious className="left-2 md:-left-10 cursor-pointer z-10" />
-        <CarouselNext className="right-2 md:-right-10 cursor-pointer z-10" />
+        <CarouselPrevious className="left-2 cursor-pointer z-10" />
+        <CarouselNext className="right-2 cursor-pointer z-10" />
       </>
     </Carousel>
   );
