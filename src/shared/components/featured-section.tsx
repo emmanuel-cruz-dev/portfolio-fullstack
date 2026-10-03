@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import { ComponentType } from "react";
+import { ArrowRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { Button, CarouselItem } from "@/components";
@@ -23,8 +23,8 @@ export function FeaturedSection<T extends { id: string | number }>({
   actionLabel,
 }: FeaturedSectionProps<T>) {
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24 bg-background text-foreground overflow-hidden">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <section className="max-w-6xl mx-auto py-16 px-4 xl:px-0 bg-background">
+      <div className="space-y-12">
         <header className="space-y-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             {title}
@@ -39,7 +39,7 @@ export function FeaturedSection<T extends { id: string | number }>({
         <ItemsCarousel>
           {items.map((item) => (
             <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
-              <div className="px-6 sm:px-12 md:p-1">
+              <div className="px-1 py-6">
                 <CardComponent item={item} />
               </div>
             </CarouselItem>
