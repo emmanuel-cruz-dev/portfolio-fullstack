@@ -6,6 +6,7 @@ export * from "./featured-section-skeleton";
 export * from "./footer";
 export * from "./icon-cloud-item";
 export * from "./language-switcher";
+export * from "./layout-guide";
 export * from "./navbar";
 export * from "./scroll-top-button";
 export * from "./social-links-item";
