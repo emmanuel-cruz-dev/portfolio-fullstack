@@ -18,7 +18,7 @@ export function HeroHome() {
   const t = useTranslations("home.hero");
 
   return (
-    <section className="px-6 xl:px-0 py-12 flex items-center justify-center">
+    <section className="px-4 xl:px-0 py-12 flex items-center justify-center">
       <article className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 xl:gap-14">
         <motion.div
           className="flex flex-col justify-center gap-4 xl:gap-6 order-last md:order-first md:w-3/6 lg:w-4/7"
