@@ -5,7 +5,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
-import { ThemeProvider } from "@/shared";
+import { LayoutGuide, ThemeProvider } from "@/shared";
 import { routing } from "@/i18n/routing";
 import { TooltipProvider } from "@/components";
 import { ScrollTopButton } from "@/shared";
@@ -67,6 +67,7 @@ export default async function RootLayout({
             <TooltipProvider delayDuration={200}>
               <main>{children}</main>
               <ScrollTopButton />
+              {process.env.NODE_ENV === "development" && <LayoutGuide />}
             </TooltipProvider>
             <Toaster />
           </NextIntlClientProvider>
