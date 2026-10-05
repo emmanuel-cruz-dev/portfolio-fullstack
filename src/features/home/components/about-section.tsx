@@ -11,6 +11,7 @@ import {
   fadeInFromRight,
   useIsDarkTheme,
   StatusBadge,
+  SectionHeader,
 } from "@/shared";
 import { Button, MagicCard } from "@/components";
 
@@ -20,22 +21,8 @@ export function AboutSection() {
 
   return (
     <section className="px-4 py-16 text-foreground md:py-20 xl:px-0">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <header className="space-y-4 text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              {t("title")}
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              {t("subtitle")}
-            </p>
-          </header>
-        </motion.div>
+      <div className="mx-auto max-w-6xl space-y-10">
+        <SectionHeader title={t("title")} subtitle={t("subtitle")} />
 
         <MagicCard
           className="rounded-2xl p-8 md:p-12 md:py-10"
