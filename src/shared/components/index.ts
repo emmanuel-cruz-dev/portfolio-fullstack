@@ -9,6 +9,7 @@ export * from "./language-switcher";
 export * from "./layout-guide";
 export * from "./navbar";
 export * from "./scroll-top-button";
+export * from "./section-header";
 export * from "./social-links-item";
 export * from "./stats-section";
 export * from "./status-badge";
