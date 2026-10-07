@@ -8,6 +8,7 @@ export * from "./icon-cloud-item";
 export * from "./language-switcher";
 export * from "./layout-guide";
 export * from "./navbar";
+export * from "./page-header";
 export * from "./scroll-top-button";
 export * from "./section-header";
 export * from "./social-links-item";
