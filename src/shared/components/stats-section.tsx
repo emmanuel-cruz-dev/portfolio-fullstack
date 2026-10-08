@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import { NumberTicker } from "@/components";
+import { cn } from "@/lib";
 
 interface Stat {
   prefix: string;
@@ -8,7 +9,7 @@ interface Stat {
   label: string;
 }
 
-export function StatsSection() {
+export function StatsSection({ className }: { className?: string }) {
   const t = useTranslations("shared.statsSection");
 
   const stats: Stat[] = [
@@ -19,7 +20,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="px-4 xl:px-0 py-6">
+    <section className={cn("py-6 px-4 xl:px-0", className)}>
       <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/80 px-6 py-8 shadow-sm backdrop-blur-sm">
         <div className="grid grid-cols-2 md:grid-cols-4 md:divide-border md:divide-x-2">
           {stats.map((stat) => (
