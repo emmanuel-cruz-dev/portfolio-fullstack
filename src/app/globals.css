@@ -192,6 +192,26 @@
   .btn-brand-cta {
     @apply w-full bg-brand-accent! font-bold! dark:hover:brightness-110 disabled:opacity-40 text-black! hover:text-white! hover:bg-black! dark:hover:text-black! dark:hover:bg-white! rounded-md items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.15)] dark:hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] active:scale-[0.98] cursor-pointer;
   }
+
+  /* ------- Start: Section gradient overlays ------- */
+
+  .section-gradient-a {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 212, 255, 0.055) 0%,
+      transparent 100%
+    );
+  }
+
+  .section-gradient-b {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 212, 255, 0.055) 100%
+    );
+  }
+
+  /* ------- End: Section gradient overlays ------- */
 }
 
 ::view-transition-old(root),
