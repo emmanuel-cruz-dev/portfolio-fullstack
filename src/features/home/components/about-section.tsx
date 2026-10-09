@@ -20,7 +20,7 @@ export function AboutSection() {
   const isDarkTheme = useIsDarkTheme();
 
   return (
-    <section className="px-4 py-16 text-foreground md:py-20 xl:px-0">
+    <section className="section-gradient-a px-4 py-16 text-foreground md:py-20 xl:px-0">
       <div className="mx-auto max-w-6xl space-y-10">
         <SectionHeader title={t("title")} subtitle={t("subtitle")} />
 
