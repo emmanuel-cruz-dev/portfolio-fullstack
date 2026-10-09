@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Button, CarouselItem } from "@/components";
 import { ItemsCarousel } from "./items-carousel";
+import { cn } from "@/lib";
 
 interface FeaturedSectionProps<T extends { id: string | number }> {
   title: string;
@@ -12,6 +13,7 @@ interface FeaturedSectionProps<T extends { id: string | number }> {
   CardComponent: ComponentType<{ item: T }>;
   href?: string;
   actionLabel?: string;
+  className?: string;
 }
 
 export function FeaturedSection<T extends { id: string | number }>({
@@ -21,10 +23,11 @@ export function FeaturedSection<T extends { id: string | number }>({
   CardComponent,
   href,
   actionLabel,
+  className,
 }: FeaturedSectionProps<T>) {
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4 xl:px-0 bg-background">
-      <div className="space-y-12">
+    <section className={cn("py-16 px-4 xl:px-0", className)}>
+      <div className="max-w-6xl mx-auto space-y-12">
         <header className="space-y-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             {title}
