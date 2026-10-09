@@ -11,7 +11,7 @@ export function ContactClient() {
   const t = useTranslations("contact.sectionHeader");
 
   return (
-    <section className="section-gradient-a px-6 xl:px-0 pt-10">
+    <section className="section-gradient-a pt-10">
       <PageHeader
         eyebrow={t("eyebrow")}
         title={t("title")}
@@ -19,7 +19,7 @@ export function ContactClient() {
         description={t("description")}
       />
 
-      <div className="section-gradient-b pb-10">
+      <div className="section-gradient-b px-4 xl:px-0 pb-10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <motion.div
             className="lg:col-span-5 lg:sticky lg:top-24"
