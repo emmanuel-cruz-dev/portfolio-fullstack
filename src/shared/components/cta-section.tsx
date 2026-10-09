@@ -3,19 +3,22 @@ import { Mail, ArrowRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components";
+import { cn } from "@/lib";
 
 export function CtaSection({
   translationKey = "shared.cta",
   contactHref = "/contact",
+  className,
 }: {
   translationKey?: string;
   contactHref?: string;
+  className?: string;
 }) {
   const t = useTranslations(translationKey);
 
   return (
-    <section className="px-4 xl:px-0 max-w-6xl mx-auto py-12">
-      <div className="relative overflow-hidden rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/50 backdrop-blur-sm p-8 md:p-12 text-center flex flex-col items-center justify-center gap-6 shadow-xs">
+    <section className={cn("px-4 xl:px-0 py-12", className)}>
+      <div className="max-w-6xl mx-auto relative overflow-hidden rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/50 backdrop-blur-sm p-8 md:p-12 text-center flex flex-col items-center justify-center gap-6 shadow-xs">
         <div
           aria-hidden="true"
           className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"
