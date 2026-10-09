@@ -17,6 +17,7 @@ export async function FeaturedExperience() {
       CardComponent={ExperienceCard}
       href="/experience"
       actionLabel={t("actionLabel")}
+      className="section-gradient-a"
     />
   );
 }

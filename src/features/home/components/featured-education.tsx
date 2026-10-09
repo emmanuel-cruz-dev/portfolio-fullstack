@@ -17,6 +17,7 @@ export async function FeaturedEducation() {
       CardComponent={EducationCard}
       href="/education"
       actionLabel={t("actionLabel")}
+      className="section-gradient-b"
     />
   );
 }
