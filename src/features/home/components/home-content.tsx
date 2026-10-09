@@ -12,7 +12,7 @@ export async function HomeContent() {
   return (
     <>
       <HeroHome />
-      <StatsSection />
+      <StatsSection className="section-gradient-b" />
       <AboutSection />
       <Suspense fallback={<FeaturedSectionSkeleton />}>
         <FeaturedEducation />
@@ -24,7 +24,7 @@ export async function HomeContent() {
         <FeaturedProjects />
       </Suspense>
       {/* <SkillsSection />*/}
-      <CtaSection />
+      <CtaSection className="section-gradient-b" />
     </>
   );
 }
