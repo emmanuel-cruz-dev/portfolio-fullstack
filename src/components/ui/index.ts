@@ -23,6 +23,7 @@ export * from "./number-ticker";
 export * from "./orbiting-circles";
 export * from "./pagination";
 export * from "./separator";
+export * from "./scroll-progress";
 export * from "./select";
 export * from "./separator";
 export * from "./sheet";
