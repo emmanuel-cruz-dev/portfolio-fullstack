@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 
 import { LayoutGuide, ThemeProvider } from "@/shared";
 import { routing } from "@/i18n/routing";
-import { TooltipProvider } from "@/components";
+import { ScrollProgress, TooltipProvider } from "@/components";
 import { ScrollTopButton } from "@/shared";
 import "../../app/globals.css";
 
@@ -70,6 +70,7 @@ export default async function RootLayout({
               {process.env.NODE_ENV === "development" && <LayoutGuide />}
             </TooltipProvider>
             <Toaster />
+            <ScrollProgress />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
