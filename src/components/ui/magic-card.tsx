@@ -17,6 +17,8 @@ import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
 
+const BRAND = "var(--color-brand-accent, #00d4ff)";
+
 interface MagicCardBaseProps {
   children?: React.ReactNode;
   className?: string;
@@ -29,7 +31,6 @@ interface MagicCardGradientProps extends MagicCardBaseProps {
   mode?: "gradient";
 
   gradientColor?: string;
-  gradientOpacity?: number;
 
   glowFrom?: never;
   glowTo?: never;
@@ -65,10 +66,9 @@ export function MagicCard(props: MagicCardProps) {
     children,
     className,
     gradientSize = 200,
-    gradientColor = "#262626",
-    gradientOpacity = 0.8,
-    gradientFrom = "#9E7AFF",
-    gradientTo = "#FE8BBB",
+    gradientColor = `color-mix(in oklab, ${BRAND} 14%, transparent)`,
+    gradientFrom = BRAND,
+    gradientTo = "#9E7AFF",
     mode = "gradient",
   } = props;
 
@@ -111,6 +111,22 @@ export function MagicCard(props: MagicCardProps) {
   useEffect(() => {
     gradientSizeRef.current = gradientSize;
   }, [gradientSize]);
+
+  const borderBackground = useMotionTemplate`
+    linear-gradient(var(--color-background) 0 0) padding-box,
+    radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
+      ${gradientFrom},
+      ${gradientTo},
+      var(--color-border) 100%
+    ) border-box
+  `;
+
+  const spotlightBackground = useMotionTemplate`
+    radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
+      ${gradientColor},
+      transparent 100%
+    )
+  `;
 
   const reset = useCallback(
     (reason: ResetReason = "leave") => {
@@ -171,32 +187,24 @@ export function MagicCard(props: MagicCardProps) {
       onPointerMove={handlePointerMove}
       onPointerLeave={() => reset("leave")}
       onPointerEnter={() => reset("enter")}
-      style={{
-        background: useMotionTemplate`
-          linear-gradient(var(--color-background) 0 0) padding-box,
-          radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
-            ${gradientFrom},
-            ${gradientTo},
-            var(--color-border) 100%
-          ) border-box
-        `,
-      }}
+      style={{ background: borderBackground }}
     >
       <div className="absolute inset-px z-20 rounded-[inherit] bg-slate-100 dark:bg-slate-900/50 backdrop-blur-sm" />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-24 -left-24 z-25 h-48 w-48 rounded-full bg-brand-accent/10 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 -right-24 z-25 h-48 w-48 rounded-full bg-brand-accent/5 blur-3xl"
+      />
 
       {mode === "gradient" && (
         <motion.div
           suppressHydrationWarning
-          className="pointer-events-none absolute inset-px z-30 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          style={{
-            background: useMotionTemplate`
-              radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
-                ${gradientColor},
-                transparent 100%
-              )
-            `,
-            opacity: gradientOpacity,
-          }}
+          className="pointer-events-none absolute inset-px z-30 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-80"
+          style={{ background: spotlightBackground }}
         />
       )}
 
