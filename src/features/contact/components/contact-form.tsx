@@ -8,7 +8,6 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
-import { useIsDarkTheme } from "@/shared";
 import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
   Button,
@@ -27,7 +26,6 @@ type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
 export function ContactForm() {
   const t = useTranslations("contact.contactForm");
-  const isDarkTheme = useIsDarkTheme();
   const [status, setStatus] = useState<Status>(() =>
     checkRateLimit() ? "idle" : "rate_limited"
   );
@@ -71,12 +69,7 @@ export function ContactForm() {
     "bg-gray-100 border dark:bg-white/5 dark:border-white/10 text-foreground placeholder:text-muted-foreground/50 focus-visible:ring-brand-accent/30 focus-visible:border-brand-accent transition-all duration-200 rounded-md";
 
   return (
-    <MagicCard
-      className="rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl"
-      gradientColor={isDarkTheme ? "#262626" : "#e0e0e0"}
-      gradientFrom="#00d4ff"
-      gradientTo="#9E7AFF"
-    >
+    <MagicCard className="rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <FieldGroup className="gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
