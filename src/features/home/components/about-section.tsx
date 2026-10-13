@@ -9,7 +9,6 @@ import {
   fadeIn,
   fadeInFromLeft,
   fadeInFromRight,
-  useIsDarkTheme,
   StatusBadge,
   SectionHeader,
 } from "@/shared";
@@ -17,28 +16,13 @@ import { Button, MagicCard } from "@/components";
 
 export function AboutSection() {
   const t = useTranslations("home.aboutSection");
-  const isDarkTheme = useIsDarkTheme();
 
   return (
     <section className="section-gradient-a px-4 py-16 text-foreground md:py-20 xl:px-0">
       <div className="mx-auto max-w-6xl space-y-10">
         <SectionHeader title={t("title")} subtitle={t("subtitle")} />
 
-        <MagicCard
-          className="rounded-2xl p-8 md:p-12 md:py-10"
-          gradientColor={isDarkTheme ? "#262626" : "#e0e0e0"}
-          gradientFrom="#00d4ff"
-          gradientTo="#9E7AFF"
-        >
-          {/* Glows */}
-          <div
-            aria-hidden="true"
-            className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute -bottom-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"
-          />
+        <MagicCard className="rounded-2xl p-8 md:p-12 md:py-10">
           <motion.div
             variants={fadeIn}
             initial="hidden"
