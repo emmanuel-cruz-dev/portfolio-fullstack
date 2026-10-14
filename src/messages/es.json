@@ -69,6 +69,18 @@
       "title": "Proyectos personales",
       "subtitle": "Proyectos que he desarrollado para aprender, experimentar y crear soluciones",
       "actionLabel": "Ver todos los proyectos"
+    },
+    "skillsSection": {
+      "title": "Stack Tecnológico",
+      "subtitle": "Tecnologías y herramientas que utilizo para llevar proyectos al siguiente nivel",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Base de datos",
+        "mobile": "Desarrollo móvil",
+        "tools": "Herramientas",
+        "management": "Gestión"
+      }
     }
   },
   "projects": {
