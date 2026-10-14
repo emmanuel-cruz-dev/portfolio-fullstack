@@ -225,7 +225,7 @@ export type Database = {
           name: string
           order?: number
           slug: string
-          type?: Database["public"]["Enums"]["technology_type"]
+          type: Database["public"]["Enums"]["technology_type"]
           updated_at?: string
         }
         Update: {
@@ -301,6 +301,7 @@ export type Database = {
         | "DATABASE"
         | "TOOLS"
         | "MANAGEMENT"
+        | "MOBILE"
       technology_type: "TECHNOLOGY" | "TOOL"
     }
     CompositeTypes: {
@@ -485,6 +486,7 @@ export const Constants = {
         "DATABASE",
         "TOOLS",
         "MANAGEMENT",
+        "MOBILE",
       ],
       technology_type: ["TECHNOLOGY", "TOOL"],
     },
