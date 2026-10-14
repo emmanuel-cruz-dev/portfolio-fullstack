@@ -6,7 +6,7 @@ import { FeaturedEducation } from "./featured-education";
 import { FeaturedExperience } from "./featured-experience";
 import { FeaturedProjects } from "./featured-projects";
 import { AboutSection } from "./about-section";
-// import { SkillsSection } from "./skills-section";
+import { SkillsSection } from "./skills-section";
 
 export async function HomeContent() {
   return (
@@ -23,7 +23,7 @@ export async function HomeContent() {
       <Suspense fallback={<FeaturedSectionSkeleton />}>
         <FeaturedProjects />
       </Suspense>
-      {/* <SkillsSection />*/}
+      <SkillsSection />
       <CtaSection className="section-gradient-b" />
     </>
   );
