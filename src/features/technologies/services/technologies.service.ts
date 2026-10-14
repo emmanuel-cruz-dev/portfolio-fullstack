@@ -23,3 +23,8 @@ export async function getTechnologies(): Promise<Technology[]> {
 
   return data ?? [];
 }
+
+export async function getTechnologiesByCategory() {
+  const technologies = await getTechnologies();
+  return Object.groupBy(technologies, (tech) => tech.category.toLowerCase());
+}
