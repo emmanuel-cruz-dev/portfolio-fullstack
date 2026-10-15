@@ -17,6 +17,9 @@ interface IconCloudProps {
   images?: string[];
 }
 
+const ICON_SIZE = 32;
+const CANVAS_SIZE = ICON_SIZE * 2;
+
 function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3);
 }
@@ -50,8 +53,8 @@ export function IconCloud({ icons, images }: IconCloudProps) {
 
     const newIconCanvases = items.map((item, index) => {
       const offscreen = document.createElement("canvas");
-      offscreen.width = 40;
-      offscreen.height = 40;
+      offscreen.width = CANVAS_SIZE;
+      offscreen.height = CANVAS_SIZE;
       const offCtx = offscreen.getContext("2d");
 
       if (offCtx) {
@@ -64,19 +67,18 @@ export function IconCloud({ icons, images }: IconCloudProps) {
             offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
 
             // Draw the image
-            offCtx.drawImage(img, 0, 0, 40, 40);
+            offCtx.drawImage(img, 0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
             imagesLoadedRef.current[index] = true;
           };
         } else {
           // Handle SVG icons
-          offCtx.scale(0.4, 0.4);
           const svgString = renderToString(item as React.ReactElement);
           const img = new Image();
           img.src = "data:image/svg+xml;base64," + btoa(svgString);
           img.onload = () => {
-            offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
-            offCtx.drawImage(img, 0, 0);
+            offCtx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+            offCtx.drawImage(img, 0, 0, CANVAS_SIZE, CANVAS_SIZE);
             imagesLoadedRef.current[index] = true;
           };
         }
@@ -142,7 +144,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const screenY = canvasRef.current!.height / 2 + rotatedY;
 
       const scale = (rotatedZ + 200) / 300;
-      const radius = 20 * scale;
+      const radius = (ICON_SIZE / 2) * scale;
       const dx = x - screenX;
       const dy = y - screenY;
 
@@ -270,7 +272,13 @@ export function IconCloud({ icons, images }: IconCloudProps) {
               iconCanvasesRef.current[index] &&
               imagesLoadedRef.current[index]
             ) {
-              ctx.drawImage(iconCanvasesRef.current[index], -20, -20, 40, 40);
+              ctx.drawImage(
+                iconCanvasesRef.current[index],
+                -ICON_SIZE / 2,
+                -ICON_SIZE / 2,
+                ICON_SIZE,
+                ICON_SIZE
+              );
             }
           } else {
             // Show numbered circles if no icons/images are provided
