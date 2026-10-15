@@ -28,3 +28,12 @@ export async function getTechnologiesByCategory() {
   const technologies = await getTechnologies();
   return Object.groupBy(technologies, (tech) => tech.category.toLowerCase());
 }
+
+const CLOUD_CATEGORIES = ["FRONTEND", "BACKEND", "DATABASE", "MOBILE"];
+
+export async function getCloudTechnologies(): Promise<Technology[]> {
+  const technologies = await getTechnologies();
+  return technologies.filter((tech) =>
+    CLOUD_CATEGORIES.includes(tech.category)
+  );
+}
