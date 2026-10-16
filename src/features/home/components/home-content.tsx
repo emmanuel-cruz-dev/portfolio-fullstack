@@ -7,11 +7,12 @@ import { FeaturedExperience } from "./featured-experience";
 import { FeaturedProjects } from "./featured-projects";
 import { AboutSection } from "./about-section";
 import { SkillsSection } from "./skills-section";
+import { IconCloudItem } from "@/shared/components/icon-cloud-item";
 
 export async function HomeContent() {
   return (
     <>
-      <HeroHome />
+      <HeroHome iconCloud={<IconCloudItem />} />
       <StatsSection className="section-gradient-b" />
       <AboutSection />
       <Suspense fallback={<FeaturedSectionSkeleton />}>
