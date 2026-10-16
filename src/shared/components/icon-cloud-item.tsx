@@ -1,43 +1,20 @@
+import { Fragment } from "react";
+
 import { IconCloud } from "@/components";
+import { getCloudTechnologies } from "@/features/technologies";
+import { renderDevicon } from "@/features/technologies/components/render-devicon";
 
-const slugs = [
-  "clickup",
-  "css3",
-  "express",
-  "fastapi",
-  "figma",
-  "firebase",
-  "git",
-  "github",
-  "html5",
-  "java",
-  "javascript",
-  "jira",
-  "nextdotjs",
-  "nestjs",
-  "nodedotjs",
-  "notion",
-  "postgresql",
-  "mysql",
-  "mongodb",
-  "prisma",
-  "python",
-  "react",
-  "supabase",
-  "tailwindcss",
-  "typescript",
-  "vercel",
-  "visualstudiocode",
-];
+export async function IconCloudItem() {
+  const technologies = await getCloudTechnologies();
 
-export function IconCloudItem() {
-  const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
-  );
+  const icons = technologies.flatMap((tech) => {
+    const icon = renderDevicon(tech.icon!, { size: 100 });
+    return icon ? [<Fragment key={tech.id}>{icon}</Fragment>] : [];
+  });
 
   return (
     <article className="relative flex size-full items-center justify-center overflow-hidden">
-      <IconCloud images={images} />
+      <IconCloud icons={icons} />
     </article>
   );
 }
