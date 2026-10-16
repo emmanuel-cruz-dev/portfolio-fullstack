@@ -211,6 +211,16 @@
     );
   }
 
+  .section-gradient-c {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 212, 255, 0.055) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(0, 212, 255, 0.055) 100%
+    );
+  }
+
   /* ------- End: Section gradient overlays ------- */
 }
 
