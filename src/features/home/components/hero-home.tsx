@@ -8,13 +8,12 @@ import {
   fadeInFromLeft,
   fadeInFromRightScale,
   fadeInUp,
-  IconCloudItem,
   SocialLinksItem,
   staggerContainer,
 } from "@/shared";
 import { AuroraText, Button } from "@/components";
 
-export function HeroHome() {
+export function HeroHome({ iconCloud }: { iconCloud: React.ReactNode }) {
   const t = useTranslations("home.hero");
 
   return (
@@ -67,7 +66,7 @@ export function HeroHome() {
             animate="visible"
           >
             <div className="relative w-full max-w-76 aspect-square flex items-center justify-center conversion-gradient rounded-full bg-linear-to-br from-primary/10 via-secondary/5 to-transparent shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.4),inset_10px_10px_25px_rgba(255,255,255,0.1)] dark:shadow-[inset_-10px_-10px_25px_rgba(0,0,0,0.5),inset_10px_10px_25px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.05)] border border-white/10 dark:border-white/20 bg-white/5 dark:bg-primary/5">
-              <IconCloudItem />
+              {iconCloud}
             </div>
           </motion.div>
         </div>
