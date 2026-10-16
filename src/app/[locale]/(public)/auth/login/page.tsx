@@ -21,7 +21,7 @@ async function LoginPage({ params }: { params: Promise<{ locale: string }> }) {
   setRequestLocale(locale);
 
   return (
-    <section className="py-16 flex items-center justify-center">
+    <section className="section-gradient-c py-16 flex items-center justify-center">
       <LoginForm />
     </section>
   );
