@@ -20,6 +20,26 @@ interface IconCloudProps {
 const ICON_SIZE = 32;
 const CANVAS_SIZE = ICON_SIZE * 2;
 
+const ORBIT_RADIUS_DEFAULT = 118;
+const ORBIT_RADIUS_SMALL = 98;
+
+function useOrbitRadius() {
+  const [radius, setRadius] = useState(ORBIT_RADIUS_DEFAULT);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 30rem)");
+
+    const update = () =>
+      setRadius(mql.matches ? ORBIT_RADIUS_DEFAULT : ORBIT_RADIUS_SMALL);
+
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  return radius;
+}
+
 function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3);
 }
@@ -43,6 +63,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   const rotationRef = useRef({ x: 0, y: 0 });
   const iconCanvasesRef = useRef<HTMLCanvasElement[]>([]);
   const imagesLoadedRef = useRef<boolean[]>([]);
+  const orbitRadius = useOrbitRadius();
 
   // Create icon canvases once when icons/images change
   useEffect(() => {
@@ -108,16 +129,16 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const z = Math.sin(phi) * r;
 
       newIcons.push({
-        x: x * 110,
-        y: y * 110,
-        z: z * 110,
+        x: x * orbitRadius,
+        y: y * orbitRadius,
+        z: z * orbitRadius,
         scale: 1,
         opacity: 1,
         id: i,
       });
     }
     setIconPositions(newIcons);
-  }, [icons, images]);
+  }, [icons, images, orbitRadius]);
 
   // Handle mouse events
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
