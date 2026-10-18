@@ -15,7 +15,7 @@ export function PageHeader({
   description: string;
 }) {
   return (
-    <header className="relative max-w-6xl mx-auto text-center mb-20">
+    <header className="px-4 lg:px-0 relative max-w-6xl mx-auto text-center mb-20">
       <motion.p
         className="inline-block px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/30 text-cyan-800 dark:text-cyan-300 text-[10px] font-bold mb-2 tracking-[0.2em] uppercase border border-cyan-100 dark:border-cyan-800/50"
         variants={fadeInUp}
@@ -27,7 +27,7 @@ export function PageHeader({
       </motion.p>
 
       <motion.h2
-        className="lg:w-11/12 text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight"
+        className="lg:w-11/12 text-3xl sm:text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight"
         variants={fadeInUp}
         custom={0.1}
         initial="hidden"
