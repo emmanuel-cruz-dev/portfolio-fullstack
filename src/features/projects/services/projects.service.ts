@@ -56,3 +56,32 @@ export async function getProjectSlugs(): Promise<string[]> {
 
   return (data ?? []).map((row) => row.slug);
 }
+
+export async function getProjectBySlug(
+  slug: string,
+  locale: Locale
+): Promise<Project | null> {
+  "use cache";
+  cacheLife("hours");
+  cacheTag("projects", "project-details");
+
+  const supabase = createStaticClient();
+
+  const { data: project, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("slug", slug)
+    .eq("is_active", true)
+    .single();
+
+  if (error) {
+    console.error("[getProjectBySlug] Supabase error:", error.message);
+    return null;
+  }
+
+  if (!project) {
+    return null;
+  }
+
+  return localizeProject(project as unknown as ProjectRaw, locale);
+}
