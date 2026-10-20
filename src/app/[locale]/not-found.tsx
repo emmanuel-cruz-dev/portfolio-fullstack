@@ -1,4 +1,4 @@
-import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import {
   Home,
   FolderOpen,
@@ -8,80 +8,84 @@ import {
   Search,
 } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components";
 import { BackButton } from "@/shared";
 
-function NotFound() {
+async function NotFound() {
+  const t = await getTranslations("app.notFound");
+
   return (
     <main className="min-h-screen bg-background flex items-center justify-center px-6">
-      <div className="max-w-2xl w-full text-center space-y-8">
-        <div className="flex justify-center">
-          <figure className="p-4 bg-muted rounded-full border border-border">
-            <Search className="text-4xl" />
-          </figure>
-        </div>
+      <article className="max-w-2xl w-full text-center space-y-8">
+        <figure className="w-fit p-4 bg-muted rounded-full border border-border mx-auto">
+          <Search className="text-4xl" />
+        </figure>
 
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-          Página no encontrada
+          {t("title")}
         </h1>
 
         <p className="text-muted-foreground text-lg max-w-md mx-auto">
-          Lo sentimos, la página que estás buscando no existe o ha sido movida.
+          {t("description")}
         </p>
 
-        <div className="flex justify-center gap-2">
-          <Link href="/">
-            <Button size="lg" className="gap-2 px-6 cursor-pointer">
-              <Home className="h-4 w-4" />
-              Ir al inicio
-            </Button>
-          </Link>
+        <div className="flex justify-center gap-4">
           <BackButton />
+          <Button
+            asChild
+            className="btn-brand-cta h-12 w-full xs:w-fit xs:px-12 xl:px-16!"
+          >
+            <Link href="/">
+              <Home className="h-4 w-4" />
+              {t("action")}
+            </Link>
+          </Button>
         </div>
 
-        <div className="pt-8 border-t border-border/60">
+        <footer className="pt-8 border-t border-border/60">
           <p className="text-sm text-muted-foreground mb-4">
-            Puedes navegar a estas secciones:
+            {t("sections.title")}
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <nav className="flex flex-wrap justify-center gap-3">
             <Link
               href="/"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
             >
               <Home className="h-3.5 w-3.5" />
-              Inicio
+              {t("sections.home")}
             </Link>
             <Link
               href="/education"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
             >
               <GraduationCap className="h-3.5 w-3.5" />
-              Formación
+              {t("sections.education")}
             </Link>
             <Link
               href="/experience"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
             >
               <Briefcase className="h-3.5 w-3.5" />
-              Experiencia
+              {t("sections.experience")}
             </Link>
             <Link
               href="/projects"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
             >
               <FolderOpen className="h-3.5 w-3.5" />
-              Proyectos
+              {t("sections.projects")}
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
             >
               <Mail className="h-3.5 w-3.5" />
-              Contacto
+              {t("sections.contact")}
             </Link>
-          </div>
-        </div>
-      </div>
+          </nav>
+        </footer>
+      </article>
     </main>
   );
 }
