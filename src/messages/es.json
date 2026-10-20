@@ -282,12 +282,30 @@
     "components": {
       "statusBadge": {
         "available": "Disponible"
+      },
+      "backButton": {
+        "label": "Volver atrás"
       }
     },
     "forms": {
       "errors": {
         "required": "Este campo es requerido",
         "invalidEmail": "Por favor ingrese una dirección de correo electrónico válida"
+      }
+    }
+  },
+  "app": {
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "Lo sentimos, la página que estás buscando no existe o ha sido movida.",
+      "action": "Ir al inicio",
+      "sections": {
+        "title": "Puedes navegar a estas secciones:",
+        "home": "Inicio",
+        "education": "Formación",
+        "experience": "Experiencia",
+        "projects": "Proyectos",
+        "contact": "Contacto"
       }
     }
   }

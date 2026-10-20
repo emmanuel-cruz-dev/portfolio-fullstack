@@ -282,12 +282,30 @@
     "components": {
       "statusBadge": {
         "available": "Available"
+      },
+      "backButton": {
+        "label": "Go back"
       }
     },
     "forms": {
       "errors": {
         "required": "This field is required",
         "invalidEmail": "Please enter a valid email address"
+      }
+    }
+  },
+  "app": {
+    "notFound": {
+      "title": "Page not found",
+      "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
+      "action": "Go to home",
+      "sections": {
+        "title": "You can navigate to these sections:",
+        "home": "Home",
+        "education": "Education",
+        "experience": "Experience",
+        "projects": "Projects",
+        "contact": "Contact"
       }
     }
   }
