@@ -157,7 +157,7 @@ export function ProjectCard({ item }: { item: Project }) {
                   </a>
                 </TooltipTrigger>
                 <TooltipContent side="bottom">
-                  <p>{t("projectCard.github")}</p>
+                  <p>{t("card.github")}</p>
                 </TooltipContent>
               </Tooltip>
             )}
@@ -175,7 +175,7 @@ export function ProjectCard({ item }: { item: Project }) {
                   </a>
                 </TooltipTrigger>
                 <TooltipContent side="bottom">
-                  <p>{t("projectCard.demo")}</p>
+                  <p>{t("card.demo")}</p>
                 </TooltipContent>
               </Tooltip>
             )}
@@ -186,7 +186,7 @@ export function ProjectCard({ item }: { item: Project }) {
               size="sm"
               className="gap-1 cursor-pointer group/button"
             >
-              {t("projectCard.viewDetails")}
+              {t("card.viewDetails")}
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/button:translate-x-0.5" />
             </Button>
           </Link>
