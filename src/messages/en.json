@@ -88,11 +88,6 @@
       "title": "Projects",
       "description": "My projects"
     },
-    "projectCard": {
-      "github": "View source code",
-      "demo": "View live demo",
-      "viewDetails": "View details"
-    },
     "types": {
       "personal": "Personal",
       "freelance": "Freelance",
@@ -105,6 +100,48 @@
       "inProgress": "In Progress",
       "planned": "Planned",
       "archived": "Archived"
+    },
+    "areas": {
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "devops": "DevOps",
+      "data": "Data"
+    },
+    "card": {
+      "github": "View source code",
+      "demo": "View live demo",
+      "viewDetails": "View details"
+    },
+    "details": {
+      "goToProjects": "Go to projects",
+      "featured": "Featured",
+      "screenshots": "Screenshots",
+      "about": "About",
+      "highlights": "Highlights",
+      "challenges": "Challenges",
+      "technologies": "Technologies",
+      "links": "Project links",
+      "sourceCode": "Source code",
+      "liveDemo": "View live demo",
+      "period": "Development period",
+      "present": "Present",
+      "cta": {
+        "title": "Let's build something similar for your team",
+        "description": "I design and develop scalable solutions tailored to your technical needs.",
+        "button": "Let's discuss your idea"
+      }
+    },
+    "notFound": {
+      "title": "Project not found",
+      "description": "Project \"{slug}\" does not exist or has been moved.",
+      "action": "Explore other projects",
+      "cta": {
+        "title": "Looking for something specific?",
+        "description": "If you have a particular type of development in mind, let's talk and I'll tell you more about it.",
+        "button": "Let's talk"
+      }
     }
   },
   "education": {
