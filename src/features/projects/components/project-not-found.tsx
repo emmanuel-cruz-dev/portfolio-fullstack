@@ -18,11 +18,7 @@ export async function ProjectNotFound({ slug }: { slug: string }) {
       </h1>
 
       <p className="text-muted-foreground max-w-md mb-8 leading-relaxed">
-        {t("description")}{" "}
-        <code className="px-1.5 py-0.5 bg-muted rounded border border-border text-xs font-mono text-foreground">
-          {slug}
-        </code>{" "}
-        {t("suffix")}
+        {t("description", { slug })}
       </p>
 
       <Button
