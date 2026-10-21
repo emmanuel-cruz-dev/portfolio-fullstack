@@ -88,11 +88,6 @@
       "title": "Proyectos",
       "description": "Mis proyectos"
     },
-    "projectCard": {
-      "github": "Ver código fuente",
-      "demo": "Ver demo online",
-      "viewDetails": "Ver detalles"
-    },
     "types": {
       "personal": "Personal",
       "freelance": "Freelance",
@@ -105,6 +100,48 @@
       "inProgress": "En Progreso",
       "planned": "Planeado",
       "archived": "Archivado"
+    },
+    "areas": {
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Móvil",
+      "devops": "DevOps",
+      "data": "Datos"
+    },
+    "card": {
+      "github": "Ver código fuente",
+      "demo": "Ver demo online",
+      "viewDetails": "Ver detalles"
+    },
+    "details": {
+      "goToProjects": "Ir a proyectos",
+      "featured": "Destacado",
+      "screenshots": "Capturas de pantalla",
+      "about": "Descripción",
+      "highlights": "Características",
+      "challenges": "Desafíos",
+      "technologies": "Tecnologías",
+      "links": "Enlaces del proyecto",
+      "sourceCode": "Código fuente",
+      "liveDemo": "Ver demo",
+      "period": "Período de desarrollo",
+      "present": "Actualidad",
+      "cta": {
+        "title": "Construyamos algo similar para tu equipo",
+        "description": "Diseño y desarrollo soluciones escalables adaptadas a tus necesidades técnicas.",
+        "button": "Hablemos de tu idea"
+      }
+    },
+    "notFound": {
+      "title": "Proyecto no encontrado",
+      "description": "El proyecto \"{slug}\" no existe o ha sido movido.",
+      "action": "Explorar otros proyectos",
+      "cta": {
+        "title": "¿Buscas algo en específico?",
+        "description": "Si tenías interés en algún desarrollo en particular, hablemos y te cuento más al respecto.",
+        "button": "Hablemos"
+      }
     }
   },
   "education": {
