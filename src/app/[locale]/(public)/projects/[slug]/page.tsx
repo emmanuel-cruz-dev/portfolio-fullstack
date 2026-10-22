@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
 import { getProjectBySlug } from "@/features/projects/services";
@@ -8,11 +8,13 @@ import {
 } from "@/features/projects";
 import { CtaSection, Locale } from "@/shared";
 
+type ProjectPageProps = {
+  params: Promise<{ locale: Locale; slug: string }>;
+};
+
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string; locale: Locale }>;
-}): Promise<Metadata> {
+}: ProjectPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
   const project = await getProjectBySlug(slug, locale);
 
@@ -21,6 +23,8 @@ export async function generateMetadata({
     return { title: t("notFound.title") };
   }
 
+  const image = project.images[0];
+
   return {
     title: project.title,
     description: project.description,
@@ -28,23 +32,22 @@ export async function generateMetadata({
       title: project.title,
       description: project.description,
       type: "article",
-      images: project.images[0] ? [{ url: project.images[0] }] : undefined,
+      ...(image ? { images: [image] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
       description: project.description,
-      images: project.images[0] ? [project.images[0]] : undefined,
+      ...(image ? { images: [image] } : {}),
     },
   };
 }
 
-async function ProjectPage({
-  params,
-}: {
-  params: Promise<{ locale: Locale; slug: string }>;
-}) {
+async function ProjectPage({ params }: ProjectPageProps) {
   const { locale, slug } = await params;
+
+  setRequestLocale(locale);
+
   const project = await getProjectBySlug(slug, locale);
 
   if (!project) {
@@ -55,8 +58,6 @@ async function ProjectPage({
       </main>
     );
   }
-
-  setRequestLocale(locale);
 
   return <ProjectDetailsPlaceholder slug={slug} />;
 }
