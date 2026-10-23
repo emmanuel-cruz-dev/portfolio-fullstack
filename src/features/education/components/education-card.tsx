@@ -5,7 +5,6 @@ import { GraduationCap, Eye } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
 import {
-  Badge,
   Button,
   Card,
   CardContent,
@@ -20,18 +19,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components";
+import { type Locale, AreaBadge, BadgeList } from "@/shared";
 import { formatMonthYear } from "@/lib/utils/date.utils";
-import type { Locale } from "@/shared";
 import { Education } from "../types";
 
 export function EducationCard({ item }: { item: Education }) {
   const t = useTranslations("education.educationCard");
-  const tAreas = useTranslations("education.educationAreas");
-  const tTypes = useTranslations("education.educationTypes");
+  const tTypes = useTranslations("shared.enums.types");
   const locale = useLocale() as Locale;
 
   return (
-    <Card className="p-0 flex flex-col h-full overflow-hidden border-muted/60 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+    <Card className="p-0 flex flex-col h-full min-h-80 overflow-hidden border-muted/60 bg-sky-50/70 dark:bg-card backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
       <div className="flex-1 flex flex-col">
         <CardHeader className="pt-6 pb-3">
           <div className="flex items-start gap-4">
@@ -75,27 +73,18 @@ export function EducationCard({ item }: { item: Education }) {
           </div>
 
           {item.technologies && item.technologies.length > 0 && (
-            <div className="space-y-1.5">
-              <p className="text-[10px] font-bold text-muted-foreground/80 tracking-wide uppercase">
+            <div>
+              <p className="text-[10px] font-bold text-muted-foreground/80 tracking-wide uppercase mb-2">
                 {t("keyTechnologies")}
               </p>
-              <div className="flex flex-wrap gap-1.5">
-                {item.technologies.map((tech) => (
-                  <div
-                    key={tech}
-                    className="flex items-center bg-background border px-2 py-0.5 rounded text-xs font-medium text-foreground"
-                  >
-                    {tech}
-                  </div>
-                ))}
-              </div>
+              <BadgeList items={item.technologies} variant="outline" />
             </div>
           )}
         </CardContent>
       </div>
 
       {item.certificate_img && (
-        <CardFooter className="py-4! px-4 border-t border-muted/40 bg-muted/10 flex items-center justify-end text-xs">
+        <CardFooter className="py-4! px-4 border-t border-muted/40 bg-sky-100/50 dark:bg-muted/10 flex items-center justify-end text-xs">
           <Dialog>
             <DialogTrigger asChild>
               <Button
@@ -133,15 +122,7 @@ export function EducationCard({ item }: { item: Education }) {
                 </h4>
                 <div className="flex flex-wrap gap-1.5 justify-start sm:justify-end">
                   {item.areas.slice(0, 2).map((area, idx) => (
-                    <Badge
-                      key={idx}
-                      variant="secondary"
-                      className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5"
-                    >
-                      {tAreas.has(area)
-                        ? tAreas(area)
-                        : String(area).replace(/_/g, " ")}
-                    </Badge>
+                    <AreaBadge key={idx} area={area} variant="secondary" />
                   ))}
                 </div>
               </DialogFooter>
