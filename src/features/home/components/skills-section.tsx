@@ -1,9 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
-import {
-  getTechnologiesByCategory,
-  CategoryCard,
-} from "@/features/technologies";
+import { CategoryCard } from "@/features/technologies";
+import { getTechnologiesByCategory } from "@/features/technologies/services";
 import { SectionHeader } from "@/shared";
 import { CATEGORIES } from "../constants";
 
