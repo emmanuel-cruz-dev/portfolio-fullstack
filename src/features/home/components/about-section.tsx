@@ -9,7 +9,7 @@ import {
   fadeIn,
   fadeInFromLeft,
   fadeInFromRight,
-  StatusBadge,
+  AvailableStatusBadge,
   SectionHeader,
 } from "@/shared";
 import { Button, MagicCard } from "@/components";
@@ -30,7 +30,6 @@ export function AboutSection() {
             viewport={{ once: true, amount: 0.3 }}
             className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12 items-center"
           >
-            {/* Left Column */}
             <motion.div
               variants={fadeInFromLeft}
               className="flex flex-col items-center lg:items-start gap-10 lg:col-span-4 xl:col-span-3"
@@ -50,7 +49,7 @@ export function AboutSection() {
                 </div>
 
                 <div className="absolute -bottom-6 -right-6">
-                  <StatusBadge />
+                  <AvailableStatusBadge />
                 </div>
               </div>
 
@@ -70,7 +69,6 @@ export function AboutSection() {
               </Button>
             </motion.div>
 
-            {/* Right Column */}
             <motion.div
               variants={fadeInFromRight}
               className="flex flex-col gap-4 md:gap-6 lg:col-span-8 xl:col-span-9"
