@@ -88,27 +88,6 @@
       "title": "Projects",
       "description": "My projects"
     },
-    "types": {
-      "personal": "Personal",
-      "freelance": "Freelance",
-      "academic": "Academic",
-      "collaborative": "Collaborative",
-      "openSource": "Open Source"
-    },
-    "status": {
-      "completed": "Completed",
-      "inProgress": "In Progress",
-      "planned": "Planned",
-      "archived": "Archived"
-    },
-    "areas": {
-      "fullStack": "Full Stack",
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "mobile": "Mobile",
-      "devops": "DevOps",
-      "data": "Data"
-    },
     "card": {
       "github": "View source code",
       "demo": "View live demo",
@@ -162,24 +141,6 @@
       "educationAreas": "Education areas",
       "certificateAlt": "Certificate of {title}"
     },
-    "educationAreas": {
-      "FRONTEND": "Frontend",
-      "BACKEND": "Backend",
-      "FULL_STACK": "Full Stack",
-      "DATABASE": "Database",
-      "DEVOPS": "DevOps",
-      "SECURITY": "Security",
-      "QA": "QA",
-      "UX_UI": "UX/UI",
-      "SOFTWARE_ENGINEERING": "Software Engineering",
-      "FUNCTIONAL_ANALYST": "Functional Analyst"
-    },
-    "educationTypes": {
-      "COURSE": "Course",
-      "BOOTCAMP": "Bootcamp",
-      "CERTIFICATE": "Certificate",
-      "DEGREE": "Degree"
-    },
     "sidebar": {
       "title": "Filters",
       "typeLabel": "Education Type",
@@ -213,13 +174,6 @@
       "github": "View source code",
       "demo": "View live demo",
       "viewDetails": "View details"
-    },
-    "experienceTypes": {
-      "EMPLOYMENT": "Employment",
-      "FREELANCE": "Freelance",
-      "INTERNSHIP": "Internship",
-      "VOLUNTEER": "Volunteer",
-      "ACADEMIC": "Academic"
     }
   },
   "contact": {
@@ -274,6 +228,42 @@
     }
   },
   "shared": {
+    "enums": {
+      "types": {
+        "PERSONAL": "Personal",
+        "FREELANCE": "Freelance",
+        "ACADEMIC": "Academic",
+        "COLLABORATIVE": "Collaborative",
+        "OPEN_SOURCE": "Open Source",
+        "EMPLOYMENT": "Employment",
+        "INTERNSHIP": "Internship",
+        "VOLUNTEER": "Volunteer",
+        "COURSE": "Course",
+        "BOOTCAMP": "Bootcamp",
+        "CERTIFICATE": "Certificate",
+        "DEGREE": "Degree"
+      },
+      "status": {
+        "COMPLETED": "Completed",
+        "IN_PROGRESS": "In Progress",
+        "PLANNED": "Planned",
+        "ARCHIVED": "Archived"
+      },
+      "areas": {
+        "FULL_STACK": "Full Stack",
+        "FRONTEND": "Frontend",
+        "BACKEND": "Backend",
+        "MOBILE": "Mobile",
+        "DEVOPS": "DevOps",
+        "DATA": "Data",
+        "DATABASE": "Database",
+        "SECURITY": "Security",
+        "QA": "QA",
+        "UX_UI": "UX/UI",
+        "SOFTWARE_ENGINEERING": "Software Engineering",
+        "FUNCTIONAL_ANALYST": "Functional Analyst"
+      }
+    },
     "nav": {
       "home": "Home",
       "projects": "Projects",
