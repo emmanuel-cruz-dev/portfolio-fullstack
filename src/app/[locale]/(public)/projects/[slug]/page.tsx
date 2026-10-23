@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
-import { getProjectBySlug } from "@/features/projects/services";
+import {
+  getProjectBySlug,
+  getProjectSlugs,
+} from "@/features/projects/services";
+import { routing } from "@/i18n/routing";
 import { ProjectDetails, ProjectNotFound } from "@/features/projects";
 import { CtaSection, Locale } from "@/shared";
 
 type ProjectPageProps = {
   params: Promise<{ locale: Locale; slug: string }>;
 };
+
+export async function generateStaticParams() {
+  const slugs = await getProjectSlugs();
+
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
+}
 
 export async function generateMetadata({
   params,
@@ -40,7 +53,7 @@ export async function generateMetadata({
   };
 }
 
-async function ProjectPage({ params }: ProjectPageProps) {
+async function ProjectContent({ params }: ProjectPageProps) {
   const { locale, slug } = await params;
 
   setRequestLocale(locale);
@@ -60,6 +73,14 @@ async function ProjectPage({ params }: ProjectPageProps) {
     <main className="section-gradient-c">
       <ProjectDetails project={project} />
     </main>
+  );
+}
+
+async function ProjectPage({ params }: ProjectPageProps) {
+  return (
+    <Suspense fallback={null}>
+      <ProjectContent params={params} />
+    </Suspense>
   );
 }
 
