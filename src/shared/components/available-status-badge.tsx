@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 
 import { ShimmerButton } from "@/components";
 
-export function StatusBadge() {
+export function AvailableStatusBadge() {
   const t = useTranslations("shared.components.statusBadge");
 
   return (
