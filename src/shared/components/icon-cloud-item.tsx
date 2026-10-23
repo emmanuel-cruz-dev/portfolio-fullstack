@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
 import { IconCloud } from "@/components";
-import { getCloudTechnologies } from "@/features/technologies";
+import { getCloudTechnologies } from "@/features/technologies/services";
 import { renderDevicon } from "@/features/technologies/components/render-devicon";
 
 export async function IconCloudItem() {
