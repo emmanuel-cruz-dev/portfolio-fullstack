@@ -59,3 +59,32 @@ export async function getExperienceSlugs(): Promise<string[]> {
 
   return (data ?? []).map((row) => row.slug);
 }
+
+export async function getExperienceBySlug(
+  slug: string,
+  locale: Locale
+): Promise<Experience | null> {
+  "use cache";
+  cacheLife("hours");
+  cacheTag("experience", "experience-details");
+
+  const supabase = createStaticClient();
+
+  const { data: experience, error } = await supabase
+    .from("experience")
+    .select("*")
+    .eq("slug", slug)
+    .eq("is_active", true)
+    .single();
+
+  if (error) {
+    console.error("[getExperienceBySlug] Supabase error:", error.message);
+    return null;
+  }
+
+  if (!experience) {
+    return null;
+  }
+
+  return localizeExperience(experience as unknown as ExperienceRaw, locale);
+}
