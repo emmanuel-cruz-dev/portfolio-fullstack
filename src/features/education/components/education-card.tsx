@@ -19,13 +19,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components";
-import { type Locale, AreaBadge, BadgeList } from "@/shared";
+import { type Locale, BadgeList, useEnumLabels } from "@/shared";
 import { formatMonthYear } from "@/lib/utils/date.utils";
 import { Education } from "../types";
 
 export function EducationCard({ item }: { item: Education }) {
   const t = useTranslations("education.educationCard");
   const tTypes = useTranslations("shared.enums.types");
+  const labels = useEnumLabels();
   const locale = useLocale() as Locale;
 
   return (
@@ -120,11 +121,12 @@ export function EducationCard({ item }: { item: Education }) {
                 <h4 className="text-xs font-semibold text-muted-foreground tracking-wide uppercase">
                   {t("educationAreas")}
                 </h4>
-                <div className="flex flex-wrap gap-1.5 justify-start sm:justify-end">
-                  {item.areas.slice(0, 2).map((area, idx) => (
-                    <AreaBadge key={idx} area={area} variant="secondary" />
-                  ))}
-                </div>
+                <BadgeList
+                  items={item.areas}
+                  max={3}
+                  variant="secondary"
+                  format={labels.area}
+                />
               </DialogFooter>
             </DialogContent>
           </Dialog>
