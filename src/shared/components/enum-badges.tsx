@@ -52,29 +52,6 @@ export function TypeBadge({
   );
 }
 
-interface AreaBadgeProps {
-  area:
-    | Enums<"project_area">
-    | Enums<"education_area">
-    | Enums<"experience_area">;
-  variant?: "default" | "secondary" | "outline" | "destructive";
-  className?: string;
-}
-
-export function AreaBadge({
-  area,
-  variant = "secondary",
-  className,
-}: AreaBadgeProps) {
-  const labels = useEnumLabels();
-
-  return (
-    <Badge variant={variant} className={className}>
-      {labels.area(area)}
-    </Badge>
-  );
-}
-
 interface BadgeListProps {
   items: string[];
   max?: number;
