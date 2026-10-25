@@ -20,3 +20,14 @@ export function formatMonthYear(
 
   return raw.charAt(0).toUpperCase() + raw.slice(1);
 }
+
+export function formatDateRange(
+  start: string,
+  end: string | null | undefined,
+  presentLabel: string,
+  locale: Locale
+) {
+  const from = formatMonthYear(new Date(start), locale);
+  const to = end ? formatMonthYear(new Date(end), locale) : presentLabel;
+  return `${from} - ${to}`;
+}
