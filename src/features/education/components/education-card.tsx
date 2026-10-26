@@ -1,17 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { GraduationCap, Eye } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { GraduationCap, Eye, Calendar } from "lucide-react";
 
 import {
   Button,
-  Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
-  CardTitle,
   Dialog,
   DialogContent,
   DialogFooter,
@@ -19,8 +15,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components";
-import { type Locale, BadgeList, useEnumLabels } from "@/shared";
-import { formatMonthYear } from "@/lib/utils/date.utils";
+import {
+  BadgeList,
+  ContentCard,
+  ContentCardFooter,
+  LogoAvatar,
+  useEnumLabels,
+  type Locale,
+} from "@/shared";
+import { formatDateRange } from "@/lib/utils/date.utils";
 import { Education } from "../types";
 
 export function EducationCard({ item }: { item: Education }) {
@@ -30,62 +33,56 @@ export function EducationCard({ item }: { item: Education }) {
   const locale = useLocale() as Locale;
 
   return (
-    <Card className="p-0 flex flex-col h-full min-h-80 overflow-hidden border-muted/60 bg-sky-50/70 dark:bg-card backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
-      <div className="flex-1 flex flex-col">
-        <CardHeader className="pt-6 pb-3">
-          <div className="flex items-start gap-4">
-            <div className="relative h-12 w-12 shrink-0 rounded-lg overflow-hidden border bg-muted flex items-center justify-center">
-              {item.logo ? (
-                <Image
-                  src={item.logo}
-                  alt={item.institution}
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <GraduationCap className="h-6 w-6 text-muted-foreground" />
-              )}
-            </div>
-
-            <div className="space-y-1">
-              <CardTitle className="text-base sm:text-lg line-clamp-2 font-bold leading-snug text-foreground">
-                {item.institution}
-              </CardTitle>
-              <CardDescription className="text-xs font-medium text-primary/80">
-                {formatMonthYear(new Date(item.start_date), locale)}
-                {" - "}
-                {item.end_date
-                  ? formatMonthYear(new Date(item.end_date), locale)
-                  : t("present")}
-              </CardDescription>
-            </div>
-          </div>
-        </CardHeader>
-
-        <CardContent className="p-5 pt-0 pb-4 flex-1 space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h3 className="text-foreground text-base font-semibold leading-snug mb-1.5">
+    <ContentCard>
+      <CardHeader className="pt-6 pb-3">
+        <div className="flex items-start gap-4">
+          <LogoAvatar
+            src={item.logo}
+            alt={item.institution}
+            Fallback={GraduationCap}
+          />
+          <div className="min-w-0 space-y-1">
+            <h3 className="line-clamp-2 text-base font-bold leading-snug sm:text-lg">
               {item.title}
             </h3>
-            <p className="line-clamp-3 leading-relaxed text-muted-foreground/90">
-              {item.description}
+            <p className="text-sm font-medium text-primary/60 dark:text-primary/80">
+              {item.institution}
             </p>
           </div>
+        </div>
+      </CardHeader>
 
-          {item.technologies && item.technologies.length > 0 && (
-            <div>
-              <p className="text-[10px] font-bold text-muted-foreground/80 tracking-wide uppercase mb-2">
-                {t("keyTechnologies")}
-              </p>
-              <BadgeList items={item.technologies} variant="outline" />
-            </div>
-          )}
-        </CardContent>
-      </div>
+      <CardContent className="flex-1 space-y-4 pb-6">
+        <div className="space-y-2">
+          <time
+            dateTime={item.start_date}
+            className="flex items-center gap-2 text-sm font-semibold text-primary"
+          >
+            <Calendar className="size-4" />
+            {formatDateRange(
+              item.start_date,
+              item.end_date,
+              t("present"),
+              locale
+            )}
+          </time>
+          <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+            {item.description}
+          </p>
+        </div>
+
+        {item.technologies?.length > 0 && (
+          <div className="space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              {t("keyTechnologies")}
+            </p>
+            <BadgeList items={item.technologies} max={8} variant="outline" />
+          </div>
+        )}
+      </CardContent>
 
       {item.certificate_img && (
-        <CardFooter className="py-4! px-4 border-t border-muted/40 bg-sky-100/50 dark:bg-muted/10 flex items-center justify-end text-xs">
+        <ContentCardFooter className="justify-end">
           <Dialog>
             <DialogTrigger asChild>
               <Button
@@ -93,12 +90,11 @@ export function EducationCard({ item }: { item: Education }) {
                 size="sm"
                 className="h-8 gap-1.5 text-xs font-medium cursor-pointer"
               >
-                <Eye className="h-3.5 w-3.5" />
+                <Eye className="size-3.5" />
                 {t("viewCertificate")}
               </Button>
             </DialogTrigger>
-
-            <DialogContent className="max-w-[95vw] sm:max-w-150 max-h-[90vh] p-5 sm:p-6">
+            <DialogContent className="max-w-[95vw] sm:max-w-150 max-h-[90vh] p-5 sm:p-6 bg-sky-50 dark:bg-card">
               <DialogHeader>
                 <DialogTitle className="text-base sm:text-lg font-semibold line-clamp-2">
                   {item.title} |{" "}
@@ -130,8 +126,8 @@ export function EducationCard({ item }: { item: Education }) {
               </DialogFooter>
             </DialogContent>
           </Dialog>
-        </CardFooter>
+        </ContentCardFooter>
       )}
-    </Card>
+    </ContentCard>
   );
 }
