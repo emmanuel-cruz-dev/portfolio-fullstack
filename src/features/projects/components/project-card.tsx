@@ -1,53 +1,57 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight, FolderGit2 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
+import { CardContent } from "@/components";
 import {
-  Button,
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  GithubIcon,
-} from "@/components";
-import { StatusBadge, TypeBadge, BadgeList, useEnumLabels } from "@/shared";
+  BadgeList,
+  CardLinks,
+  ContentCard,
+  ContentCardFooter,
+  StatusBadge,
+  TypeBadge,
+  useEnumLabels,
+} from "@/shared";
 import { Project } from "../types";
 
 export function ProjectCard({ item }: { item: Project }) {
   const t = useTranslations("projects");
   const labels = useEnumLabels();
+  const cover = item.images?.[0];
 
   return (
-    <article className="group relative rounded-xl border border-border bg-sky-50/70 dark:bg-card hover:shadow-lg transition-all duration-300 overflow-hidden h-full flex flex-col">
-      <Link
-        href={`/projects/${item.slug}`}
-        className="block relative w-full aspect-video overflow-hidden bg-muted"
-        aria-label="View project details"
-        title={t("card.viewDetails")}
-      >
-        <Image
-          src={item.images[0]}
-          alt={item.title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          sizes="(min-width: 768px) 480px, 100vw"
-        />
+    <ContentCard className="group has-[h3_a:focus-visible]:ring-2 has-[h3_a:focus-visible]:ring-ring/50">
+      <div className="relative aspect-video overflow-hidden bg-muted">
+        {cover ? (
+          <Image
+            src={cover}
+            alt={item.title}
+            fill
+            sizes="(min-width: 768px) 480px, 100vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="grid h-full place-items-center">
+            <FolderGit2 className="size-10 text-muted-foreground/50" />
+          </div>
+        )}
         <StatusBadge status={item.status} className="absolute top-3 right-3" />
-      </Link>
+      </div>
 
-      <div className="p-6 space-y-3 flex-1 flex flex-col">
+      <CardContent className="flex flex-1 flex-col gap-3 p-6">
         <TypeBadge type={item.type} />
 
-        <Link
-          href={`/projects/${item.slug}`}
-          className="hover:text-primary transition-colors"
-          aria-label="View project details"
-          title={t("card.viewDetails")}
-        >
-          <h3 className="text-lg font-bold tracking-tight">{item.title}</h3>
-        </Link>
+        <h3 className="text-lg font-bold leading-snug tracking-tight">
+          <Link
+            href={`/projects/${item.slug}`}
+            className="outline-none transition-colors after:absolute after:inset-0 group-hover:text-primary"
+          >
+            {item.title}
+          </Link>
+        </h3>
 
-        <p className="text-left text-sm text-muted-foreground line-clamp-3">
+        <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
           {item.description}
         </p>
 
@@ -57,56 +61,21 @@ export function ProjectCard({ item }: { item: Project }) {
           variant="secondary"
           format={labels.area}
         />
-
         <BadgeList items={item.technologies} max={8} variant="outline" />
+      </CardContent>
 
-        <div className="flex items-center justify-between pt-2 border-t border-border/40">
-          <div className="flex gap-3">
-            {item.github_url && (
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    href={item.github_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <GithubIcon className="h-5 w-5" />
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent side="bottom">
-                  <p>{t("card.github")}</p>
-                </TooltipContent>
-              </Tooltip>
-            )}
-            {item.demo_url && (
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    href={item.demo_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label="Demo"
-                  >
-                    <ExternalLink className="h-5 w-5" />
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent side="bottom">
-                  <p>{t("card.demo")}</p>
-                </TooltipContent>
-              </Tooltip>
-            )}
-          </div>
-          <Button asChild variant="ghost" size="sm" className="group/button">
-            <Link href={`/projects/${item.slug}`}>
-              {t("card.viewDetails")}
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/button:translate-x-0.5" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </article>
+      <ContentCardFooter>
+        <CardLinks
+          githubUrl={item.github_url}
+          demoUrl={item.demo_url}
+          githubLabel={t("card.github")}
+          demoLabel={t("card.demo")}
+        />
+        <span className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors group-hover:text-foreground">
+          {t("card.viewDetails")}
+          <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+        </span>
+      </ContentCardFooter>
+    </ContentCard>
   );
 }
