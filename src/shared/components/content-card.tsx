@@ -10,7 +10,7 @@ export function ContentCard({
   return (
     <Card
       className={cn(
-        "relative h-full gap-0 overflow-hidden py-0",
+        "relative h-full min-h-80 gap-0 overflow-hidden py-0",
         "border-border/60 bg-sky-50/70 dark:bg-card",
         "transition-[box-shadow,border-color] duration-300",
         "hover:border-primary/20 hover:shadow-md",
