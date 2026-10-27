@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 
@@ -87,7 +87,7 @@ export function Navbar() {
           <div className="hidden items-center gap-2 md:flex">
             <LanguageSwitcher />
             <div>
-              <Button asChild className="btn-brand-cta">
+              <Button asChild className="btn-brand-cta px-5">
                 <Link href="/contact">{t("contact")}</Link>
               </Button>
             </div>
