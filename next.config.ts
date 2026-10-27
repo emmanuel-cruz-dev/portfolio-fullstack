@@ -1,14 +1,16 @@
-import { NextConfig } from "next";
+import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
+  partialPrefetching: true,
+
   experimental: {
-    rootParams: true,
     staleTimes: {
       dynamic: 30,
     },
   },
+
   images: {
     remotePatterns: [
       {
@@ -24,4 +26,5 @@ const nextConfig: NextConfig = {
 };
 
 const withNextIntl = createNextIntlPlugin();
+
 export default withNextIntl(nextConfig);
