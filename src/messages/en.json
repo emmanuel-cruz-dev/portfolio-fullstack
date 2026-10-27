@@ -58,12 +58,12 @@
     "featuredEducation": {
       "title": "Featured Training",
       "subtitle": "A selection of my most relevant certifications, bootcamps, and courses in software development",
-      "actionLabel": "View my certifications"
+      "actionLabel": "View all education"
     },
     "featuredExperience": {
       "title": "Experience in projects",
       "subtitle": "Participation in multidisciplinary teams under agile methodologies, with a focus on code quality and good practices.",
-      "actionLabel": "View more"
+      "actionLabel": "View all experience"
     },
     "featuredProjects": {
       "title": "Personal projects",

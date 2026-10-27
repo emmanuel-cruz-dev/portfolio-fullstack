@@ -58,12 +58,12 @@
     "featuredEducation": {
       "title": "Formación destacada",
       "subtitle": "Una selección de mis certificaciones, bootcamps y cursos más relevantes en el desarrollo de software.",
-      "actionLabel": "Ver mis certificaciones"
+      "actionLabel": "Ver toda mi formación"
     },
     "featuredExperience": {
       "title": "Experiencia en proyectos",
       "subtitle": "Participación en equipos multidisciplinarios bajo metodologías ágiles, con foco en calidad de código y buenas prácticas.",
-      "actionLabel": "Ver más"
+      "actionLabel": "Ver toda mi experiencia"
     },
     "featuredProjects": {
       "title": "Proyectos personales",
