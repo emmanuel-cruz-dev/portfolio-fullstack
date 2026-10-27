@@ -50,12 +50,16 @@ export function FeaturedSection<T extends { id: string | number }>({
         </ItemsCarousel>
 
         {href && (
-          <div className="text-center">
-            <Link href={href}>
-              <Button variant="outline" size="lg" className="cursor-pointer">
+          <div className="flex justify-center">
+            <Button
+              asChild
+              variant="outline"
+              className="cursor-pointer shadow-sm px-12! xl:px-16! h-12 font-bold w-full xs:w-fit"
+            >
+              <Link href={href}>
                 {actionLabel} <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         )}
       </div>
