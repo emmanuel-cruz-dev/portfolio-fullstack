@@ -46,7 +46,10 @@ export function TypeBadge({
   const labels = useEnumLabels();
 
   return (
-    <Badge variant={variant} className={className}>
+    <Badge
+      variant={variant}
+      className={cn("bg-white dark:bg-secondary/30", className)}
+    >
       {labels.type(type)}
     </Badge>
   );
