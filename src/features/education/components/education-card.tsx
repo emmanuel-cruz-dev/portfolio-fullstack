@@ -73,7 +73,7 @@ export function EducationCard({ item }: { item: Education }) {
 
         {item.technologies?.length > 0 && (
           <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
               {t("keyTechnologies")}
             </p>
             <BadgeList items={item.technologies} max={8} variant="outline" />
