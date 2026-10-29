@@ -1,3 +1,4 @@
+import { ViewTransition } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight, FolderGit2 } from "lucide-react";
@@ -24,13 +25,15 @@ export function ProjectCard({ item }: { item: Project }) {
     <ContentCard className="group has-[h3_a:focus-visible]:ring-2 has-[h3_a:focus-visible]:ring-ring/50">
       <div className="relative aspect-video overflow-hidden bg-muted">
         {cover ? (
-          <Image
-            src={cover}
-            alt={item.title}
-            fill
-            sizes="(min-width: 768px) 480px, 100vw"
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-          />
+          <ViewTransition name={`image-${item.id}`}>
+            <Image
+              src={cover}
+              alt={item.title}
+              fill
+              sizes="(min-width: 768px) 480px, 100vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </ViewTransition>
         ) : (
           <div className="grid h-full place-items-center">
             <FolderGit2 className="size-10 text-muted-foreground/50" />
