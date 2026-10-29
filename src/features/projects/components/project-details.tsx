@@ -7,14 +7,12 @@ import {
   ExternalLink,
   ListChecks,
   Calendar,
-  ArrowLeft,
   Zap,
   Star,
   LinkIcon,
   Puzzle,
 } from "lucide-react";
 
-import { Link } from "@/i18n/navigation";
 import { Badge, Button, MagicCard, Separator, GithubIcon } from "@/components";
 import {
   StatusBadge,
@@ -22,12 +20,12 @@ import {
   BadgeList,
   useEnumLabels,
   type Locale,
-  fadeIn,
   staggerContainer,
   staggerItem,
 } from "@/shared";
 import { formatMonthYear } from "@/lib/utils/date.utils";
 import { Project } from "../types";
+import { ViewTransition } from "react";
 
 export function ProjectDetails({ project }: { project: Project }) {
   const locale = useLocale() as Locale;
@@ -47,55 +45,11 @@ export function ProjectDetails({ project }: { project: Project }) {
   return (
     <article className="max-w-6xl mx-auto py-10 md:py-14 px-4 xl:px-0">
       <motion.div
-        variants={fadeIn}
-        custom={0}
-        initial="hidden"
-        animate="visible"
-        className="mb-8"
-      >
-        <Button
-          asChild
-          variant="ghost"
-          size="sm"
-          className="group text-muted-foreground hover:text-foreground cursor-pointer"
-        >
-          <Link href="/projects">
-            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            {t("details.goToProjects")}
-          </Link>
-        </Button>
-      </motion.div>
-
-      <motion.div
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
         className="space-y-12"
       >
-        <motion.header variants={staggerItem} className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <TypeBadge type={project.type} />
-            <BadgeList
-              items={project.areas}
-              variant="secondary"
-              format={labels.area}
-            />
-            <StatusBadge status={project.status} />
-            {project.featured && (
-              <Badge
-                variant="secondary"
-                className="flex items-center gap-1 text-sky-700 dark:text-brand-accent border-sky-700 dark:border-brand-accent/50"
-              >
-                <Star className="h-3 w-3 fill-current" />
-                {t("details.featured")}
-              </Badge>
-            )}
-          </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight lg:max-w-4xl">
-            {project.title}
-          </h1>
-        </motion.header>
-
         <motion.section
           variants={staggerItem}
           aria-label={t("details.screenshots")}
@@ -106,18 +60,20 @@ export function ProjectDetails({ project }: { project: Project }) {
               hasSide ? "lg:col-span-2" : "lg:col-span-3"
             }`}
           >
-            <Image
-              src={mainImage}
-              alt={project.title}
-              fill
-              className="object-cover"
-              sizes={
-                hasSide
-                  ? "(min-width: 1024px) 66vw, 100vw"
-                  : "(min-width: 1152px) 1152px, 100vw"
-              }
-              priority
-            />
+            <ViewTransition name={`image-${project.id}`}>
+              <Image
+                src={mainImage}
+                alt={project.title}
+                fill
+                className="object-cover"
+                sizes={
+                  hasSide
+                    ? "(min-width: 1024px) 66vw, 100vw"
+                    : "(min-width: 1152px) 1152px, 100vw"
+                }
+                priority
+              />
+            </ViewTransition>
           </div>
 
           {hasSide && (
@@ -150,6 +106,29 @@ export function ProjectDetails({ project }: { project: Project }) {
           className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-10 lg:gap-6 items-start"
         >
           <div className="md:col-span-3 lg:col-span-2 space-y-10">
+            <header className="space-y-4">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <TypeBadge type={project.type} />
+                <BadgeList
+                  items={project.areas}
+                  variant="secondary"
+                  format={labels.area}
+                />
+                <StatusBadge status={project.status} />
+                {project.featured && (
+                  <Badge
+                    variant="secondary"
+                    className="flex items-center gap-1 text-sky-700 dark:text-brand-accent border-sky-700 dark:border-brand-accent/50"
+                  >
+                    <Star className="h-3 w-3 fill-current" />
+                    {t("details.featured")}
+                  </Badge>
+                )}
+              </div>
+              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight lg:max-w-4xl">
+                {project.title}
+              </h1>
+            </header>
             <section className="space-y-3">
               <h2 className="text-2xl font-bold tracking-tight">
                 {t("details.about")}
