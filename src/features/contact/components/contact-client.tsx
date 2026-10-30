@@ -20,9 +20,9 @@ export function ContactClient() {
       />
 
       <div className="section-gradient-b px-4 xl:px-0 pb-10">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-5 items-start">
           <motion.div
-            className="lg:col-span-5 lg:sticky lg:top-24"
+            className="lg:sticky lg:top-24"
             variants={fadeInUp}
             custom={0}
             initial="hidden"
@@ -33,7 +33,6 @@ export function ContactClient() {
           </motion.div>
 
           <motion.div
-            className="lg:col-span-7"
             variants={fadeInUp}
             custom={0.15}
             initial="hidden"
