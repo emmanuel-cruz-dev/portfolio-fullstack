@@ -28,7 +28,7 @@ export function ContactInformation() {
     <article className="flex flex-col gap-8">
       <header>
         <h3 className="text-2xl font-bold mb-3 tracking-tight">{t("title")}</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
+        <p className="text-muted-foreground text-sm leading-relaxed max-w-sm lg:max-w-lg">
           {t("subtitle")}
         </p>
       </header>

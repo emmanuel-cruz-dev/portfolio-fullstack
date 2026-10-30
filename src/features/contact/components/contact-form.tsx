@@ -69,9 +69,9 @@ export function ContactForm() {
     "bg-gray-100 border dark:bg-white/5 dark:border-white/10 text-foreground placeholder:text-muted-foreground/50 focus-visible:ring-brand-accent/30 focus-visible:border-brand-accent transition-all duration-200 rounded-md";
 
   return (
-    <MagicCard className="rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl">
+    <MagicCard className="rounded-3xl p-6 backdrop-blur-sm shadow-2xl">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <FieldGroup className="gap-6">
+        <FieldGroup className="gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <Controller
               name="name"
@@ -200,7 +200,7 @@ export function ContactForm() {
           <Button
             type="submit"
             disabled={status === "loading" || status === "rate_limited"}
-            className="w-full h-12 bg-brand-accent dark:hover:brightness-110 disabled:opacity-40 text-black hover:text-white dark:hover:text-black font-bold rounded-md flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.15)] dark:hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] active:scale-[0.98] cursor-pointer"
+            className="mt-2 w-full h-12 bg-brand-accent dark:hover:brightness-110 disabled:opacity-40 text-black hover:text-white dark:hover:text-black font-bold rounded-md flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.15)] dark:hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] active:scale-[0.98] cursor-pointer"
           >
             {status === "loading" ? (
               <>
