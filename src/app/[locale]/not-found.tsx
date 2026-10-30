@@ -30,8 +30,7 @@ async function NotFound() {
           {t("description")}
         </p>
 
-        <div className="flex justify-center gap-4">
-          <BackButton />
+        <div className="flex justify-center gap-4 w-fit mx-auto">
           <Button
             asChild
             className="btn-brand-cta h-12 w-full xs:w-fit xs:px-12 xl:px-16!"
@@ -41,6 +40,7 @@ async function NotFound() {
               {t("action")}
             </Link>
           </Button>
+          <BackButton />
         </div>
 
         <footer className="pt-8 border-t border-border/60">
