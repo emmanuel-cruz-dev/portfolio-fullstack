@@ -36,8 +36,8 @@
       "title": "Hola! Soy Emmanuel",
       "subtitle": "Desarrollador Fullstack",
       "description": "Especializado en la creación de aplicaciones web modernas y de alto rendimiento. Creo productos digitales escalables con interfaces responsivas, arquitectura limpia y sistemas backend listos para producción.",
-      "actionLabelPrimary": "Ver experiencia",
-      "actionLabelSecondary": "Contactame"
+      "actionLabelPrimary": "Contactame",
+      "actionLabelSecondary": "Ver experiencia"
     },
     "aboutSection": {
       "title": "Sobre mí",
