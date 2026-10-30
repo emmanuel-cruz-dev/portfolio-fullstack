@@ -27,7 +27,7 @@ export function PageHeader({
       </motion.p>
 
       <motion.h2
-        className="lg:w-11/12 text-3xl sm:text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight"
+        className="lg:w-11/12 text-3xl sm:text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight mx-auto"
         variants={fadeInUp}
         custom={0.1}
         initial="hidden"
