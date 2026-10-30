@@ -45,16 +45,16 @@ export function HeroHome({ iconCloud }: { iconCloud: React.ReactNode }) {
             <div className="flex flex-col gap-4 xl:gap-6 xs:flex-row w-full xs:w-fit">
               <Button
                 asChild
-                variant={"outline"}
-                className="cursor-pointer shadow-sm px-12! xl:px-16! h-12 font-bold"
+                className="btn-brand-cta h-12 w-full xs:w-fit xs:px-12 xl:px-16"
               >
-                <Link href="/experience">{t("actionLabelPrimary")}</Link>
+                <Link href="/contact">{t("actionLabelPrimary")}</Link>
               </Button>
               <Button
                 asChild
-                className="btn-brand-cta h-12 w-full xs:w-fit xs:px-12 xl:px-16"
+                variant={"outline"}
+                className="cursor-pointer shadow-sm px-12! xl:px-16! h-12 font-bold"
               >
-                <Link href="/contact">{t("actionLabelSecondary")}</Link>
+                <Link href="/experience">{t("actionLabelSecondary")}</Link>
               </Button>
             </div>
           </motion.div>
