@@ -19,7 +19,7 @@ import {
   FieldGroup,
   MagicCard,
 } from "@/components";
-import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "@/constants";
+import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "../constants";
 import { ContactFormValues, getContactSchema } from "../schemas";
 
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
