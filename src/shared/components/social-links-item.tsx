@@ -13,7 +13,7 @@ import {
   Dock,
   DockIcon,
 } from "@/components";
-import { EMAIL, CONTACT_DATA } from "@/constants";
+import { EMAIL, CONTACT_DATA } from "@/features/contact";
 
 const iconClass = cn(
   buttonVariants({ variant: "ghost", size: "icon" }),

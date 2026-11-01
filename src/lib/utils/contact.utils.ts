@@ -1,4 +1,4 @@
-import { RATE_LIMIT_KEY, MAX_PER_DAY } from "@/constants";
+import { RATE_LIMIT_KEY, MAX_PER_DAY } from "@/features/contact";
 
 export function checkRateLimit(): boolean {
   if (typeof window === "undefined") return true;
