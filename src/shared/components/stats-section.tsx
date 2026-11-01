@@ -1,6 +1,13 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { NumberTicker } from "@/components";
+import {
+  getEstimatedCommits,
+  getExperienceYears,
+} from "@/lib/utils/stats.utils";
 import { cn } from "@/lib";
 
 interface Stat {
@@ -11,12 +18,25 @@ interface Stat {
 
 export function StatsSection({ className }: { className?: string }) {
   const t = useTranslations("shared.statsSection");
+  const [now, setNow] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setNow(new Date());
+  }, []);
 
   const stats: Stat[] = [
-    { prefix: "+", value: 2, label: t("experience") },
+    {
+      prefix: "+",
+      value: now ? getExperienceYears(now) : 0,
+      label: t("experience"),
+    },
     { prefix: "+", value: 60, label: t("certifications") },
     { prefix: "+", value: 15, label: t("projects") },
-    { prefix: "+", value: 8500, label: t("commits") },
+    {
+      prefix: "+",
+      value: now ? getEstimatedCommits(now) : 0,
+      label: t("commits"),
+    },
   ];
 
   return (
