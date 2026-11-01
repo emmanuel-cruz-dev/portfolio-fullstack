@@ -20,7 +20,6 @@ export * from "./label";
 export * from "./magic-card";
 export * from "./navigation-menu";
 export * from "./number-ticker";
-export * from "./orbiting-circles";
 export * from "./pagination";
 export * from "./separator";
 export * from "./scroll-progress";
