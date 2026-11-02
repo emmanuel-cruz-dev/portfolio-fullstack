@@ -1,5 +1,5 @@
-import { getPageMetadata } from "@/lib/utils/metadata";
 import { ProjectsContent } from "@/features/projects";
+import { getPageMetadata } from "@/lib";
 
 export async function generateMetadata({
   params,

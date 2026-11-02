@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 
-import { getPageMetadata } from "@/lib/utils/metadata";
 import { ContactClient } from "@/features/contact";
+import { getPageMetadata } from "@/lib";
 
 export async function generateMetadata({
   params,

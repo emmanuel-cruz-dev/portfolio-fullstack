@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 
 import { LoginForm } from "@/features/auth";
-import { getPageMetadata } from "@/lib/utils/metadata";
+import { getPageMetadata } from "@/lib";
 
 export async function generateMetadata({
   params,
