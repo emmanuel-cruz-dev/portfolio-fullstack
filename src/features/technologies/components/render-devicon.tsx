@@ -1,4 +1,4 @@
-import { getDevicon } from "@/lib/utils/icon.utils";
+import { getDevicon } from "@/lib";
 
 export function renderDevicon(
   name: string,

@@ -1,14 +1,13 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { AlertCircle, Send } from "lucide-react";
 
-import { checkRateLimit, incrementRateLimit } from "@/lib/utils/contact.utils";
 import {
   Button,
   Input,
@@ -19,6 +18,7 @@ import {
   FieldGroup,
   MagicCard,
 } from "@/components";
+import { checkRateLimit, incrementRateLimit } from "@/lib";
 import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, MAX_PER_DAY } from "../constants";
 import { ContactFormValues, getContactSchema } from "../schemas";
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { ViewTransition } from "react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "motion/react";
@@ -23,9 +24,8 @@ import {
   staggerContainer,
   staggerItem,
 } from "@/shared";
-import { formatMonthYear } from "@/lib/utils/date.utils";
+import { formatMonthYear } from "@/lib";
 import { Project } from "../types";
-import { ViewTransition } from "react";
 
 export function ProjectDetails({ project }: { project: Project }) {
   const locale = useLocale() as Locale;

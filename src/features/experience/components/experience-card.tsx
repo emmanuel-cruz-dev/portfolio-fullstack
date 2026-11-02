@@ -12,7 +12,7 @@ import {
   TypeBadge,
   type Locale,
 } from "@/shared";
-import { formatDateRange } from "@/lib/utils/date.utils";
+import { formatDateRange } from "@/lib";
 import { Experience } from "../types";
 
 export function ExperienceCard({ item }: { item: Experience }) {

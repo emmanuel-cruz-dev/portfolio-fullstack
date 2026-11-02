@@ -23,7 +23,7 @@ import {
   useEnumLabels,
   type Locale,
 } from "@/shared";
-import { formatDateRange } from "@/lib/utils/date.utils";
+import { formatDateRange } from "@/lib";
 import { Education } from "../types";
 
 export function EducationCard({ item }: { item: Education }) {
