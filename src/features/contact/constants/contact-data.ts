@@ -11,7 +11,7 @@ export const EMAIL = "emmanuelgerr@gmail.com";
 export const CONTACT_DATA = {
   actions: [
     {
-      href: "/CV - Emmanuel Cruz (fullstack).pdf",
+      href: "/CV - Emmanuel Cruz (Full Stack).pdf",
       icon: FaRegFileAlt,
       label: "downloadCurriculum",
       type: "link" as const,
