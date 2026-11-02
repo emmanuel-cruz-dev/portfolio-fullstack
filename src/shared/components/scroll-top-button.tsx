@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { ChevronUp } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components";
+import { cn } from "@/lib";
 
 export function ScrollTopButton() {
   const [isVisible, setIsVisible] = useState(false);

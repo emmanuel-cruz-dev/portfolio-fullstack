@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { cn } from "@/lib/utils";
 import {
   buttonVariants,
   Separator,
@@ -13,6 +12,7 @@ import {
   Dock,
   DockIcon,
 } from "@/components";
+import { cn } from "@/lib";
 import { EMAIL, CONTACT_DATA } from "@/features/contact";
 
 const iconClass = cn(

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Card, CardFooter } from "@/components";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib";
 
 export function ContentCard({
   className,

@@ -4,11 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { NumberTicker } from "@/components";
-import {
-  getEstimatedCommits,
-  getExperienceYears,
-} from "@/lib/utils/stats.utils";
-import { cn } from "@/lib";
+import { cn, getEstimatedCommits, getExperienceYears } from "@/lib";
 
 interface Stat {
   prefix: string;
@@ -41,7 +37,7 @@ export function StatsSection({ className }: { className?: string }) {
 
   return (
     <section className={cn("py-6 px-4 xl:px-0", className)}>
-      <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/80 px-6 py-8 shadow-sm backdrop-blur-sm">
+      <article className="max-w-6xl mx-auto rounded-2xl border border-border bg-slate-100 dark:bg-slate-900/80 px-6 py-8 shadow-sm backdrop-blur-sm">
         <div className="grid grid-cols-2 md:grid-cols-4 md:divide-border md:divide-x-2">
           {stats.map((stat) => (
             <div
@@ -61,7 +57,7 @@ export function StatsSection({ className }: { className?: string }) {
             </div>
           ))}
         </div>
-      </div>
+      </article>
     </section>
   );
 }

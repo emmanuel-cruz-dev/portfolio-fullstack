@@ -12,7 +12,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { generatePagination } from "@/lib/utils/pagination.utils";
+import { generatePagination } from "@/lib";
 
 export function PaginationControl({ totalPages }: { totalPages: number }) {
   const pathname = usePathname();

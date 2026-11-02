@@ -22,7 +22,7 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib";
 
 export function Navbar() {
   const pathname = usePathname();
