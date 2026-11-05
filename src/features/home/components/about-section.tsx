@@ -58,7 +58,7 @@ export function AboutSection() {
                 className="btn-brand-cta hidden lg:flex h-12 max-w-64"
               >
                 <a
-                  href="/CV - Emmanuel Cruz (fullstack).pdf"
+                  href="/CV - Emmanuel Cruz (Full Stack).pdf"
                   aria-label={t("aboutCard.downloadCv")}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -139,7 +139,7 @@ export function AboutSection() {
                     className="btn-brand-cta lg:hidden h-12 px-12! xl:px-16! w-full xs:w-fit"
                   >
                     <a
-                      href="/CV - Emmanuel Cruz (fullstack).pdf"
+                      href="/CV - Emmanuel Cruz (Full Stack).pdf"
                       aria-label={t("aboutCard.downloadCv")}
                       target="_blank"
                       rel="noopener noreferrer"
