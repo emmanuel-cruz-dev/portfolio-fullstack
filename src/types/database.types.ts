@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
+    PostgrestVersion: "14.18"
   }
   public: {
     Tables: {
@@ -262,24 +262,8 @@ export type Database = {
         | "SOFTWARE_ENGINEERING"
         | "FUNCTIONAL_ANALYST"
       education_type: "COURSE" | "BOOTCAMP" | "CERTIFICATE" | "DEGREE"
-      experience_area:
-        | "FRONTEND"
-        | "BACKEND"
-        | "FULL_STACK"
-        | "DATABASE"
-        | "SECURITY"
-        | "QA"
-        | "DEVOPS"
-        | "UX_UI"
-        | "PROJECT_MANAGEMENT"
-        | "SOFTWARE_ENGINEERING"
-        | "LEADERSHIP"
-      experience_type:
-        | "EMPLOYMENT"
-        | "FREELANCE"
-        | "INTERNSHIP"
-        | "VOLUNTEER"
-        | "ACADEMIC"
+      experience_area: "FRONTEND" | "BACKEND" | "FULL_STACK"
+      experience_type: "EMPLOYMENT" | "FREELANCE" | "ACADEMIC"
       project_area:
         | "FRONTEND"
         | "BACKEND"
@@ -443,26 +427,8 @@ export const Constants = {
         "FUNCTIONAL_ANALYST",
       ],
       education_type: ["COURSE", "BOOTCAMP", "CERTIFICATE", "DEGREE"],
-      experience_area: [
-        "FRONTEND",
-        "BACKEND",
-        "FULL_STACK",
-        "DATABASE",
-        "SECURITY",
-        "QA",
-        "DEVOPS",
-        "UX_UI",
-        "PROJECT_MANAGEMENT",
-        "SOFTWARE_ENGINEERING",
-        "LEADERSHIP",
-      ],
-      experience_type: [
-        "EMPLOYMENT",
-        "FREELANCE",
-        "INTERNSHIP",
-        "VOLUNTEER",
-        "ACADEMIC",
-      ],
+      experience_area: ["FRONTEND", "BACKEND", "FULL_STACK"],
+      experience_type: ["EMPLOYMENT", "FREELANCE", "ACADEMIC"],
       project_area: [
         "FRONTEND",
         "BACKEND",
