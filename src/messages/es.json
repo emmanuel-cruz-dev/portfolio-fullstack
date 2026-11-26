@@ -164,6 +164,12 @@
       "title": "Experiencia",
       "description": "Mis trabajos realizados"
     },
+    "pageHeader": {
+      "eyebrow": "Colaboración y desarrollo",
+      "title": "Experiencia grupal",
+      "titleAccent": "en proyectos",
+      "description": "Roles, colaboraciones y proyectos que han impulsado mi crecimiento profesional y fortalecido mis habilidades técnicas."
+    },
     "experienceCard": {
       "present": "Actualidad",
       "technologies": "Tecnologías",
@@ -172,6 +178,18 @@
       "demo": "Ver demo online",
       "viewDetails": "Ver detalles"
     },
+    "sidebar": {
+      "title": "Filtros",
+      "searchPlaceholder": "Buscar por nombre o descripción",
+      "typeLabel": "Tipo de experiencia",
+      "areaLabel": "Área de especialización",
+      "featuredLabel": "Solo destacados",
+      "allTypes": "Todos los tipos",
+      "allAreas": "Todas las áreas",
+      "clearFilters": "Limpiar filtros",
+      "filterButton": "Filtros"
+    },
+    "empty": "No se encontraron resultados con los filtros aplicados.",
     "details": {
       "about": "Descripción",
       "technologies": "Tecnologías",
@@ -196,6 +214,11 @@
         "description": "Si querés saber más sobre mi trayectoria, mis habilidades o los proyectos en los que participé, no dudes en ponerte en contacto conmigo.",
         "button": "Contactame"
       }
+    },
+    "error": {
+      "title": "Algo salió mal",
+      "description": "Ocurrió un error al obtener las experiencias.",
+      "retry": "Intentar nuevamente"
     }
   },
   "contact": {
@@ -258,8 +281,6 @@
         "COLLABORATIVE": "Colaborativo",
         "OPEN_SOURCE": "Open Source",
         "EMPLOYMENT": "Empleo",
-        "INTERNSHIP": "Pasantía",
-        "VOLUNTEER": "Voluntariado",
         "COURSE": "Curso",
         "BOOTCAMP": "Bootcamp",
         "CERTIFICATE": "Certificación",

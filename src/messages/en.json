@@ -164,6 +164,12 @@
       "title": "Experience",
       "description": "My works"
     },
+    "pageHeader": {
+      "eyebrow": "Collaboration and development",
+      "title": "Group experience",
+      "titleAccent": "in projects",
+      "description": "Roles, collaborations, and projects that have fueled my professional growth and strengthened my technical skills."
+    },
     "experienceCard": {
       "present": "Present",
       "technologies": "Technologies",
@@ -172,6 +178,18 @@
       "demo": "View live demo",
       "viewDetails": "View details"
     },
+    "sidebar": {
+      "title": "Filters",
+      "searchPlaceholder": "Search by name or description",
+      "typeLabel": "Experience type",
+      "areaLabel": "Area of specialization",
+      "featuredLabel": "Featured only",
+      "allTypes": "All types",
+      "allAreas": "All areas",
+      "clearFilters": "Clear filters",
+      "filterButton": "Filters"
+    },
+    "empty": "No results found with the applied filters.",
     "details": {
       "about": "About",
       "technologies": "Technologies",
@@ -196,6 +214,11 @@
         "description": "If you'd like to know more about my background, my skills, or the projects I've been involved in, please don't hesitate to get in touch with me.",
         "button": "Contact me"
       }
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "An error occurred while retrieving the experiences.",
+      "retry": "Try again"
     }
   },
   "contact": {
@@ -258,8 +281,6 @@
         "COLLABORATIVE": "Collaborative",
         "OPEN_SOURCE": "Open Source",
         "EMPLOYMENT": "Employment",
-        "INTERNSHIP": "Internship",
-        "VOLUNTEER": "Volunteer",
         "COURSE": "Course",
         "BOOTCAMP": "Bootcamp",
         "CERTIFICATE": "Certificate",
