@@ -1,3 +1,3 @@
 export * from "./education-card";
-export * from "./education-content";
-export * from "./education-section";
+export * from "./education-filters";
+export * from "./education-grid";
