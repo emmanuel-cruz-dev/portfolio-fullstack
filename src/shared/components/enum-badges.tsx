@@ -92,3 +92,79 @@ export function BadgeList({
     </div>
   );
 }
+
+const FILTER_TONE_STYLES = {
+  primary: {
+    all: "px-2.5 py-1 text-xs justify-start",
+    item: "px-2.5 py-1 text-xs justify-start",
+    active: "bg-primary text-primary-foreground",
+    inactive: "hover:border-primary/50",
+  },
+  accent: {
+    all: "px-2.5 py-1 text-xs",
+    item: "px-2 py-1 text-[11px]",
+    active: "bg-brand-accent text-brand-accent-foreground",
+    inactive: "hover:border-brand-accent/50",
+  },
+} as const;
+
+interface FilterBadgeListProps<T extends string> {
+  items: readonly T[];
+  selected?: T | string | null;
+  onSelect: (value: T | null) => void;
+  allLabel?: string;
+  format?: (v: T) => string;
+  tone?: keyof typeof FILTER_TONE_STYLES;
+  className?: string;
+  badgeClassName?: string;
+}
+
+export function FilterBadgeList<T extends string>({
+  items,
+  selected,
+  onSelect,
+  allLabel,
+  format = (v) => v,
+  tone = "primary",
+  className,
+  badgeClassName,
+}: FilterBadgeListProps<T>) {
+  const styles = FILTER_TONE_STYLES[tone];
+
+  return (
+    <div className={cn("flex flex-wrap gap-1.5", className)}>
+      {allLabel && (
+        <Badge
+          variant={!selected ? "default" : "outline"}
+          className={cn(
+            "cursor-pointer transition-colors",
+            styles.all,
+            badgeClassName
+          )}
+          onClick={() => onSelect(null)}
+        >
+          {allLabel}
+        </Badge>
+      )}
+
+      {items.map((item) => {
+        const isActive = selected === item;
+        return (
+          <Badge
+            key={item}
+            variant={isActive ? "default" : "outline"}
+            className={cn(
+              "cursor-pointer transition-colors",
+              styles.item,
+              isActive ? styles.active : styles.inactive,
+              badgeClassName
+            )}
+            onClick={() => onSelect(isActive ? null : item)}
+          >
+            {format(item)}
+          </Badge>
+        );
+      })}
+    </div>
+  );
+}
