@@ -1,7 +1,9 @@
 import { cacheLife, cacheTag } from "next/cache";
 
 import { createStaticClient } from "@/lib/supabase/static";
-import { Education, EducationRaw, EducationFilters } from "../types";
+import { Education, EducationRaw } from "../types";
+import type { Enums } from "@/types";
+
 import { Locale } from "@/shared";
 import { escapeIlike, normalizeSearchTerm } from "@/lib/utils/search.utils";
 
@@ -40,11 +42,19 @@ export async function getFeaturedEducation(
   );
 }
 
-export interface EducationPage {
+interface EducationPage {
   data: Education[];
   total: number;
   totalPages: number;
   currentPage: number;
+}
+
+interface EducationFilters {
+  type?: Enums<"education_type">;
+  area?: Enums<"education_area">;
+  featured?: boolean;
+  search?: string;
+  page?: number;
 }
 
 export async function getFilteredEducation(
