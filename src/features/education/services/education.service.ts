@@ -1,11 +1,10 @@
 import { cacheLife, cacheTag } from "next/cache";
 
 import { createStaticClient } from "@/lib/supabase/static";
-import { Education, EducationRaw } from "../types";
-import type { Enums } from "@/types";
-
-import { Locale } from "@/shared";
 import { escapeIlike, normalizeSearchTerm } from "@/lib/utils/search.utils";
+import type { Education, EducationRaw } from "../types";
+import { type Enums } from "@/types";
+import { type Locale } from "@/shared";
 
 export const PAGE_SIZE = 6;
 
