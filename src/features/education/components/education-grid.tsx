@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 
 import { EducationCard } from "./education-card";
-import type { Education } from "../types";
 import { PaginationControl } from "@/shared";
+import type { Education } from "../types";
 
 export function EducationGrid({
   education,
