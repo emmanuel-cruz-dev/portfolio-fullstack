@@ -129,7 +129,7 @@
       "description": "My education courses"
     },
     "pageHeader": {
-      "eyebrow": "Education",
+      "eyebrow": "My academic journey",
       "title": "Learning",
       "titleAccent": "continuous",
       "description": "Each course, certification, and stage of study has strengthened my skills in developing modern, scalable, and best-practice-oriented applications."
@@ -143,6 +143,7 @@
     },
     "sidebar": {
       "title": "Filters",
+      "searchPlaceholder": "Search by name or description",
       "typeLabel": "Education Type",
       "areaLabel": "Specialization Area",
       "featuredLabel": "Featured only",
@@ -150,10 +151,6 @@
       "allAreas": "All areas",
       "clearFilters": "Clear filters",
       "filterButton": "Filters"
-    },
-    "pagination": {
-      "previous": "Previous",
-      "next": "Next"
     },
     "empty": "No education entries found matching the selected filters.",
     "error": {
@@ -332,6 +329,11 @@
       "button": "Get in touch"
     },
     "components": {
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "more": "More pages"
+      },
       "statusBadge": {
         "available": "Available"
       },

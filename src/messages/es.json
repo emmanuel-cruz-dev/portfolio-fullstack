@@ -129,7 +129,7 @@
       "description": "Mis cursos de formación"
     },
     "pageHeader": {
-      "eyebrow": "Formación",
+      "eyebrow": "Mi recorrido académico",
       "title": "Aprendizaje",
       "titleAccent": "continuo",
       "description": "Cada curso, certificación y etapa de estudio ha fortalecido mis habilidades para desarrollar aplicaciones modernas, escalables y orientadas a buenas prácticas."
@@ -143,6 +143,7 @@
     },
     "sidebar": {
       "title": "Filtros",
+      "searchPlaceholder": "Buscar por nombre o descripción",
       "typeLabel": "Tipo de formación",
       "areaLabel": "Área de especialización",
       "featuredLabel": "Solo destacados",
@@ -150,10 +151,6 @@
       "allAreas": "Todas las áreas",
       "clearFilters": "Limpiar filtros",
       "filterButton": "Filtros"
-    },
-    "pagination": {
-      "previous": "Anterior",
-      "next": "Siguiente"
     },
     "empty": "No se encontraron resultados con los filtros aplicados.",
     "error": {
@@ -332,6 +329,11 @@
       "button": "Ponte en contacto"
     },
     "components": {
+      "pagination": {
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "more": "Más páginas"
+      },
       "statusBadge": {
         "available": "Disponible"
       },
