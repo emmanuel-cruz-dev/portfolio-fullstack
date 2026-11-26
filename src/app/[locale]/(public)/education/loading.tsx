@@ -2,10 +2,10 @@ import { Skeleton } from "@/components";
 
 function EducationLoading() {
   return (
-    <div className="space-y-8">
+    <section className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {Array.from({ length: 6 }).map((_, idx) => (
-          <div
+          <article
             key={idx}
             className="flex flex-col h-72 rounded-xl border border-border/50 p-6 space-y-4 bg-card/30 backdrop-blur-xs"
           >
@@ -28,10 +28,10 @@ function EducationLoading() {
               <Skeleton className="h-5 w-20 rounded" />
               <Skeleton className="h-5 w-14 rounded" />
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
