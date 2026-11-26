@@ -1,0 +1,37 @@
+import { useTranslations } from "next-intl";
+
+import { ExperienceCard } from "./experience-card";
+import { PaginationControl } from "@/shared";
+import type { Experience } from "../types";
+
+export function ExperienceGrid({
+  experience,
+  totalPages,
+}: {
+  experience: Experience[];
+  totalPages: number;
+}) {
+  const t = useTranslations("experience");
+
+  if (experience.length === 0) {
+    return (
+      <article className="flex flex-col items-center justify-center py-16 px-4 text-center rounded-xl border border-dashed border-muted-foreground/25 bg-card/30">
+        <p className="text-muted-foreground text-base max-w-md font-medium">
+          {t("empty")}
+        </p>
+      </article>
+    );
+  }
+
+  return (
+    <main className="space-y-8">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {experience.map((item) => (
+          <ExperienceCard key={item.id} item={item} />
+        ))}
+      </section>
+
+      <PaginationControl totalPages={totalPages} />
+    </main>
+  );
+}
