@@ -20,10 +20,10 @@ export default function EducationError({
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center py-16 px-4 text-center rounded-xl border border-destructive/20 bg-destructive/5 space-y-4">
-      <div className="p-3 rounded-full bg-destructive/10 text-destructive">
+    <section className="flex flex-col items-center justify-center py-16 px-4 text-center rounded-xl border border-destructive/20 bg-destructive/5 space-y-4">
+      <figure className="p-3 rounded-full bg-destructive/10 text-destructive">
         <AlertTriangle className="h-6 w-6" />
-      </div>
+      </figure>
 
       <div className="space-y-1 max-w-md">
         <h3 className="text-lg font-bold text-foreground">{t("title")}</h3>
@@ -39,6 +39,6 @@ export default function EducationError({
         <RotateCcw className="h-3.5 w-3.5" />
         {t("retry")}
       </Button>
-    </div>
+    </section>
   );
 }
