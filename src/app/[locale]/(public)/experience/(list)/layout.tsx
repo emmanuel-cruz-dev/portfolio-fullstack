@@ -2,14 +2,14 @@ import { Suspense } from "react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
 import { ExperienceFilters } from "@/features/experience";
-import { Locale, PageHeader } from "@/shared";
+import { PageHeader } from "@/shared";
 
 export default async function ExperienceLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
