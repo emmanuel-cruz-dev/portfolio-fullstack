@@ -19,11 +19,11 @@ import {
   StatusBadge,
   TypeBadge,
   BadgeList,
-  useEnumLabels,
   type Locale,
   staggerContainer,
   staggerItem,
 } from "@/shared";
+import { useEnumLabels } from "@/shared/hooks";
 import { formatMonthYear } from "@/lib";
 import { Project } from "../types";
 

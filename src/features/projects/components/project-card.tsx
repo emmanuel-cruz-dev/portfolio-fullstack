@@ -1,3 +1,5 @@
+"use client";
+
 import { ViewTransition } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -12,8 +14,8 @@ import {
   ContentCardFooter,
   StatusBadge,
   TypeBadge,
-  useEnumLabels,
 } from "@/shared";
+import { useEnumLabels } from "@/shared/hooks";
 import { Project } from "../types";
 
 export function ProjectCard({ item }: { item: Project }) {
