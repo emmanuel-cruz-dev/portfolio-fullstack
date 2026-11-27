@@ -15,12 +15,8 @@ import {
   Label,
 } from "@/components";
 import { EducationSearch } from "./education-search";
-import { FilterBadgeList, useEnumLabels } from "@/shared";
-import { useEducationFilters } from "../hooks";
-import { Constants } from "@/types";
-
-const TYPES = Constants.public.Enums.education_type;
-const AREAS = Constants.public.Enums.education_area;
+import { FilterBadgeList, AREAS, TYPES } from "@/shared";
+import { useEnumLabels, useSearchFilters } from "@/shared/hooks";
 
 export function EducationFilters() {
   const t = useTranslations("education");
@@ -36,7 +32,7 @@ export function EducationFilters() {
     isPending,
     updateFilter,
     handleClearAll,
-  } = useEducationFilters();
+  } = useSearchFilters();
 
   const renderHeader = (iconClassName = "text-brand-accent") => (
     <div className="flex items-center justify-between mb-4 min-h-7">
