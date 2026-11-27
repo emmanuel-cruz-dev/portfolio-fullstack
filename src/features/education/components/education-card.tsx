@@ -20,9 +20,9 @@ import {
   ContentCard,
   ContentCardFooter,
   LogoAvatar,
-  useEnumLabels,
   type Locale,
 } from "@/shared";
+import { useEnumLabels } from "@/shared/hooks";
 import { formatDateRange } from "@/lib";
 import { Education } from "../types";
 
