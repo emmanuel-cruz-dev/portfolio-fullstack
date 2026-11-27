@@ -17,7 +17,7 @@ export default async function EducationLayout({
   const t = await getTranslations("education.pageHeader");
 
   return (
-    <section className="min-h-screen py-16 bg-background px-4 xl:px-0">
+    <section className="section-gradient-c py-16 px-4 xl:px-0">
       <div className="max-w-6xl mx-auto">
         <PageHeader
           eyebrow={t("eyebrow")}
