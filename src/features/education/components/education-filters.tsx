@@ -15,7 +15,8 @@ import {
   Label,
 } from "@/components";
 import { EducationSearch } from "./education-search";
-import { FilterBadgeList, AREAS, TYPES } from "@/shared";
+import { FilterBadgeList } from "@/shared";
+import { AREAS, TYPES } from "../constants";
 import { useEnumLabels, useSearchFilters } from "@/shared/hooks";
 
 export function EducationFilters() {
