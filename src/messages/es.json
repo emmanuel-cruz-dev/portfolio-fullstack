@@ -166,7 +166,7 @@
     },
     "pageHeader": {
       "eyebrow": "Colaboración y desarrollo",
-      "title": "Experiencia grupal",
+      "title": "Experiencia",
       "titleAccent": "en proyectos",
       "description": "Roles, colaboraciones y proyectos que han impulsado mi crecimiento profesional y fortalecido mis habilidades técnicas."
     },
@@ -182,7 +182,7 @@
       "title": "Filtros",
       "searchPlaceholder": "Buscar por nombre o descripción",
       "typeLabel": "Tipo de experiencia",
-      "areaLabel": "Área de especialización",
+      "areaLabel": "Área de desarrollo",
       "featuredLabel": "Solo destacados",
       "allTypes": "Todos los tipos",
       "allAreas": "Todas las áreas",

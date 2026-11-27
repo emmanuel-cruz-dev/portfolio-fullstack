@@ -165,9 +165,9 @@
       "description": "My works"
     },
     "pageHeader": {
-      "eyebrow": "Collaboration and development",
-      "title": "Group experience",
-      "titleAccent": "in projects",
+      "eyebrow": "Collaboration & development",
+      "title": "Project",
+      "titleAccent": "experience",
       "description": "Roles, collaborations, and projects that have fueled my professional growth and strengthened my technical skills."
     },
     "experienceCard": {
@@ -182,7 +182,7 @@
       "title": "Filters",
       "searchPlaceholder": "Search by name or description",
       "typeLabel": "Experience type",
-      "areaLabel": "Area of specialization",
+      "areaLabel": "Development area",
       "featuredLabel": "Featured only",
       "allTypes": "All types",
       "allAreas": "All areas",
