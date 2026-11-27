@@ -16,11 +16,11 @@ import {
   BadgeList,
   LogoAvatar,
   TypeBadge,
-  useEnumLabels,
   type Locale,
   staggerContainer,
   staggerItem,
 } from "@/shared";
+import { useEnumLabels } from "@/shared/hooks";
 import { formatMonthYear } from "@/lib";
 import { Experience } from "../types";
 
