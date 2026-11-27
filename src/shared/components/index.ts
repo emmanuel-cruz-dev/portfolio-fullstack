@@ -1,6 +1,7 @@
 export * from "./available-status-badge";
 export * from "./back-button";
 export * from "./card-links";
+export * from "./card-skeleton";
 export * from "./content-card";
 export * from "./cta-section";
 export * from "./enum-badges";
