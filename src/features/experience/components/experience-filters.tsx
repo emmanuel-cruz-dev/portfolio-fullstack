@@ -15,7 +15,8 @@ import {
   Label,
 } from "@/components";
 import { ExperienceSearch } from "./experience-search";
-import { FilterBadgeList, AREAS, TYPES } from "@/shared";
+import { FilterBadgeList } from "@/shared";
+import { AREAS, TYPES } from "../constants";
 import { useEnumLabels, useSearchFilters } from "@/shared/hooks";
 
 export function ExperienceFilters() {
